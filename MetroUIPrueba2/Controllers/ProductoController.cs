@@ -8,8 +8,7 @@ namespace MetroUIPrueba2.Controllers
 {
     public class ProductoController : Controller
     {
-        // GET: Producto
-        [HttpGet]
+   
         public ActionResult Index()
         {
             return View();

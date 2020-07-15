@@ -16,16 +16,27 @@
         width: 900px;
         height: auto;
         top: 50%;
-        margin-top: 60px;
+        margin-top: 20px;
         border: 1px solid green;
         padding: 50px;
         position: relative;
     }
+
+    .user_session {
+        margin-top: 3px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+        .user_session h6 {
+            color: blue;
+        }
 </style>
-
-
-
-
+<div class="user_session">
+    <h6>Usuario: Juan Perez</h6>
+</div>
 <div class="container" id="principal">
     <h3>Registrar Inventario Producto</h3>
     <hr />
@@ -35,6 +46,7 @@
                 <td style="padding-right:15px;">Almacen:</td>
                 <td style="padding:10px;">
                     <select style="width:400px;" data-role="select" class="input-lg">
+                        <option value="">seleccione</option>
                         <option value="1">ST-01</option>
                         <option value="2">DS-01</option>
                         <option value="3">ST-05</option>
@@ -46,6 +58,7 @@
                 <td style="padding-right:15px;">Producto:</td>
                 <td style="padding:10px;">
                     <select style="width:400px;" data-role="select" class="input-lg">
+                        <option value="">seleccione</option>
                         <option value="1">Prod-01</option>
                         <option value="2">Prod-02</option>
 
