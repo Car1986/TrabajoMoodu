@@ -165,9 +165,6 @@
     <Content Include="mif\metro.json" />
     <Content Include="Areas\Gerencia\Views\web.config" />
     <Content Include="Areas\Gerencia\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Shared\_DisennoLayout.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Shared\_IntranetLayout.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Gerencia\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Gerencia\Views\Proveedor\Crear.cshtml" />
     <Content Include="Areas\Gerencia\Views\Proveedor\Editar.cshtml" />
