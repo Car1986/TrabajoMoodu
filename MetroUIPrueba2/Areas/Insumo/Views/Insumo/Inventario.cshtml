@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Intranet";
+    Layout = "~/Areas/Insumo/Views/Shared/_IntranetLayoutInsumo.cshtml";
+}
+
+<style>
+    .login-form {
+        width: 650px;
+        height: auto;
+        top: 50%;
+        margin-top: -10px;
+    }
+
+    #principal {
+        width: 900px;
+        height: auto;
+        top: 50%;
+        margin-top: 60px;
+        border: 1px solid green;
+        padding: 50px;
+        position: relative;
+    }
+</style>
+
+
+
+
+<div class="container" id="principal">
+    <h3>Registrar Inventario Insumo</h3>
+    <hr />
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
+        <table>
+            <tr>
+                <td style="padding-right:15px;">Almacen:</td>
+                <td style="padding:10px;">
+                    <select style="width:400px;" data-role="select" class="input-lg">
+                        <option value="1">ST-01</option>
+                        <option value="2">DS-01</option>
+                        <option value="3">ST-05</option>
+                        <option value="2">DS-03</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Insumo:</td>
+                <td style="padding:10px;">
+                    <select style="width:400px;" data-role="select" class="input-lg">
+                        <option value="1">Ins-01</option>
+                        <option value="2">Ins-02</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr><td style="padding-right:15px;">Cantidad:</td><td style="padding:10px;"><input style="width:400px;" type="number" data-role="num" data-append="#" class="input-lg"></td></tr>
+            <tr><td style="padding-right:15px;">Fecha Inventario:</td><td style="padding-left:10px;"><input style="width:347px;" type="date" data-role="input" class="input-lg" /></td></tr>
+            <tr><td style="padding-right:15px;">Stock Crítico:</td><td style="padding:10px;"><input style="width:400px;" type="number" data-role="input" data-append="$.00" class="input-lg"></td></tr>
+
+        </table><br />
+
+        <div class="form-group">
+            <button class="button success">Registrar</button>
+            <input type="button" class="button" value="Cancel">
+        </div>
+
+    </form>
+
+</div>
