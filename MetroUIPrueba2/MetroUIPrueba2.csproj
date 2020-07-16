@@ -240,7 +240,6 @@
     <Content Include="Areas\Insumo\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Insumo\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Insumo\Views\Shared\_IntranetLayoutInsumo.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\Prueba.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
