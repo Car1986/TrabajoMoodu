@@ -125,6 +125,8 @@
     <Compile Include="Areas\Gerencia\Controllers\ProductoController.cs" />
     <Compile Include="Areas\Gerencia\Controllers\ProveedorController.cs" />
     <Compile Include="Areas\Gerencia\GerenciaAreaRegistration.cs" />
+    <Compile Include="Areas\Insumo\Controllers\InsumoController.cs" />
+    <Compile Include="Areas\Insumo\InsumoAreaRegistration.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Areas\Produccion\Controllers\InsumoController.cs" />
     <Compile Include="Areas\Produccion\Controllers\ProductoController.cs" />
@@ -227,6 +229,18 @@
     <Content Include="Areas\Gerencia\Views\Producto\Mesas.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Nuevo.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Ver.cshtml" />
+    <Content Include="Areas\Insumo\Views\web.config" />
+    <Content Include="Areas\Insumo\Views\Insumo\Actualizar.cshtml" />
+    <Content Include="Areas\Insumo\Views\Insumo\Crear.cshtml" />
+    <Content Include="Areas\Insumo\Views\Insumo\Editar.cshtml" />
+    <Content Include="Areas\Insumo\Views\Insumo\Index.cshtml" />
+    <Content Include="Areas\Insumo\Views\Insumo\Inventario.cshtml" />
+    <Content Include="Areas\Insumo\Views\Insumo\Nuevo.cshtml" />
+    <Content Include="Areas\Insumo\Views\Insumo\Ver.cshtml" />
+    <Content Include="Areas\Insumo\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Insumo\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Insumo\Views\Shared\_IntranetLayoutInsumo.cshtml" />
+    <Content Include="Areas\Insumo\Views\Insumo\Prueba.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -312,6 +326,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Gerencia\Data\" />
+    <Folder Include="Areas\Insumo\Data\" />
     <Folder Include="Areas\Produccion\Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
