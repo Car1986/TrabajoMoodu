@@ -239,13 +239,6 @@
     <Content Include="Areas\Insumo\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Insumo\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Insumo\Views\Shared\_IntranetLayoutInsumo.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\Disenno.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\ComodasCR.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\Comodas.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\Comedores.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\ClosetsCR.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\Closets.cshtml" />
-    <Content Include="Areas\Insumo\Views\Insumo\Camas.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -278,7 +271,6 @@
     <Content Include="Views\Empleado\Nuevo.cshtml" />
     <Content Include="Views\Empleado\Ver.cshtml" />
     <Content Include="Views\Empleado\Editar.cshtml" />
-    <None Include="Views\Home\Index.xxx" />
     <Content Include="Scripts\metro.min.js.map" />
     <Content Include="Views\Home\PayDocumentUser.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
