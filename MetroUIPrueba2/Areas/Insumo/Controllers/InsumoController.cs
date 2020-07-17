@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MetroUIPrueba2.Controllers
+namespace MetroUIPrueba2.Areas.Insumo.Controllers
 {
-    public class ProductoController : Controller
+    public class InsumoController : Controller
     {
-   
+        // GET: Insumo
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
@@ -23,7 +24,6 @@ namespace MetroUIPrueba2.Controllers
         {
             return View();
         }
-
         [HttpGet]
         public ActionResult Editar(int id)
         {
@@ -39,39 +39,12 @@ namespace MetroUIPrueba2.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult Inventario()
         {
             return View();
         }
-        public ActionResult Closets()
-        {
-            return View();
-        }
-        public ActionResult ClosetsCR()
-        {
-            return View();
-        }
-        public ActionResult Comedores()
-        {
-            return View();
-        }
-        public ActionResult Comodas()
-        {
-            return View();
-        }
-        public ActionResult ComodasCR()
-        {
-            return View();
-        }
-        public ActionResult Camas()
-        {
-            return View();
-        }
-        public ActionResult Disenno()
-        {
-            return View();
-        }
-        public ActionResult Mesas()
+        public ActionResult Prueba()
         {
             return View();
         }

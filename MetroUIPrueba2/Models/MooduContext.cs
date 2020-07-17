@@ -10,5 +10,6 @@ namespace MetroUIPrueba2.Models
     {
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Producto> Productos { get; set; }
     }
 }

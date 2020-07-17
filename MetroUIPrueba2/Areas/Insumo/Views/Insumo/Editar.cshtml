@@ -1,16 +1,9 @@
 ﻿@{
     ViewBag.Title = "Intranet";
-    Layout = "~/Areas/Gerencia/Views/Shared/_IntranetLayoutGerencia.cshtml";
+    Layout = "~/Areas/Insumo/Views/Shared/_IntranetLayoutInsumo.cshtml";
 }
 
 <style>
-    .login-form {
-        width: 650px;
-        height: auto;
-        top: 50%;
-        margin-top: -10px;
-    }
-
     #principal {
         width: 800px;
         height: 450px;
@@ -28,18 +21,17 @@
 
 
 <div class="container" id="principal">
-    <h3>Nuevo Insumo</h3>
+    <h3>Editar Insumo</h3>
     <hr />
     <form class="bg-white p-6 mx-auto border bd-default win-shadow">
         <table>
-            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding:10px;"><input style="width:400px;" type="text" data-role="input" data-append="" class="input-lg"></td></tr>
+            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding:10px;"><input style="width:400px;" type="text" value="Terciado Estructural" data-role="input" data-append="" class="input-lg"></td></tr>
             <tr>
 
             <tr>
                 <td style="padding-right:15px;">UMedida</td>
                 <td style="padding:10px;">
                     <select style="width:400px;" data-role="select" class="input-lg">
-                        <option value="">seleccione</option>
                         <option value="1">M2</option>
                         <option value="2">Unidad</option>
                         <option value="3">Galon</option>
@@ -52,7 +44,6 @@
                 <td style="padding-right:15px;">Categoria</td>
                 <td style="padding:10px;">
                     <select style="width:400px;" data-role="select" class="input-lg">
-                        <option value="">seleccione</option>
                         <option value="MP">Materia Prima</option>
                         <option value="PI">Pintura</option>
                         <option value="AC">Accesorios</option>
@@ -63,7 +54,7 @@
         </table><br />
 
         <div class="form-group">
-            <button class="button success">Registrar</button>
+            <button class="button success">Actualizar</button>
             <input type="button" class="button" value="Cancel">
         </div>
 
