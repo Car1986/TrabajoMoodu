@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MetroUIPrueba2.Models.Cliente>
+
+<style>
+    #principal {
+        width: 900px;
+        height: auto;
+        top: 50%;
+        margin-top: 60px;
+        border: 1px solid green;
+        padding: 50px;
+        position: relative;
+    }
+
+    .user_session {
+        margin-top: 3px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+        .user_session h6 {
+            color: blue;
+        }
+
+    #btn_nuevo {
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    .div-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="container" id="principal">
+    <table class="table compact row-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Rut</th>
+                <th>Nick</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+            <tr>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nombres</td>
+                <td>@cliente.Apellidos</td>
+                <td>@cliente.Correo</td>
+                <td>@cliente.Telefono</td>
+                <td>@cliente.Rut</td>
+                <td>@cliente.Usuario.NombreUsuario</td>
+                <td>
+                    <a href="@Url.Action("Ver","Usuario", new { id = cliente.Id })">Ver/</a>
+                    <a href="@Url.Action("Editar", "Usuario", new { id = cliente.Id })">Editar</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

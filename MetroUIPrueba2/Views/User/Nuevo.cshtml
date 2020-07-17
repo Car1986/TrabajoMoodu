@@ -3,6 +3,7 @@
     ViewBag.Title = "Create";
 }
 
+@model MetroUIPrueba2.Models.Cliente
 <style>
     fieldset {
         border: 1px solid #0366d6;
@@ -22,35 +23,35 @@
     }
 </style>
 
-<div class="container bg-white p-6 mx-auto border bd-default win-shadow" 
+<div class="container bg-white p-6 mx-auto border bd-default win-shadow"
      style="margin-top:100px; max-width: 600px">
     <label>Registro de Usuario</label>
     <fieldset class="container">
         <legend>Datos de Cliente</legend>
-        <form>
+        <form mrthod="post" action="@Url.Action( "Nueva", "Clientes" )" >
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                 <label>Nombres:</label>
-                <input type="text" placeholder="Nombres..." style="width: 320px" />
+                <input type="text" placeholder="Nombres..." style="width: 320px" name="Nombres" />
             </div>
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                 <label>Apellidos:</label>
-                <input type="text" placeholder="Apellidos..." style="width: 320px; " />
+                <input type="text" placeholder="Apellidos..." style="width: 320px;" name="Apellidos" />
             </div>
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                 <label>Dirección</label>
-                <input type="text" placeholder="Dirección..." style="width: 320px" />
+                <input type="text" placeholder="Dirección..." style="width: 320px" name="Direccion" />
             </div>
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                 <label>Email:</label>
-                <input type="email" placeholder="Email..." style="width: 320px" />
+                <input type="email" placeholder="Email..." style="width: 320px" name="Email" />
             </div>
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                 <label>Teléfono:</label>
-                <input type="text" placeholder="Teléfono..." style="width: 320px; " />
+                <input type="text" placeholder="Teléfono..." style="width: 320px;" name="Telefono" />
             </div>
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Ciudad</label>
-                <input type="text" placeholder="Ciudad..." style="width: 320px" />
+                <label>RUT</label>
+                <input type="text" placeholder="RUT..." style="width: 320px" name="RUT" />
             </div>
         </form>
     </fieldset>
@@ -60,16 +61,12 @@
         <form>
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                 <label>Nick</label>
-                <input type="text" placeholder="Nombre de Usuario:..." style="width: 320px" />
+                <input type="text" placeholder="Nombre de Usuario:..." style="width: 320px" name="Nick" />
             </div>
             <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                 <label>Contraseña:</label>
-                <input type="password" placeholder="Contraseña..." style="width: 320px; " />
-            </div>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Repita la Contraseña</label>
-                <input type="password" placeholder="Contraseña..." style="width: 320px" />
-            </div>
+                <input type="password" placeholder="Contraseña..." style="width: 320px;" name="contrasena" />
+            </div>          
         </form>
     </fieldset>
     <br />
@@ -85,4 +82,3 @@
         window.history.back();
     }
 </script>
-

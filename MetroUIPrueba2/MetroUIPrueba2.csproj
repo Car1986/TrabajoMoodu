@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -137,6 +144,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\MooduContext.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,18 +197,11 @@
     <Content Include="Areas\Gerencia\Views\Empleado\Ver.cshtml" />
     <Content Include="Areas\Produccion\Views\web.config" />
     <Content Include="Areas\Produccion\Views\Producto\Actualizar.cshtml" />
-    <Content Include="Areas\Produccion\Views\Producto\Camas.cshtml" />
-    <Content Include="Areas\Produccion\Views\Producto\Closets.cshtml" />
-    <Content Include="Areas\Produccion\Views\Producto\ClosetsCR.cshtml" />
-    <Content Include="Areas\Produccion\Views\Producto\Comedores.cshtml" />
-    <Content Include="Areas\Produccion\Views\Producto\Comodas.cshtml" />
-    <Content Include="Areas\Produccion\Views\Producto\ComodasCR.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Crear.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Disenno.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Editar.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Index.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Inventario.cshtml" />
-    <Content Include="Areas\Produccion\Views\Producto\Mesas.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Nuevo.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Ver.cshtml" />
     <Content Include="Areas\Produccion\Views\Insumo\Actualizar.cshtml" />
@@ -213,18 +216,11 @@
     <Content Include="Areas\Produccion\Views\Shared\_IntranetLayoutInsumos.cshtml" />
     <Content Include="Areas\Gerencia\Views\Shared\_IntranetLayoutGerencia.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Actualizar.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Producto\Camas.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Producto\Closets.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Producto\ClosetsCR.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Producto\Comedores.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Producto\Comodas.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Producto\ComodasCR.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Crear.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Disenno.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Editar.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Index.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Inventario.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Producto\Mesas.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Nuevo.cshtml" />
     <Content Include="Areas\Gerencia\Views\Producto\Ver.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -241,8 +237,6 @@
     <Content Include="Scripts\metro.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\User\Create.cshtml" />
-    <Content Include="Views\User\Modificate.cshtml" />
-    <Content Include="Views\User\ViewUser.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -270,9 +264,6 @@
     <Content Include="Views\Producto\Crear.cshtml" />
     <Content Include="Views\Home\product_selected.cshtml" />
     <Content Include="Views\Home\Mesas.cshtml" />
-    <Content Include="Views\User\Create.cshtml" />
-    <Content Include="Views\User\ViewUser.cshtml" />
-    <Content Include="Views\User\Modificate.cshtml" />
     <Content Include="Views\Producto\Inventario.cshtml" />
     <Content Include="Views\Insumo\Crear.cshtml" />
     <Content Include="Views\Insumo\Inventario.cshtml" />
@@ -308,12 +299,13 @@
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\RecoverPassword.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Nuevo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Gerencia\Data\" />
     <Folder Include="Areas\Produccion\Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -353,7 +345,10 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
