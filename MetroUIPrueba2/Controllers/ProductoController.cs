@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Antlr.Runtime.Misc;
+using MetroUIPrueba2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,41 @@ namespace MetroUIPrueba2.Controllers
 {
     public class ProductoController : Controller
     {
-   
+      
+        private List<Producto> GetProductos()
+        {
+            Producto pd1 = new Producto()
+            {
+                Id = 1,
+                Codigo = "PD-01",
+                Fecha = "01-01-2019",
+                Precio = 650000,
+                Imagen="la ruta",
+                Descripcion= "bla bla",
+                Estado ="Diseño"
+
+            };
+            Producto pd2 = new Producto()
+            {
+                Id = 2,
+                Codigo = "PD-02",
+                Fecha = "01-01-2019",
+                Precio = 750000,
+                Imagen = "la ruta",
+                Descripcion = "bla bla",
+                Estado = "Diseño"
+
+            };
+            List<Producto> list = new List<Producto>();
+            list.Add(pd1);
+            list.Add(pd2);
+            return list;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            List<Producto> misProductos = GetProductos();
+            return View(misProductos);
         }
         [HttpGet]
         public ActionResult Nuevo()

@@ -28,14 +28,13 @@
         margin-bottom: 20px;
         margin-left: 10px;
     }
-</style>
-
     .div-img {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 </style>
+
 <div class="user_session">
     <h6>Usuario: Juan Perez</h6>
 </div>
@@ -43,11 +42,7 @@
 
 
 <div class="container" id="principal">
-    <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div>
-    <h3>Lista de Proveedores</h3>
-    <a href="/Proveedor/nuevo" class="button primary small"><span class="mif-note-add"></span>Nuevo</a>
-
-<div class="container" id="principal">   
+    <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div> 
     <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
         <h3>Lista de Proveedores</h3>
         <a id="btn_nuevo" href="/Proveedor/nuevo" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
@@ -56,51 +51,40 @@
     <table class="table compact row-hover">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Razon</th>
-               
+                <th>Rut</th>
                 <th>Dirección</th>
+                <th>Teléfono</th>
                 <th>Email</th>
-                <th>Categoria</th>
+                <th>Contacto</th>
+                <th>Comuna</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
+            @foreach (var Proveedor in Model)
+            {
             <tr>
-                <td>Empresa de Pinturas S.A</td>
-               
-                <td>Los Avellanos # 675</td>
-                <td>ep@email.com</td>
-                <td>Pinturas</td>
+
+                <td>@Proveedor.Id</td>
+                <td>@Proveedor.Razon</td>
+                <td>@Proveedor.Rut</td>
+                <td>@Proveedor.Direccion</td>
+                <td>@Proveedor.Telefono</td>
+                <td>@Proveedor.Email</td>
+                <td>@Proveedor.Contacto</td>
+                <td>@Proveedor.Comuna</td>
                 <td>
-                    <a href="@Url.Action("Ver","Proveedor", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Proveedor", new {id=1 })">Editar</a>
+                    <a href="@Url.Action("Ver", "Proveedor", new { id = 1 })">Ver/</a>
+                    <a href="@Url.Action("Editar", "Proveedor", new { id = 1 })">Editar</a>
                 </td>
             </tr>
-            <tr>
-                <td>Prodema S.A</td>
-                
-                <td>Padre Lorenzo Eiting #5893</td>
-                <td>prodema@email.com</td>
-                <td>Materia Prima</td>
-                <td>
-                    <a href="@Url.Action("Ver","Proveedor", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Proveedor", new {id=1 })">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Gretsch-Unitas</td>
-               
-                <td> Camino Los Carros #1955</td>
-                <td>gu@email.com</td>
-                <td>Cerraduras</td>
-                <td>
-                    <a href="@Url.Action("Ver","Proveedor", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Proveedor", new { id =1 })">Editar</a>
-                </td>
-            </tr>
-        </tbody>
+            }
+            </tbody>
     </table>
 </div>
+  
 
 
 
