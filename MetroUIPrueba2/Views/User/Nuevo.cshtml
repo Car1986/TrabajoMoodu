@@ -23,57 +23,42 @@
     }
 </style>
 
+@Html.ValidationSummary()
 <div class="container bg-white p-6 mx-auto border bd-default win-shadow"
      style="margin-top:100px; max-width: 600px">
     <label>Registro de Usuario</label>
-    <fieldset class="container">
-        <legend>Datos de Cliente</legend>
-        <form mrthod="post" action="@Url.Action( "Nueva", "Clientes" )" >
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Nombres:</label>
-                <input type="text" placeholder="Nombres..." style="width: 320px" name="Nombres" />
-            </div>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Apellidos:</label>
-                <input type="text" placeholder="Apellidos..." style="width: 320px;" name="Apellidos" />
-            </div>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Dirección</label>
-                <input type="text" placeholder="Dirección..." style="width: 320px" name="Direccion" />
-            </div>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Email:</label>
-                <input type="email" placeholder="Email..." style="width: 320px" name="Email" />
-            </div>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Teléfono:</label>
-                <input type="text" placeholder="Teléfono..." style="width: 320px;" name="Telefono" />
-            </div>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>RUT</label>
-                <input type="text" placeholder="RUT..." style="width: 320px" name="RUT" />
-            </div>
-        </form>
-    </fieldset>
-    <br />
-    <fieldset class="container">
-        <legend>Datos de Usuario del Sistema</legend>
-        <form>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Nick</label>
-                <input type="text" placeholder="Nombre de Usuario:..." style="width: 320px" name="Nick" />
-            </div>
-            <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
-                <label>Contraseña:</label>
-                <input type="password" placeholder="Contraseña..." style="width: 320px;" name="contrasena" />
-            </div>          
-        </form>
-    </fieldset>
-    <br />
-    <div class="form-group">
-        <input onclick="goBack()" class="button primary outline" value="Ingresar" style="width:100px" />
-        <input onclick="goBack()" class="button primary outline" value="Atrás" style="width:100px" />
-    </div>
+    <form method="POST" action="@Url.Action( "Nuevo", "User" )">
+        <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
+            <label>Nombres:</label>
+            <input type="text" placeholder="Nombres..." style="width: 320px" name="Nombres" />
+            @Html.ValidationMessageFor(model => model.Nombres)
+        </div>
+        <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
+            <label>Apellidos:</label>
+            <input type="text" placeholder="Apellidos..." style="width: 320px;" name="Apellidos" />
+            @Html.ValidationMessageFor(model => model.Apellidos)
+        </div>
+        <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
+            <label>Email:</label>
+            <input type="email" placeholder="Email..." style="width: 320px" name="Email" />
+            @Html.ValidationMessageFor(model => model.Correo)
+        </div>
+        <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
+            <label>Teléfono:</label>
+            <input type="text" placeholder="Teléfono..." style="width: 320px;" name="Telefono" />
+            @Html.ValidationMessageFor(model => model.Telefono)
+        </div>
+        <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
+            <label>RUT</label>
+            <input type="text" placeholder="RUT..." style="width: 320px" name="RUT" />
+            @Html.ValidationMessageFor(model => model.Rut)
+        </div>
+        <div class="form-group">
+            <input type="submit" class="button primary outline" value="Ingresar" style="width:100px" />
+            <input class="button primary outline" value="Atrás" style="width:100px" />
+        </div>
+    </form>
+    
 </div>
 
 

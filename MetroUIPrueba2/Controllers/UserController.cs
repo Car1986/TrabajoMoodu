@@ -73,11 +73,25 @@ namespace MetroUIPrueba2.Controllers
             List<Cliente> misClientes = GetClientes();
             return View(misClientes);
         }
-
+        [HttpGet]
         public ActionResult Nuevo()
         {
             ViewBag.usuarios = GetUsuarios();
-            return View();
+            Cliente cliente = new Cliente();
+            return View(cliente);
+        }
+
+        [HttpPost]
+        public ActionResult Nuevo(Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index", "User");
+            }
+            else
+            {
+                return View(cliente);
+            }
         }
 
         public ActionResult Login()
