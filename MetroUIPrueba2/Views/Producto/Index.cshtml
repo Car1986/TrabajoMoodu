@@ -42,8 +42,6 @@
 
 <div class="container" id="principal">
     <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div>
-    <h3>Lista de Productos</h3>
-    <a href="/Producto/nuevo" class="button primary small"><span class="mif-note-add"></span>Nuevo</a>
     <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
         <h3>Lista de Productos</h3>
         <a id="btn_nuevo" href="/Producto/nuevo" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
@@ -54,47 +52,32 @@
             <tr>
                 <th>#</th>
                 <th>Codigo</th>
-                <th>Ingreso</th>
-                <th>Valoracion</th>
-                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
+            @foreach (var Producto in Model)
+            {
             <tr>
-                <td>1</td>
-                <td>PD-19</td>
-                <td>20-02-2018</td>
-                <td>$ 650.000</td>
-                <td>La descripcion...</td>
+                <td>@Producto.Id</td>
+                <td>@Producto.Codigo</td>
+                <td>@Producto.Fecha</td>
+                <td>@Producto.Precio</td>
+                <td>@Producto.Imagen</td>
+                <td>@Producto.Descripcion</td>
+                <td>@Producto.Estado</td>
                 <td>
-                    <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
+                    <a href="@Url.Action("Ver", "Producto", new { id = 1 })">Ver/</a>
+                    <a href="@Url.Action("Editar", "Producto", new { id = 1 })">Editar</a>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>PD-360</td>
-                <td>30-03-2020</td>
-                <td>$ 450.000</td>
-                <td>La descripcion2...</td>
-                <td>
-                    <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>PD-05</td>
-                <td>29-02.2018</td>
-                <td>$ 200.000</td>
-                <td>La descripcion3...</td>
-                <td>
-                    <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
-                </td>
-            </tr>
-        </tbody>
+            }
+            </tbody>
     </table>
 
 </div>
