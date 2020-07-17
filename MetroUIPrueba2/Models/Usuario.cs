@@ -13,5 +13,6 @@ namespace MetroUIPrueba2.Models
        
         // al reves de lo que dicen la logica
         public virtual ICollection<Cliente> Cliente { get; set; }
+        public virtual ICollection<Producto> Producto { get; set; }
     }
 }

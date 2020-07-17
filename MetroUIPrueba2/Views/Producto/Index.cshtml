@@ -27,6 +27,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
     #btn_nuevo {
         margin-bottom: 20px;
         margin-left: 10px;
@@ -57,6 +58,7 @@
                 <th>Imagen</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
+                <th>Usuario</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -71,9 +73,10 @@
                 <td>@Producto.Imagen</td>
                 <td>@Producto.Descripcion</td>
                 <td>@Producto.Estado</td>
+                <td>@Producto.Usuario.NombreUsuario</td>
                 <td>
-                    <a href="@Url.Action("Ver", "Producto", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new { id = 1 })">Editar</a>
+                    <a href="@Url.Action("Ver", "Producto", new { id = Producto.Id })">Ver/</a>
+                    <a href="@Url.Action("Editar", "Producto", new { id = Producto.Id })">Editar</a>
                 </td>
             </tr>
             }

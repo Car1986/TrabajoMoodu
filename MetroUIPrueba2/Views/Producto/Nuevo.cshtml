@@ -24,38 +24,61 @@
 
 
 
-
+@model MetroUIPrueba2.Models.Producto
 <div class="container" id="principal">
     <h3>Nuevo Producto</h3>
     <hr />
-    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow" method="POST" action="@Url.Action("Nuevo","Producto")">
         <table>
             <tr>
-                <td style="padding-right:15px;">Usuario:</td>
-                <td>
-                    <select style="width:400px;" data-role="select" class="input-lg">
-                        <option value="1">User-01</option>
-                        <option value="2">User-03</option>
-                        <option value="3">User-05</option>
-                    </select>
-                </td>
+                <td style="padding-right:15px;">Codigo Producto:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Codigo" data-role="input" data-append="#" class="input-lg"></td>
             </tr>
 
-            <tr><td style="padding-right:15px;">Codigo Producto:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" data-append="#" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Ingreso:</td><td style="padding-top: 10px;"><input style="width:347px;" type="date" data-role="input" class="input-lg" /></td></tr>
-            <tr><td style="padding-right:15px;">Valoración:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" onkeyup="format(this);" data-role="input" data-append="$.00" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Imagen:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" data-append="/Ruta" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" data-append="$.00" class="input-lg"></td></tr>
+            <tr>
+                <td style="padding-right:15px;">Ingreso:</td> 
+                <td style="padding-top: 10px;"><input style="width:347px;" type="date" name="Fecha"  data-role="input" class="input-lg" /></td>
+            </tr>
+
+            <tr>
+                <td style="padding-right:15px;">Valoración:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Precio" onkeyup="format(this);" data-role="input" data-append="$.00" class="input-lg"></td>
+                @Html.ValidationMessageFor(model => model.Precio);
+            </tr>
+
+            <tr>
+                <td style="padding-right:15px;">Imagen:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Imagen" data-role="input" data-append="/Ruta" class="input-lg"></td>
+            </tr>
+
+            <tr>
+                <td style="padding-right:15px;">Descripción:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Descripcion" data-role="input" data-append="$.00" class="input-lg"></td>
+            </tr>
+
             <tr>
                 <td style="padding-right:15px;padding-top:20px;">Estado:</td>
                 <td>
-                    <select style="width:400px;" data-role="select" class="input-lg">
+                    <select style="width:400px;" data-role="select" name ="Estado" class="input-lg">
                         <option value="1">Fabricado</option>
                         <option value="2">En Diseño</option>
 
                     </select>
                 </td>
             </tr>
+            <tr>
+                <td style="padding-right:15px;padding-top:20px;" >Usuario:</td>
+                <td>
+                    <select style="width:400px;" name="Id" data-role="select" class="input-lg">
+                        <option value="">seleccione</option>
+                        @foreach (var Usuario in ViewBag.Usuario)
+                        {
+                        <option value="@Usuario.Id">@Usuario.NombreUsuario</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+
         </table><br />
         <div class="form-group">
             <button class="button success">Registrar</button>
