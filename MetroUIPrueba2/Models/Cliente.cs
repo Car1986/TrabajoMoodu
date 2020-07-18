@@ -23,7 +23,6 @@ namespace MetroUIPrueba2.Models
         public string Rut { get; set; }
 
         //puesto alreves de lo que dice la logica con el cliente usuario
-        public int UsuarioId { get; set; }
-        public Usuario Usuario { get; set; }
+        //public virtual Usuario Usuario { get; set; }        
     }
 }
