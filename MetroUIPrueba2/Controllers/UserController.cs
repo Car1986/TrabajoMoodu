@@ -52,20 +52,7 @@ namespace MetroUIPrueba2.Controllers
             lista.Add(rodrigo);
 
             return lista;
-        }
-
-        private List<Usuario> GetUsuarios()
-        {
-            Usuario Carl_1 = new Usuario() { Id = 1, NombreUsuario = "Carl_1" };
-            Usuario Juancho = new Usuario() { Id = 2, NombreUsuario = "Juancho" };
-            Usuario RORRO = new Usuario() { Id = 3, NombreUsuario = "RORRO" };
-
-            List<Usuario> lista = new List<Usuario>();
-            lista.Add(Carl_1);
-            lista.Add(Juancho);
-            lista.Add(RORRO);
-            return lista;
-        }
+        }     
 
         // GET: User
         public ActionResult Index()
@@ -75,8 +62,7 @@ namespace MetroUIPrueba2.Controllers
         }
         [HttpGet]
         public ActionResult Nuevo()
-        {
-            ViewBag.usuarios = GetUsuarios();
+        {           
             Cliente cliente = new Cliente();
             return View(cliente);
         }
