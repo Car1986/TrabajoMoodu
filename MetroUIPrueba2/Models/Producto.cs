@@ -27,5 +27,6 @@ namespace MetroUIPrueba2.Models
         //[Required]
         //public int id { get; set; }
         //public Usuario Usuario { get; set; }
+      
     }
 }
