@@ -22,8 +22,8 @@ namespace MetroUIPrueba2.Controllers
                 Apellidos = "Marchant Sánchez",
                 Correo = "carlos@dsa.cl",
                 Telefono = 12343435,
-                Rut = "12443432-2",
-                Usuario = Carl_1
+                Rut = "12443432-2"
+               
             };
             Cliente juan = new Cliente()
             {
@@ -32,8 +32,8 @@ namespace MetroUIPrueba2.Controllers
                 Apellidos = "Leiva León",
                 Correo = "Juan@dsa.cl",
                 Telefono = 11626756,
-                Rut = "11626756-2",
-                Usuario = Juancho
+                Rut = "11626756-2"
+               
             };
             Cliente rodrigo = new Cliente()
             {
@@ -42,8 +42,8 @@ namespace MetroUIPrueba2.Controllers
                 Apellidos = "Urrutia Vazquéz",
                 Correo = "Rodrigo@dsa.cl",
                 Telefono = 16745999,
-                Rut = "16745999-3",
-                Usuario = RORRO
+                Rut = "16745999-3"
+               
             };
 
             List<Cliente> lista = new List<Cliente>();
