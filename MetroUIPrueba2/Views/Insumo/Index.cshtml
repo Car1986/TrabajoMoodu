@@ -13,6 +13,7 @@
         padding: 50px;
         position: relative;
     }
+
     .user_session {
         margin-top: 3px;
         margin-left: 5px;
@@ -21,14 +22,14 @@
         color: blue;
     }
 
-        .user_session h6 {
-            color: blue;
-        }
     #btn_nuevo {
-        margin-bottom:20px;
+        margin-bottom: 20px;
         margin-left: 10px;
     }
-</style>
+
+    .user_session h6 {
+        color: blue;
+    }
 
     .div-img {
         display: flex;
@@ -41,13 +42,10 @@
 </div>
 <div class="container" id="principal">
     <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div>
-    <h3>Lista de Insumo</h3>
-    <a href="/Insumo/nuevo" class="button primary small"><span class="mif-note-add"></span>Nuevo</a>
     <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
         <h3>Lista de Insumo</h3>
-        <a id="btn_nuevo" href="/Insumo/nuevo" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
+        <a id="btn_nuevo" href="@Url.Action("Nuevo","Insumo")" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
     </div>
-    
     <hr />
     <table class="table compact row-hover">
         <thead>
@@ -67,7 +65,7 @@
                 <td>Accesorios</td>
                 <td>
                     <a href="@Url.Action("Ver","Insumo", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Insumo", new {id=1 })">Editar</a>
+                    <a href="@Url.Action("Editar","Insumo", new { id = 1 })">Editar</a>
                 </td>
             </tr>
             <tr>
@@ -77,7 +75,7 @@
                 <td>Materia Prima</td>
                 <td>
                     <a href="@Url.Action("Ver","Insumo", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Insumo", new {id=1 })">Editar</a>
+                    <a href="@Url.Action("Editar","Insumo", new { id = 1 })">Editar</a>
                 </td>
             </tr>
             <tr>
@@ -87,7 +85,7 @@
                 <td>Pinturas</td>
                 <td>
                     <a href="@Url.Action("Ver","Insumo", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Insumo", new {id=1 })">Editar</a>
+                    <a href="@Url.Action("Editar","Insumo", new { id = 1 })">Editar</a>
                 </td>
             </tr>
         </tbody>

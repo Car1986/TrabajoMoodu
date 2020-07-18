@@ -10,7 +10,8 @@ namespace MetroUIPrueba2.Controllers
 {
     public class ProductoController : Controller
     {
-      
+        Usuario user1 = new Usuario() { Id = 1, NombreUsuario = "Manuel Neuer", Password = "123" };
+        Usuario user2 = new Usuario() { Id = 2, NombreUsuario = "Phillipe Lamp", Password = "456" };
         private List<Producto> GetProductos()
         {
             Producto pd1 = new Producto()
@@ -19,9 +20,10 @@ namespace MetroUIPrueba2.Controllers
                 Codigo = "PD-01",
                 Fecha = "01-01-2019",
                 Precio = 650000,
-                Imagen="la ruta",
-                Descripcion= "bla bla",
-                Estado ="Diseño"
+                Imagen = "la ruta",
+                Descripcion = "bla bla",
+                Estado = "Diseño",
+                Usuario = user1
 
             };
             Producto pd2 = new Producto()
@@ -32,7 +34,8 @@ namespace MetroUIPrueba2.Controllers
                 Precio = 750000,
                 Imagen = "la ruta",
                 Descripcion = "bla bla",
-                Estado = "Diseño"
+                Estado = "Diseño",
+                Usuario = user2
 
             };
             List<Producto> list = new List<Producto>();
@@ -40,6 +43,17 @@ namespace MetroUIPrueba2.Controllers
             list.Add(pd2);
             return list;
         }
+        private List<Usuario> GetUsuarios()
+        {
+            Usuario user1 = new Usuario() { Id = 1, NombreUsuario = "Manuel Neuer", Password = "123" };
+            Usuario user2 = new Usuario() { Id = 2, NombreUsuario = "Phillipe Lamp", Password = "456" };
+            List<Usuario> lista = new List<Usuario>();
+            lista.Add(user1);
+            lista.Add(user2);
+            return lista;
+        }
+
+            
 
         public ActionResult Index()
         {
@@ -49,8 +63,25 @@ namespace MetroUIPrueba2.Controllers
         [HttpGet]
         public ActionResult Nuevo()
         {
+            ViewBag.Usuario = GetUsuarios();
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Nuevo(Producto producto)
+        {
+            if (ModelState.IsValid)
+            { 
+                //codigo para guardar en BD
+                return RedirectToAction("Index", "Producto");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+
         [HttpGet]
         public ActionResult Ver(int id)
         {

@@ -44,7 +44,7 @@ namespace MetroUIPrueba2.Areas.Insumo.Controllers
         {
             return View();
         }
-        public ActionResult Prueba()
+        public ActionResult Camas()
         {
             return View();
         }

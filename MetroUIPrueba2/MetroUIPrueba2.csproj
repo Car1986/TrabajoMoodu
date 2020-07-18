@@ -271,7 +271,6 @@
     <Content Include="Views\Empleado\Nuevo.cshtml" />
     <Content Include="Views\Empleado\Ver.cshtml" />
     <Content Include="Views\Empleado\Editar.cshtml" />
-    <None Include="Views\Home\Index.xxx" />
     <Content Include="Scripts\metro.min.js.map" />
     <Content Include="Views\Home\PayDocumentUser.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
@@ -281,8 +280,6 @@
     <Content Include="Views\Home\product_selected.cshtml" />
     <Content Include="Views\Home\Mesas.cshtml" />
     <Content Include="Views\Producto\Inventario.cshtml" />
-    <Content Include="Views\Insumo\Crear.cshtml" />
-    <Content Include="Views\Insumo\Inventario.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
     <Content Include="Views\Proveedor\Crear.cshtml" />
     <Content Include="Views\Proveedor\Index.cshtml" />
@@ -295,11 +292,6 @@
     <Content Include="Views\Producto\Ver.cshtml" />
     <Content Include="Views\Producto\Editar.cshtml" />
     <Content Include="Views\Producto\Actualizar.cshtml" />
-    <Content Include="Views\Insumo\Nuevo.cshtml" />
-    <Content Include="Views\Insumo\Index.cshtml" />
-    <Content Include="Views\Insumo\Ver.cshtml" />
-    <Content Include="Views\Insumo\Editar.cshtml" />
-    <Content Include="Views\Insumo\Actualizar.cshtml" />
     <Content Include="Views\Shared\_IntranetLayout.cshtml" />
     <Content Include="Views\Home\Intranet.cshtml" />
     <Content Include="Views\Producto\Disenno.cshtml" />
@@ -317,6 +309,13 @@
     <Content Include="Views\User\RecoverPassword.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Nuevo.cshtml" />
+    <Content Include="Views\Insumo\Actualizar.cshtml" />
+    <Content Include="Views\Insumo\Crear.cshtml" />
+    <Content Include="Views\Insumo\Editar.cshtml" />
+    <Content Include="Views\Insumo\Index.cshtml" />
+    <Content Include="Views\Insumo\Inventario.cshtml" />
+    <Content Include="Views\Insumo\Nuevo.cshtml" />
+    <Content Include="Views\Insumo\Ver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
