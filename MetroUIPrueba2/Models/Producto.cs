@@ -24,12 +24,8 @@ namespace MetroUIPrueba2.Models
         public string Descripcion { get; set; }
         [Required]
         public string Estado { get; set; }
-        [Required]
-
-        public int id { get; set; }
-        public Usuario Usuario { get; set; }
-      
-
-
+        //[Required]
+        //public int id { get; set; }
+        //public Usuario Usuario { get; set; }
     }
 }
