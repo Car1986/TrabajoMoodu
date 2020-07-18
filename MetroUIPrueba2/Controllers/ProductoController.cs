@@ -10,60 +10,18 @@ namespace MetroUIPrueba2.Controllers
 {
     public class ProductoController : Controller
     {
-        Usuario user1 = new Usuario() { Id = 1, NombreUsuario = "Manuel Neuer", Password = "123" };
-        Usuario user2 = new Usuario() { Id = 2, NombreUsuario = "Phillipe Lamp", Password = "456" };
-        private List<Producto> GetProductos()
-        {
-            Producto pd1 = new Producto()
-            {
-                Id = 1,
-                Codigo = "PD-01",
-                Fecha = "01-01-2019",
-                Precio = 650000,
-                Imagen = "la ruta",
-                Descripcion = "bla bla",
-                Estado = "Diseño",
-                Usuario = user1
-
-            };
-            Producto pd2 = new Producto()
-            {
-                Id = 2,
-                Codigo = "PD-02",
-                Fecha = "01-01-2019",
-                Precio = 750000,
-                Imagen = "la ruta",
-                Descripcion = "bla bla",
-                Estado = "Diseño",
-                Usuario = user2
-
-            };
-            List<Producto> list = new List<Producto>();
-            list.Add(pd1);
-            list.Add(pd2);
-            return list;
-        }
-        private List<Usuario> GetUsuarios()
-        {
-            Usuario user1 = new Usuario() { Id = 1, NombreUsuario = "Manuel Neuer", Password = "123" };
-            Usuario user2 = new Usuario() { Id = 2, NombreUsuario = "Phillipe Lamp", Password = "456" };
-            List<Usuario> lista = new List<Usuario>();
-            lista.Add(user1);
-            lista.Add(user2);
-            return lista;
-        }
-
-            
+    
+    
 
         public ActionResult Index()
         {
-            List<Producto> misProductos = GetProductos();
-            return View(misProductos);
+        
+            return View();
         }
         [HttpGet]
         public ActionResult Nuevo()
         {
-            ViewBag.Usuario = GetUsuarios();
+         
             return View();
         }
 
