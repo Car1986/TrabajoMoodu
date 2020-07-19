@@ -32,8 +32,8 @@ namespace MetroUIPrueba2.Controllers
                 Apellidos = "Leiva León",
                 Correo = "Juan@dsa.cl",
                 Telefono = 11626756,
-                Rut = "11626756-2",
-            
+                Rut = "11626756-2"
+               
             };
             Cliente rodrigo = new Cliente()
             {
@@ -42,7 +42,7 @@ namespace MetroUIPrueba2.Controllers
                 Apellidos = "Urrutia Vazquéz",
                 Correo = "Rodrigo@dsa.cl",
                 Telefono = 16745999,
-                Rut = "16745999-3",
+                Rut = "16745999-3"
                
             };
 
