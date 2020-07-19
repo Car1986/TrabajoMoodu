@@ -1,5 +1,6 @@
 ﻿using Antlr.Runtime.Misc;
 using MetroUIPrueba2.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,28 +11,30 @@ namespace MetroUIPrueba2.Controllers
 {
     public class ProductoController : Controller
     {
-    
+        MooduContext _db = new MooduContext();
     
 
         public ActionResult Index()
         {
-        
-            return View();
+            List<Producto> producto = _db.Producto.ToList();
+            return View(producto);
         }
         [HttpGet]
-        public ActionResult Nuevo()
+        public ActionResult Create()
         {
+            Producto producto = new Producto();
          
-            return View();
+            return View(producto);
         }
 
+
         [HttpPost]
-        public ActionResult Nuevo(Producto producto)
+        public ActionResult Create(Producto producto)
         {
             if (ModelState.IsValid)
             { 
                 //codigo para guardar en BD
-                return RedirectToAction("Index", "Producto");
+                return RedirectToAction("View", "Producto", new {id=producto.Id });
             }
             else
             {
@@ -41,26 +44,28 @@ namespace MetroUIPrueba2.Controllers
 
 
         [HttpGet]
-        public ActionResult Ver(int id)
+        public ActionResult View(int id)
         {
-            return View();
+            Producto producto = _db.Producto.Find(id);
+            if (producto==null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(producto);
         }
 
         [HttpGet]
-        public ActionResult Editar(int id)
+        public ActionResult Edit(int id)
         {
-            return View();
+            Producto producto = _db.Producto.Find(id);
+            if (producto==null)
+            {
+                return HttpNotFound();
+            }
+            return View(producto);
         }
+
         [HttpPost]
-        public ActionResult Crear()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Actualizar()
-        {
-            return View();
-        }
         public ActionResult Inventario()
         {
             return View();

@@ -1,0 +1,52 @@
+﻿@model MetroUIPrueba2.Models.Producto
+@{
+    ViewBag.Title = "Intranet";
+    Layout = "~/Views/Shared/_IntranetLayout.cshtml";
+}
+
+<style>
+    #principal {
+        width: 900px;
+        height: auto;
+        top: 50%;
+        margin-top: 60px;
+        border: 1px solid green;
+        padding: 50px;
+        position: relative;
+    }
+</style>
+
+<br />
+<div class="container" id="principal">
+    <h3> Ver Producto</h3>
+    <hr />
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
+        <table>
+            <tr>
+            <td style="padding-right:15px;">Codigo Producto:</td>
+            <td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" value="@Model.Codigo" disabled="disabled" class="input-lg">
+                </td>
+            </tr>
+
+            <tr>
+            <td style="padding-right:15px;">Ingreso:</td>
+            <td style="padding-top: 10px;"><input style="width:347px;" type="text" data-role="input" class="input-lg" value="@Model.Fecha" disabled="disabled" /></td>
+            </tr>
+
+            <tr>
+            <td style="padding-right:15px;">Valoración:</td>
+            <td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" value="@Model.Precio" disabled="disabled" class="input-lg"></td>
+            </tr>
+
+            <tr>
+            <td style="padding-right:15px;">Descripción:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" value="@Model.Descripcion" disabled="disabled" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;padding-top:20px;">Estado:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" value="@Model.Estado" disabled="disabled" class="input-lg"></td>
+            </tr>
+        </table><br />
+
+    </form>
+
+</div>

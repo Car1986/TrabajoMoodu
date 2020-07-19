@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MetroUIPrueba2.Models.Proveedor>
+@{
     ViewBag.Title = "Intranet";
     Layout = "~/Views/Shared/_IntranetLayout.cshtml";
 }
@@ -45,7 +46,7 @@
     <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div> 
     <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
         <h3>Lista de Proveedores</h3>
-        <a id="btn_nuevo" href="/Proveedor/nuevo" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
+        <a id="btn_nuevo" href="/Proveedor/Create" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
     </div>
     <hr />
     <table class="table compact row-hover">
@@ -63,21 +64,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var Proveedor in Model)
+            @foreach (MetroUIPrueba2.Models.Proveedor pr in Model)
             {
             <tr>
 
-                <td>@Proveedor.Id</td>
-                <td>@Proveedor.Razon</td>
-                <td>@Proveedor.Rut</td>
-                <td>@Proveedor.Direccion</td>
-                <td>@Proveedor.Telefono</td>
-                <td>@Proveedor.Email</td>
-                <td>@Proveedor.Contacto</td>
-                <td>@Proveedor.Comuna</td>
+                <td>@pr.Id</td>
+                <td>@pr.Razon</td>
+                <td>@pr.Rut</td>
+                <td>@pr.Direccion</td>
+                <td>@pr.Telefono</td>
+                <td>@pr.Email</td>
+                <td>@pr.Contacto</td>
+                <td>@pr.Comuna</td>
                 <td>
-                    <a href="@Url.Action("Ver", "Proveedor", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Proveedor", new { id = 1 })">Editar</a>
+                    <a href="@Url.Action("View", "Proveedor", new { id = pr.Id })">Ver/</a>
+                    <a href="@Url.Action("Edit", "Proveedor", new { id = pr.Id })">Editar</a>
                 </td>
             </tr>
             }

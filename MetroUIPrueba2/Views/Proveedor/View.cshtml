@@ -1,4 +1,5 @@
-﻿<style>
+﻿@model MetroUIPrueba2.Models.Proveedor
+<style>
     #principal {
         width: 800px;
         height: 750px;
@@ -9,6 +10,7 @@
         padding-left: 60px;
         position: relative;
     }
+
     .user_session {
         margin-top: 60px;
         margin-left: 5px;
@@ -36,7 +38,7 @@
         <div class="row mb-2">
             <label class="cell-sm-3">Razón:</label>
             <div class="cell-sm-9">
-                <input type="text" value="Empresa de Pinturas S.A" data-role="input"
+                <input type="text" value="@Model.Razon"  data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-shop'></span>"
                        readonly>
@@ -45,7 +47,7 @@
         <div class="row mb-2">
             <label class="cell-sm-3">Rut:</label>
             <div class="cell-sm-4">
-                <input type="text" data-role="input" value="65.897.345-k" class="mb-1"
+                <input type="text" data-role="input" value="@Model.Rut" class="mb-1"
                        data-prepend="<span class='mif-indent-increase'></span>" readonly>
             </div>
         </div>
@@ -53,7 +55,7 @@
         <div class="row mb-2">
             <label class="cell-sm-3">Dirección:</label>
             <div class="cell-sm-9">
-                <input type="text" value="Los Avellanos # 675" data-role="input"
+                <input type="text" value="@Model.Direccion" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-steps'></span>"
                        readonly>
@@ -63,7 +65,7 @@
         <div class="row mb-2">
             <label class="cell-sm-3">Teléfono:</label>
             <div class="cell-sm-4">
-                <input type="text" value="+56 9 86754532" data-role="input"
+                <input type="text" value="@Model.Telefono" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-phone'></span>"
                        readonly>
@@ -72,36 +74,27 @@
         <div class="row mb-2">
             <label class="cell-sm-3">Email:</label>
             <div class="cell-sm-9">
-                <input type="email" value="ep@email.com" data-role="input"
+                <input type="email" value="@Model.Email" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-envelop'></span>"
                        readonly>
             </div>
         </div>
         <div class="row mb-2">
-            <label class="cell-sm-3">Categoria:</label>
+            <label class="cell-sm-3">Contacto:</label>
             <div class="cell-sm-6">
-                <input type="text" value="Pinturas" data-role="input"
+                <input type="text" value="@Model.Contacto" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-stack2'></span>"
                        readonly>
             </div>
         </div>
         <div class="row mb-2">
-            <label class="cell-sm-3">Región:</label>
-            <div class="cell-sm-6">
-                <input type="text" value="Metropolitana" data-role="input"
-                       class="mb-1"
-                       data-prepend="<span class='mif-earth2'></span>"
-                       readonly>
-            </div>
-        </div>
-        <div class="row mb-2">
             <label class="cell-sm-3">Comuna:</label>
             <div class="cell-sm-6">
-                <input type="text" value="Providencia" data-role="input"
+                <input type="text" value="@Model.Comuna" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-earth'></span>"
+                       data-prepend="<span class='mif-earth2'></span>"
                        readonly>
             </div>
         </div>

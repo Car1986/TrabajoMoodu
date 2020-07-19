@@ -1,4 +1,6 @@
-﻿using MetroUIPrueba2.Models;
+﻿using Antlr.Runtime.Misc;
+using MetroUIPrueba2.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +11,57 @@ namespace MetroUIPrueba2.Controllers
 {
     public class ProveedorController : Controller
     {
-     
+        MooduContext _db = new MooduContext();
+
         // GET: Proveedor
         [HttpGet]
         public ActionResult Index()
         {
-           
-            return View();
+            List<Proveedor> proveedor = _db.Proveedor.ToList();
+
+            return View(proveedor);
         }
         [HttpGet]
-        public ActionResult Nuevo()
+        public ActionResult Create()
         {
-            return View();
+            Proveedor proveedor = new Proveedor();
+            return View(proveedor);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Proveedor proveedor)
+        {
+            if (ModelState.IsValid)
+            {
+                //acá codigo para guardar
+                return RedirectToAction("View","Proveedor", new { id=proveedor.Id });
+            }
+            return View(proveedor);
+        }
+
+
+        [HttpGet]
+        public ActionResult View(int id)
+        {
+            Proveedor proveedor = _db.Proveedor.Find(id);
+            if (proveedor==null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(proveedor);
         }
 
         [HttpGet]
-        public ActionResult Ver(int id)
+        public ActionResult Edit(int id)
         {
-            return View();
+            Proveedor proveedor = _db.Proveedor.Find(id);
+            if (proveedor == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(proveedor);
         }
-        [HttpGet]
-        public ActionResult Editar(int id)
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Crear()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Actualizar()
-        {
-            return View();
-        }
+       
+     
     }
 }

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MetroUIPrueba2.Models.Producto
+
+@{
     ViewBag.Title = "Intranet";
     Layout = "~/Views/Shared/_IntranetLayout.cshtml";
 }
@@ -24,32 +26,36 @@
 
 
 
-
 <div class="container" id="principal">
     <h3>Editar Producto</h3>
     <hr />
     <form class="bg-white p-6 mx-auto border bd-default win-shadow">
         <table>
             <tr>
-                <td style="padding-right:15px;">Usuario:</td>
-                <td>
-                    <select style="width:400px;" data-role="select" class="input-lg">
-                        <option value="1">User-01</option>
-                        <option value="2">User-03</option>
-                        <option value="3">User-05</option>
-                    </select>
-                </td>
+                <td style="padding-right:15px;">Codigo Producto:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Codigo" value="@Model.Codigo" data-role="input" data-append="#" class="input-lg"></td>
             </tr>
-
-            <tr><td style="padding-right:15px;">Codigo Producto:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" value="PD-01" data-role="input" data-append="#" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Ingreso:</td><td style="padding-top: 10px;"><input style="width:347px;" type="text" value="20-02-2018" data-role="input" class="input-lg" /></td></tr>
-            <tr><td style="padding-right:15px;">Valoración:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" value="$ 650.000" onkeyup="format(this);" data-role="input" data-append="$.00" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Imagen:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" value="C/imagenes/img-01.jpg" data-role="input" data-append="/Ruta" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" value="La descripcion.." data-role="input" data-append="$.00" class="input-lg"></td></tr>
+            <tr>
+                <td style="padding-right:15px;">Ingreso:</td>
+                <td style="padding-top: 10px;"><input style="width:347px;" type="text" name="Fecha" value="@Model.Fecha" data-role="input" class="input-lg" /></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Valoración:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Precio" value="@Model.Precio" onkeyup="format(this);" data-role="input" data-append="$.00" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Imagen:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Imagen" value="@Model.Imagen" data-role="input" data-append="/Ruta" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Descripción:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Descripcion" value="@Model.Descripcion" data-role="input" data-append="$.00" class="input-lg"></td>
+            </tr>
             <tr>
                 <td style="padding-right:15px;padding-top:20px;">Estado:</td>
                 <td>
-                    <select style="width:400px;" data-role="select" class="input-lg">
+                    <select style="width:400px;" data-role="select" name="Estado" class="input-lg">
+                        <option value="@Model.Estado">@Model.Estado</option>
                         <option value="1">Produccion</option>
                         <option value="2">En Diseño</option>
 

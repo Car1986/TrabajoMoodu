@@ -23,7 +23,7 @@ namespace MetroUIPrueba2.Controllers
                 Correo = "carlos@dsa.cl",
                 Telefono = 12343435,
                 Rut = "12443432-2",
-                Usuario = Carl_1
+              
             };
             Cliente juan = new Cliente()
             {
@@ -33,7 +33,7 @@ namespace MetroUIPrueba2.Controllers
                 Correo = "Juan@dsa.cl",
                 Telefono = 11626756,
                 Rut = "11626756-2",
-                Usuario = Juancho
+            
             };
             Cliente rodrigo = new Cliente()
             {
@@ -43,7 +43,7 @@ namespace MetroUIPrueba2.Controllers
                 Correo = "Rodrigo@dsa.cl",
                 Telefono = 16745999,
                 Rut = "16745999-3",
-                Usuario = RORRO
+               
             };
 
             List<Cliente> lista = new List<Cliente>();

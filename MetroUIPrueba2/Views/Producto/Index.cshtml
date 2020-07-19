@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MetroUIPrueba2.Models.Producto>
+@{
     ViewBag.Title = "Intranet";
     Layout = "~/Views/Shared/_IntranetLayout.cshtml";
 }
@@ -13,21 +14,25 @@
         padding: 50px;
         position: relative;
     }
+
     .user_session {
         margin-top: 3px;
         margin-left: 5px;
-        width:300px;
+        width: 300px;
         position: relative;
         color: blue;
     }
-    .user_session h6{
-        color:blue;
-    }
+
+        .user_session h6 {
+            color: blue;
+        }
+
     .div-img {
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
     #btn_nuevo {
         margin-bottom: 20px;
         margin-left: 10px;
@@ -45,8 +50,8 @@
     <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div>
     <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
         <h3>Lista de Productos</h3>
-        <a id="btn_nuevo" href="/Producto/nuevo" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
-    </div>    
+        <a id="btn_nuevo" href="/Producto/Create" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
+    </div>
     <hr />
     <table class="table compact row-hover">
         <thead>
@@ -58,29 +63,28 @@
                 <th>Imagen</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
-                <th>Usuario</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var Producto in Model)
+            @foreach (MetroUIPrueba2.Models.Producto p in Model)
             {
-            <tr>
-                <td>@Producto.Id</td>
-                <td>@Producto.Codigo</td>
-                <td>@Producto.Fecha</td>
-                <td>@Producto.Precio</td>
-                <td>@Producto.Imagen</td>
-                <td>@Producto.Descripcion</td>
-                <td>@Producto.Estado</td>
-                <td>@Producto.Usuario.NombreUsuario</td>
-                <td>
-                    <a href="@Url.Action("Ver", "Producto", new { id = Producto.Id })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new { id = Producto.Id })">Editar</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Codigo</td>
+                    <td>@p.Fecha</td>
+                    <td>@p.Precio</td>
+                    <td>@p.Imagen</td>
+                    <td>@p.Descripcion</td>
+                    <td>@p.Estado</td>
+
+                    <td>
+                        <a href="@Url.Action("View", "Producto", new { id = p.Id })">Ver/</a>
+                        <a href="@Url.Action("Edit", "Producto", new { id = p.Id })">Editar</a>
+                    </td>
+                </tr>
             }
-            </tbody>
+        </tbody>
     </table>
 
 </div>

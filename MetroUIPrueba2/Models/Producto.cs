@@ -11,7 +11,7 @@ namespace MetroUIPrueba2.Models
     {
         public  int Id { get; set; }
         [Required]
-        [StringLength(50,MinimumLength =10)]
+        [StringLength(50,MinimumLength =1)]
         public string Codigo { get; set; }
         [Required]
         public string Fecha { get; set; }
