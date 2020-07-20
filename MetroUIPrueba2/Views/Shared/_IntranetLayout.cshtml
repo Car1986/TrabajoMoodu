@@ -13,77 +13,60 @@
             background: transparent;
             border: none;
         }
-        
+
+        div.mega-container {
+            display: inline-block;
+            min-width: 400px;
+        }
     </style>
-  
 </head>
 
 
 
 <body>
-    <aside class="sidebar pos-absolute z-2"
-           data-role="sidebar"
-           data-toggle="#sidebar-toggle-3"
-           id="sb3"
-           data-shift=".shifted-content">
-        <div class="sidebar-header" data-image="mif-user icon">
-            <div class="avatar" >
-                <img data-role="gravatar" data-email="a@b.com" data-default="mp">
-            </div>
-            <span class="title fg-white">Trabajador 1</span>
-            <span class="subtitle fg-white">Gerencia</span>
-        </div>
-        <ul class="sidebar-menu">
+    <div style="display:flex; flex-direction:row; justify-content:space-between ">
+        <ul class="h-menu mega">
+            <li><a href="@Url.Action("Index","Empleado")"><span class="mif-home icon"></span></a></li>
             <li>
-                <div style="display:flex; flex-direction:row; align-items:center">
-                    <a href="#"><span class="mif-stack icon"></span>Insumos</a>
-                    <button class="button2 dropdown-toggle dropdownmenu" href="#" style="padding: 0px 0px 0px 0px;"></button>
+                <a href="#" class="dropdown-toggle"><span class="mif-cart icon"></span> Productos</a>
+                <div class="mega-container" data-role="dropdown">
+                    <ul class="h-menu">
+                        <li><a href="@Url.Action("Index","Producto")"><span class="mif-zoom-in icon"></span> Ver Productos</a></li>
+                        <li><a href="@Url.Action("Inventario","Producto")"><span class="mif-database"></span>Inventario</a></li>
+                    </ul>
                 </div>
-                <ul class="d-menu" data-role="dropdown" style="display: none;">
-                    <li><a href="/Insumo/Index"><span class="mif-zoom-in icon"></span>Ver Insumos</a></li>
-                    <li><a href="#">Subitem 2</a></li>
-                    <li><a href="#">Subitem 3</a></li>
-                    <li><a href="#">Subitem 4</a></li>
-                </ul>
             </li>
             <li>
-                <div style="display:flex; flex-direction:row; align-items:center">
-                    <a href="#"><span class="mif-cart icon"></span>Productos</a>
-                    <button class="button2 dropdown-toggle dropdownmenu" href="#" style="padding: 0px 0px 0px 0px;"></button>
+                <a href="#" class="dropdown-toggle"><span class="mif-stack icon"></span> Insumos</a>
+                <div class="mega-container" data-role="dropdown">
+                    <ul class="h-menu">
+                        <li><a href="@Url.Action("Index","Insumo")"><span class="mif-zoom-in icon"></span> Ver Insumos</a></li>
+                        <li><a href="@Url.Action("Inventario","Insumo")"><span class="mif-database"></span>Inventario</a></li>
+                    </ul>
                 </div>
-                <ul class="d-menu" data-role="dropdown" style="display: none;">
-                    <li><a href="/Producto/Index"><span class="mif-zoom-in icon"></span>Ver Productos</a></li>
-                    <li><a href="#">Subitem 2</a></li>
-                    <li><a href="#">Subitem 3</a></li>
-                    <li><a href="#">Subitem 4</a></li>
-                </ul>
+            </li<span class="mif-database"></span>
+            <li>
+                <a href="#" class="dropdown-toggle"><span class="mif-shop icon"></span> Proveedores</a>
+                <div class="mega-container" data-role="dropdown">
+                    <ul class="h-menu">
+                        <li><a href="@Url.Action("Index","Proveedor")"><span class="mif-zoom-in icon"></span> Ver Proveedores</a></li>
+                    </ul>
+                </div>
             </li>
             <li>
-                <div style="display:flex; flex-direction:row; align-items:center">
-                    <a href="#"><span class="mif-shop icon"></span>Proveedores</a>
-                    <button class="button2 dropdown-toggle dropdownmenu" href="#" style="padding: 0px 0px 0px 0px;"></button>
+                <a href="#" class="dropdown-toggle"><span class="mif-user icon"></span> Empleados</a>
+                <div class="mega-container" data-role="dropdown">
+                    <ul class="h-menu">
+                        <li><a href="@Url.Action("Index","Empleado")"><span class="mif-zoom-in icon"></span> Ver Empleados</a></li>
+                    </ul>
                 </div>
-                <ul class="d-menu" data-role="dropdown" style="display: none;">
-                    <li><a href="/Proveedor/Index"><span class="mif-zoom-in icon"></span>Ver Proveedores</a></li>
-                    <li><a href="#">Subitem 2</a></li>
-                    <li><a href="#">Subitem 3</a></li>
-                    <li><a href="#">Subitem 4</a></li>
-                </ul>
-            </li>            
-            <li class="divider"></li>
-            <li><a href="/Home"><span class="mif-exit icon"></span>Salir</a></li>
+            </li>
         </ul>
-    </aside>
-    <div class="shifted-content h-100 p-ab">
-        <div class="app-bar pos-absolute bg-red z-1" data-role="appbar">
-            <button class="app-bar-item c-pointer" id="sidebar-toggle-3">
-                <span class="mif-menu fg-white"></span>
-            </button>
-        </div>
-        <div class="h-100 p-4">
-            @RenderBody()
-        </div>
+        <ul class="h-menu mega">
+            <li><a href="/Home/Index"><span class="mif-exit icon"></span> Salir</a></li>
+        </ul>
     </div>
-   
+
+    @RenderBody()
 </body>
 </html>
