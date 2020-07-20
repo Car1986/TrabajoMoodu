@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroUIPrueba2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,37 +10,49 @@ namespace MetroUIPrueba2.Areas.Gerencia.Controllers
     
     public class EmpleadoController : Controller
     {
+        MooduContext _db = new MooduContext();
         // GET: Empleado
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            List<Empleado> empleado = _db.Empleado.ToList();
+            return View(empleado);
         }
         [HttpGet]
-        public ActionResult Nuevo()
+        public ActionResult Create()
         {
-            return View();
+            Empleado empleado = new Empleado();
+            return View(empleado);
         }
         [HttpGet]
-        public ActionResult Editar(int id)
+        public ActionResult Create(Empleado empleado)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("View", "Empleado", new { id = empleado.Id });
+            }
+            
+            return View(empleado);
         }
         [HttpGet]
-        public ActionResult Ver(int id)
+        public ActionResult Edit(int id)
         {
-            return View();
+            Empleado empleado = _db.Empleado.Find(id);
+            if (empleado == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(empleado);
         }
-        [HttpPost]
-        public ActionResult Crear()
+        [HttpGet]
+        public ActionResult View(int id)
         {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Actualizar()
-        {
-            return View();
-        }
-       
+            Empleado empleado = _db.Empleado.Find(id);
+            if (empleado == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(empleado);
+        }      
     }
 }

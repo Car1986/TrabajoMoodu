@@ -198,10 +198,9 @@
     <Content Include="Areas\Gerencia\Views\User\Create.cshtml" />
     <Content Include="Areas\Gerencia\Views\User\Edit.cshtml" />
     <Content Include="Areas\Gerencia\Views\User\Login.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Empleado\Editar.cshtml" />
     <Content Include="Areas\Gerencia\Views\Empleado\Index.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Empleado\Nuevo.cshtml" />
-    <Content Include="Areas\Gerencia\Views\Empleado\Ver.cshtml" />
+    <Content Include="Areas\Gerencia\Views\Empleado\Create.cshtml" />
+    <Content Include="Areas\Gerencia\Views\Empleado\View.cshtml" />
     <Content Include="Areas\Produccion\Views\web.config" />
     <Content Include="Areas\Produccion\Views\Producto\Actualizar.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Crear.cshtml" />
@@ -241,6 +240,7 @@
     <Content Include="Areas\Insumo\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Insumo\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Insumo\Views\Shared\_IntranetLayoutInsumo.cshtml" />
+    <Content Include="Areas\Gerencia\Views\Empleado\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
