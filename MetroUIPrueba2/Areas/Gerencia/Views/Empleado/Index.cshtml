@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MetroUIPrueba2.Models.Empleado>
+@{
     ViewBag.Title = "Intranet";
     Layout = "~/Areas/Gerencia/Views/Shared/_IntranetLayoutGerencia.cshtml";
 }
@@ -44,7 +45,7 @@
     <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div>
     <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
         <h3>Lista de Empleados</h3>
-        <a id="btn_nuevo" href="@Url.Action("Nuevo","Empleado")" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
+        <a id="btn_nuevo" href="@Url.Action("Create","Empleado")" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
     </div>    
     <hr />
     <table class="table compact row-hover">
@@ -59,39 +60,20 @@
             </tr>
         </thead>
         <tbody>
+            @foreach (MetroUIPrueba2.Models.Empleado e in Model)
+            {
             <tr>
-                <td>1</td>
-                <td>Juan Carlos</td>
-                <td>Fernandez Medina</td>
-                <td>14.876.789-1</td>
-                <td>Supervisor</td>
+                <td>@e.Id</td>
+                <td>@e.Nombres</td>
+                <td>@e.Apellidos</td>
+                <td>@e.Rut</td>
+                <td>@e.Cargo</td>
                 <td>
-                    <a href="@Url.Action("Ver","Empleado", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Empleado", new {id=1 })">Editar</a>
+                    <a href="@Url.Action("View","Empleado", new { id = e.Id })">Ver/</a>
+                    <a href="@Url.Action("Edit", "Empleado", new {id = e.Id })">Editar</a>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Felipe Rodrigo</td>
-                <td>Aravena Canto</td>
-                <td>20.897.232-1</td>
-                <td>Bodeguero</td>
-                <td>
-                    <a href="@Url.Action("Ver","Empleado", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Empleado", new {id=1 })">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Manuel Alberto</td>
-                <td>Millanao Vera</td>
-                <td>12.897.123-k</td>
-                <td>Control producción</td>
-                <td>
-                    <a href="@Url.Action("Ver","Empleado", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Empleado", new {id=1 })">Editar</a>
-                </td>
-            </tr>
+            }
         </tbody>
     </table>
 

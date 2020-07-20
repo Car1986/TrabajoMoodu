@@ -1,0 +1,62 @@
+﻿@model  MetroUIPrueba2.Models.Empleado
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Gerencia/Views/Shared/_IntranetLayoutGerencia.cshtml";
+}
+
+<style>
+    #principal {
+        width: 800px;
+        height: 600px;
+        top: 50%;
+        margin-top: 55px;
+        border: 1px solid green;
+        padding-top: 10px;
+        padding-left: 60px;
+        position: relative;
+    }
+</style>
+
+
+<div class="container" id="principal">
+    <h3>Editar Empleado</h3>
+    <hr />
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
+        <table>
+            <tr>
+                <td style="padding-right:15px;">Rut:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Rut" value="@Model.Rut" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Nombres:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Nombres" value="@Model.Nombres" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Apellidos:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Apellidos" value="@Model.Apellidos" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Dirección:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Direccion" value="@Model.Direccion" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Teléfono:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Telefono" value="@Model.Telefono" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Email:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="email" name="Correo" value="@Model.Correo" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Cargo:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Cargo" value="@Model.Cargo" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+
+        </table><br />
+        <div class="form-group">
+            <button class="button success">Actualizar</button>
+            <input type="button" class="button" value="Cancel">
+        </div>
+    </form>
+
+</div>

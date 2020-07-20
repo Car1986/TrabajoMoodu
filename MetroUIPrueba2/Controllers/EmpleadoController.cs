@@ -12,8 +12,6 @@ namespace MetroUIPrueba2.Controllers
     {
         MooduContext _db = new MooduContext();
         // GET: Empleado
-
-
         [HttpGet]
         public ActionResult Index()
         {
@@ -26,7 +24,6 @@ namespace MetroUIPrueba2.Controllers
             Empleado empleado = new Empleado();
             return View(empleado);
         }
-
         [HttpPost]
         public ActionResult Create(Empleado empleado)
         {
@@ -37,8 +34,6 @@ namespace MetroUIPrueba2.Controllers
             }
             return View(empleado);
         }
-
-
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -49,9 +44,6 @@ namespace MetroUIPrueba2.Controllers
             }
             return View(empleado);
         }
-
-
-
         [HttpGet]
         public ActionResult View(int id)
         {
@@ -61,8 +53,6 @@ namespace MetroUIPrueba2.Controllers
                 return new HttpNotFoundResult();
             }
             return View(empleado);
-        }
-      
-       
+        }      
     }
 }
