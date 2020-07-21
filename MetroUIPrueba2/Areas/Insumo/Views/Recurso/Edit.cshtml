@@ -1,0 +1,45 @@
+﻿@model MetroUIPrueba2.Models.Recurso
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Insumo/Views/Shared/_IntranetLayoutInsumos.cshtml";
+}
+
+<style>
+    #principal {
+        width: 800px;
+        height: 450px;
+        top: 50%;
+        margin-top: 60px;
+        border: 1px solid green;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        position: relative;
+    }
+</style>
+
+<div class="container" id="principal">
+    <h3>Editar Recurso</h3>
+    <hr />
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
+        <table>
+            <tr><td style="padding-right:15px;">Descripción:</td>
+            <td style="padding:10px;"><input style="width:400px;" type="text" value="@Model.Descripcion" data-role="input" data-append="" class="input-lg"></td></tr>
+            <tr>
+
+            <tr>
+                <td style="padding-right:15px;">UMedida</td>
+                <td style="padding:10px;">
+                    <input style="width:400px;" type="text" value="@Model.Umedida" data-role="input" data-append="" class="input-lg">
+                </td>          
+            </tr>           
+        </table><br />
+        <div class="form-group">
+            <button type="submit" class="button success">Actualizar</button>
+            <input type="button" class="button" value="Cancel">
+        </div>
+
+    </form>
+
+</div>
+

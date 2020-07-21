@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MetroUIPrueba2.Models.Recurso>
+@{
+    ViewBag.Title = "Intranet";
+    Layout = "~/Areas/Produccion/Views/Shared/_IntranetLayoutInsumos.cshtml";
+}
+
+<style>
+    #principal {
+        width: 900px;
+        height: auto;
+        top: 50%;
+        margin-top: 60px;
+        border: 1px solid green;
+        padding: 50px;
+        position: relative;
+    }
+    #btn_nuevo {
+        margin-bottom:20px;
+        margin-left: 10px;
+    }
+</style>
+
+<div class="container" id="principal">
+    <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
+        <h3>Lista de Recursos</h3>
+        <a id="btn_nuevo" href="@Url.Action("Create","Recurso")" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
+    </div>    
+    <hr />
+    <table class="table compact">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Descripcion</th>
+                <th>Unidad Medida</th>               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (MetroUIPrueba2.Models.Recurso r in Model)
+            {
+                <tr>
+                    <td>@r.Id</td>
+                    <td>@r.Descripcion</td>
+                    <td>@r.Umedida</td>                    
+                    <td>
+                        <a href="@Url.Action("View","Recurso", new { id = r.Id })">Ver</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+
