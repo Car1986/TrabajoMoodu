@@ -133,9 +133,10 @@
     <Compile Include="Areas\Gerencia\Controllers\ProveedorController.cs" />
     <Compile Include="Areas\Gerencia\GerenciaAreaRegistration.cs" />
     <Compile Include="Areas\Insumo\Controllers\InsumoController.cs" />
+    <Compile Include="Areas\Insumo\Controllers\RecursoController.cs" />
     <Compile Include="Areas\Insumo\InsumoAreaRegistration.cs" />
+    <Compile Include="Areas\Produccion\Controllers\RecursoController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
-    <Compile Include="Areas\Produccion\Controllers\InsumoController.cs" />
     <Compile Include="Areas\Produccion\Controllers\ProductoController.cs" />
     <Compile Include="Areas\Produccion\ProduccionAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Models\MooduContext.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
+    <Compile Include="Models\Recurso.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -210,13 +212,6 @@
     <Content Include="Areas\Produccion\Views\Producto\Inventario.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Nuevo.cshtml" />
     <Content Include="Areas\Produccion\Views\Producto\Ver.cshtml" />
-    <Content Include="Areas\Produccion\Views\Insumo\Actualizar.cshtml" />
-    <Content Include="Areas\Produccion\Views\Insumo\Crear.cshtml" />
-    <Content Include="Areas\Produccion\Views\Insumo\Editar.cshtml" />
-    <Content Include="Areas\Produccion\Views\Insumo\Index.cshtml" />
-    <Content Include="Areas\Produccion\Views\Insumo\Inventario.cshtml" />
-    <Content Include="Areas\Produccion\Views\Insumo\Nuevo.cshtml" />
-    <Content Include="Areas\Produccion\Views\Insumo\Ver.cshtml" />
     <Content Include="Areas\Produccion\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Produccion\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Produccion\Views\Shared\_IntranetLayoutInsumos.cshtml" />
@@ -241,6 +236,20 @@
     <Content Include="Areas\Insumo\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Insumo\Views\Shared\_IntranetLayoutInsumo.cshtml" />
     <Content Include="Areas\Gerencia\Views\Empleado\Edit.cshtml" />
+    <Content Include="Areas\Produccion\Views\Producto\Create.cshtml" />
+    <Content Include="Areas\Produccion\Views\Producto\View.cshtml" />
+    <Content Include="Areas\Produccion\Views\Recurso\Actualizar.cshtml" />
+    <Content Include="Areas\Produccion\Views\Recurso\Create.cshtml" />
+    <Content Include="Areas\Produccion\Views\Recurso\Edit.cshtml" />
+    <Content Include="Areas\Produccion\Views\Recurso\Index.cshtml" />
+    <Content Include="Areas\Produccion\Views\Recurso\Inventario.cshtml" />
+    <Content Include="Areas\Produccion\Views\Recurso\View.cshtml" />
+    <Content Include="Areas\Insumo\Views\Recurso\Actualizar.cshtml" />
+    <Content Include="Areas\Insumo\Views\Recurso\Create.cshtml" />
+    <Content Include="Areas\Insumo\Views\Recurso\Edit.cshtml" />
+    <Content Include="Areas\Insumo\Views\Recurso\Index.cshtml" />
+    <Content Include="Areas\Insumo\Views\Recurso\Inventario.cshtml" />
+    <Content Include="Areas\Insumo\Views\Recurso\View.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -116,6 +116,21 @@
                 Email = "ei1@email.com",
                 Contacto = "Bernardo Silva Medina",
                 Comuna = "Santiago"
+            };            
+            Recurso re1 = new Recurso()
+            {
+                Descripcion = "Madera de Pino",
+                Umedida = "m"
+            };
+            Recurso re2 = new Recurso()
+            {
+                Descripcion = "Tela Sintetica",
+                Umedida = "m"
+            };
+            Recurso re3 = new Recurso()
+            {
+                Descripcion = "Relleno de lana",
+                Umedida = "m*3"
             };
 
             context.Producto.Add(p1);
@@ -128,8 +143,10 @@
             context.Empleado.Add(em4);
             context.Proveedor.Add(pr1);
             context.Proveedor.Add(pr2);
+            context.Recurso.Add(re1);
+            context.Recurso.Add(re2);
+            context.Recurso.Add(re3);
             context.SaveChanges();
-
         }
     }
 }
