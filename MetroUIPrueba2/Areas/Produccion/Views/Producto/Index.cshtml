@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MetroUIPrueba2.Models.Producto>
+@{
     ViewBag.Title = "Intranet";
     Layout = "~/Areas/Produccion/Views/Shared/_IntranetLayoutInsumos.cshtml";
 }
@@ -13,6 +14,7 @@
         padding: 50px;
         position: relative;
     }
+
     #btn_nuevo {
         margin-bottom: 20px;
         margin-left: 10px;
@@ -23,14 +25,14 @@
 <div class="container" id="principal">
     <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between">
         <h3>Lista de Productos</h3>
-        <a id="btn_nuevo" href="@Url.Action("Nuevo","Producto")" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
-    </div>    
+        <a id="btn_nuevo" href="@Url.Action("Create","Producto")" class="button primary rounded"><span class="mif-add icon">Nuevo</span></a>
+    </div>
     <hr />
     <table class="table compact">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Usuario</th>
+                <th>Codigo</th>
                 <th>Codigo</th>
                 <th>Ingreso</th>
                 <th>Valoracion</th>
@@ -39,42 +41,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>User-01</td>
-                <td>PD-19</td>
-                <td>20-02-2018</td>
-                <td>$ 650.000</td>
-                <td>La descripcion...</td>
-                <td>
-                    <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>User-05</td>
-                <td>PD-360</td>
-                <td>30-03-2020</td>
-                <td>$ 450.000</td>
-                <td>La descripcion2...</td>
-                <td>
-                    <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>User-01</td>
-                <td>PD-05</td>
-                <td>29-02.2018</td>
-                <td>$ 200.000</td>
-                <td>La descripcion3...</td>
-                <td>
-                    <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
-                </td>
-            </tr>
+            @foreach (MetroUIPrueba2.Models.Producto p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>User-01</td>
+                    <td>PD-19</td>
+                    <td>20-02-2018</td>
+                    <td>$ 650.000</td>
+                    <td>La descripcion...</td>
+                    <td>
+                        <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
+                        <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 

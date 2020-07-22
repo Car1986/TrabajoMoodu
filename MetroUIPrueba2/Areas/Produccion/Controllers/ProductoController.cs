@@ -15,23 +15,18 @@ namespace MetroUIPrueba2.Areas.Produccion.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Nuevo()
+        public ActionResult Create()
         {
             return View();
         }
         [HttpGet]
-        public ActionResult Ver(int id)
+        public ActionResult View(int id)
         {
             return View();
         }
 
         [HttpGet]
-        public ActionResult Editar(int id)
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Crear()
+        public ActionResult Edit(int id)
         {
             return View();
         }
@@ -41,38 +36,6 @@ namespace MetroUIPrueba2.Areas.Produccion.Controllers
             return View();
         }
         public ActionResult Inventario()
-        {
-            return View();
-        }
-        public ActionResult Closets()
-        {
-            return View();
-        }
-        public ActionResult ClosetsCR()
-        {
-            return View();
-        }
-        public ActionResult Comedores()
-        {
-            return View();
-        }
-        public ActionResult Comodas()
-        {
-            return View();
-        }
-        public ActionResult ComodasCR()
-        {
-            return View();
-        }
-        public ActionResult Camas()
-        {
-            return View();
-        }
-        public ActionResult Disenno()
-        {
-            return View();
-        }
-        public ActionResult Mesas()
         {
             return View();
         }

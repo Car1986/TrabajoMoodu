@@ -14,7 +14,7 @@ namespace MetroUIPrueba2.Controllers
         // GET: Empleado
         [HttpGet]
         public ActionResult Index()
-        {
+        {           
             List<Empleado> empleado = _db.Empleado.ToList();
             return View(empleado);
         }
