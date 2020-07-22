@@ -21,8 +21,9 @@ namespace MetroUIPrueba2.Models
         [Required]
         public string Imagen { get; set; }
         [Required]
+        [StringLength(100, MinimumLength = 3)]
         public string Descripcion { get; set; }
-        [Required]
+        [Required]      
         public string Estado { get; set; }
         //[Required]
         //public int id { get; set; }

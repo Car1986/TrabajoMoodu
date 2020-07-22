@@ -32,10 +32,9 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Codigo</th>
-                <th>Codigo</th>
-                <th>Ingreso</th>
-                <th>Valoracion</th>
+                <th>Codigo</th>               
+                <th>Día de la entrada</th>
+                <th>Precio</th>
                 <th>Descripción</th>
                 <th>Acciones</th>
             </tr>
@@ -44,15 +43,14 @@
             @foreach (MetroUIPrueba2.Models.Producto p in Model)
             {
                 <tr>
-                    <td>@p.Id</td>
-                    <td>User-01</td>
-                    <td>PD-19</td>
-                    <td>20-02-2018</td>
-                    <td>$ 650.000</td>
-                    <td>La descripcion...</td>
+                    <td>@p.Id</td>                    
+                    <td>@p.Codigo</td>
+                    <td>@p.Fecha</td>
+                    <td>@p.Precio</td>
+                    <td>@p.Descripcion</td>
                     <td>
-                        <a href="@Url.Action("Ver","Producto", new { id = 1 })">Ver/</a>
-                        <a href="@Url.Action("Editar", "Producto", new {id=1 })">Editar</a>
+                        <a href="@Url.Action("View","Producto", new { id = p.Id })">Ver/</a>
+                        <a href="@Url.Action("Edit", "Producto", new { id= p.Id })">Editar</a>
                     </td>
                 </tr>
             }

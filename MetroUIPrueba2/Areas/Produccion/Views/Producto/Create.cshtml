@@ -22,35 +22,24 @@
         position: relative;
     }
 </style>
-
+@Html.ValidationSummary()
 <div class="container" id="principal">
     <h3>Nuevo Producto</h3>
     <hr />
     <form class="bg-white p-6 mx-auto border bd-default win-shadow" method="POST" action="@Url.Action("Create","Producto")">
         <table>
-            <tr>
-                <td style="padding-right:15px;">Usuario:</td>
-                <td>
-                    <select style="width:400px;" data-role="select" class="input-lg">
-                        <option value="1">User-01</option>
-                        <option value="2">User-03</option>
-                        <option value="3">User-05</option>
-                    </select>
-                </td>
-            </tr>
 
-            <tr><td style="padding-right:15px;">Codigo Producto:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" data-append="#" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Ingreso:</td><td style="padding-top: 10px;"><input style="width:347px;" type="date" data-role="input" class="input-lg" /></td></tr>
-            <tr><td style="padding-right:15px;">Valoración:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" onkeyup="format(this);" data-role="input" data-append="$.00" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Imagen:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" data-append="/Ruta" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" data-append="$.00" class="input-lg"></td></tr>
+            <tr><td style="padding-right:15px;">Codigo Producto:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" name="Codigo" data-role="input" data-append="#" class="input-lg"></td></tr>
+            <tr><td style="padding-right:15px;">Ingreso:</td><td style="padding-top: 10px;"><input style="width:347px;" type="date" name="Fecha" data-role="input" class="input-lg" /></td></tr>
+            <tr><td style="padding-right:15px;">Precio:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" name="Precio" data-role="input" data-append="$.00" class="input-lg"></td></tr>            
+            <tr><td style="padding-right:15px;">Imagen:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" name="Imagen" data-append="$.00" class="input-lg"></td></tr>
+            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" name="Descripcion" data-append="$.00" class="input-lg"></td></tr>
             <tr>
                 <td style="padding-right:15px;padding-top:20px;">Estado:</td>
                 <td>
-                    <select style="width:400px;" data-role="select" class="input-lg">
-                        <option value="1">Fabricado</option>
+                    <select style="width:400px;" name="Estado" data-role="select" class="input-lg">
+                        <option value="1">Produccion</option>
                         <option value="2">En Diseño</option>
-
                     </select>
                 </td>
             </tr>

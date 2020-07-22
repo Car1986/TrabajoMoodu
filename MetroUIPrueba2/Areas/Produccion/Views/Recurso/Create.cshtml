@@ -43,23 +43,23 @@
         position: relative;
     }
 </style>
-
+@Html.ValidationSummary()
 <div class="container" id="principal">
     <h3>Nuevo Recurso</h3>
     <hr />
     <form class="bg-white p-6 mx-auto border bd-default win-shadow" method="POST" action="@Url.Action("Create","Recurso")">
         <table>
             <tr>
-            <td style="padding-right:15px;">Descripción:</td>
-            <td style="padding:10px;"><input style="width:400px;" type="text" data-role="input" data-append="" class="input-lg"></td>
+                <td style="padding-right:15px;">Descripción:</td>
+                <td style="padding:10px;"><input style="width:400px;" type="text" data-role="input" name="Descripcion" data-append="" class="input-lg"></td>
             </tr>
-           
+
             <tr>
                 <td style="padding-right:15px;">UMedida</td>
                 <td style="padding:10px;">
-                    <input style="width:400px;" type="text" data-role="input" data-append="" class="input-lg">
+                    <input style="width:400px;" type="text" data-role="input" name="UMedida" data-append="" class="input-lg">
                 </td>
-            </tr>           
+            </tr>
         </table><br />
         <div class="form-group">
             <button type="submit" class="button success">Registrar</button>
