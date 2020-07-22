@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Antlr.Runtime.Misc;
+using MetroUIPrueba2.Models;
+using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,16 +11,20 @@ namespace MetroUIPrueba2.Controllers
 {
     public class InsumoController : Controller
     {
+        MooduContext _db = new MooduContext();
+
         // GET: Insumo
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            List<Insumo> insumos = _db.Insumo.ToList();
+            return View(insumos);
         }
         [HttpGet]
         public ActionResult Nuevo()
         {
-            return View();
+            Insumo insumo = new Insumo();
+            return View(insumo);
         }
         [HttpGet]
         public ActionResult Ver(int id)

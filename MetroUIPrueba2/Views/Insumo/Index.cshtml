@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MetroUIPrueba2.Models.Insumo>
+@{
     ViewBag.Title = "Intranet";
     Layout = "~/Views/Shared/_IntranetLayout.cshtml";
 }
@@ -58,36 +59,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Manillas de Bronce</td>
-                <td>Unidad</td>
-                <td>Accesorios</td>
-                <td>
-                    <a href="@Url.Action("Ver","Insumo", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar","Insumo", new { id = 1 })">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Terciado Estructural</td>
-                <td>M2</td>
-                <td>Materia Prima</td>
-                <td>
-                    <a href="@Url.Action("Ver","Insumo", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar","Insumo", new { id = 1 })">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Pintura Blanca</td>
-                <td>Galon</td>
-                <td>Pinturas</td>
-                <td>
-                    <a href="@Url.Action("Ver","Insumo", new { id = 1 })">Ver/</a>
-                    <a href="@Url.Action("Editar","Insumo", new { id = 1 })">Editar</a>
-                </td>
-            </tr>
+            @foreach (MetroUIPrueba2.Models.Insumo In in Model)
+            {
+                <tr>
+                    <td>@In.Id</td>
+                    <td>@In.Descripcion</td>
+                    <td>@In.Umedida</td>
+                    <td>@In.Categoria</td>
+                    <td>Accesorios</td>
+                    <td>
+                        <a href="@Url.Action("Ver", "Insumo", new { id = 1 })">Ver/</a>
+                        <a href="@Url.Action("Editar", "Insumo", new { id = 1 })">Editar</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 
