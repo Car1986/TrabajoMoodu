@@ -11,7 +11,7 @@ namespace MetroUIPrueba2.Areas.Gerencia.Controllers
     public class EmpleadoController : Controller
     {
         MooduContext _db = new MooduContext();
-        // GET: Empleado
+        // GET: Insumo
         [HttpGet]
         public ActionResult Index()
         {
@@ -24,16 +24,17 @@ namespace MetroUIPrueba2.Areas.Gerencia.Controllers
             Empleado empleado = new Empleado();
             return View(empleado);
         }
-        [HttpGet]
+        [HttpPost]
         public ActionResult Create(Empleado empleado)
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("View", "Empleado", new { id = empleado.Id });
+                //acá codigo para guardar
+                return RedirectToAction("Index", "Empleado");
             }
-            
             return View(empleado);
         }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -44,6 +45,22 @@ namespace MetroUIPrueba2.Areas.Gerencia.Controllers
             }
             return View(empleado);
         }
+        [HttpPost]
+        public ActionResult Edit(int id, Empleado empleado)
+        {
+            Empleado e = _db.Empleado.Find(id);
+            if (e == null)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("View", "Empleado", new { id = id });
+            }
+            return View(empleado);
+        }
+
         [HttpGet]
         public ActionResult View(int id)
         {
@@ -53,6 +70,17 @@ namespace MetroUIPrueba2.Areas.Gerencia.Controllers
                 return new HttpNotFoundResult();
             }
             return View(empleado);
-        }      
+        }
+
+        [HttpPost]
+        public ActionResult Actualizar()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Inventario()
+        {
+            return View();
+        }
     }
 }

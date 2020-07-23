@@ -16,7 +16,7 @@ namespace MetroUIPrueba2.Models
         [Required]
         public string Fecha { get; set; }
         [Required]
-        [Range(0,1000)]
+        [Range(0,100000000)]
         public double Precio { get; set; }
         [Required]
         public string Imagen { get; set; }

@@ -16,5 +16,6 @@ namespace MetroUIPrueba2.Models
         public DbSet<Proveedor> Proveedor { get; set; }
         public DbSet<Empleado> Empleado { get; set; }
         public DbSet<Recurso> Recurso { get; set; }
+        public DbSet<Almacen> Almacenes { get; set; }
     }
 }

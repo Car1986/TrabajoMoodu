@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroUIPrueba2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,71 +9,75 @@ namespace MetroUIPrueba2.Areas.Gerencia.Controllers
 {
     public class ProductoController : Controller
     {
-        // GET: Producto
+        MooduContext _db = new MooduContext();
+        // GET: Insumo
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            List<Producto> producto = _db.Producto.ToList();
+            return View(producto);
         }
         [HttpGet]
-        public ActionResult Nuevo()
+        public ActionResult Create()
         {
-            return View();
+            Producto producto = new Producto();
+            return View(producto);
         }
-        [HttpGet]
-        public ActionResult Ver(int id)
+        [HttpPost]
+        public ActionResult Create(Producto producto)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                //acá codigo para guardar
+                return RedirectToAction("Index", "Producto");
+            }
+            return View(producto);
         }
 
         [HttpGet]
-        public ActionResult Editar(int id)
+        public ActionResult Edit(int id)
         {
-            return View();
+            Producto producto = _db.Producto.Find(id);
+            if (producto == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(producto);
         }
         [HttpPost]
-        public ActionResult Crear()
+        public ActionResult Edit(int id, Producto producto)
         {
-            return View();
+            Producto p = _db.Producto.Find(id);
+            if (p == null)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("View", "Producto", new { id = id });
+            }
+            return View(producto);
         }
+
+        [HttpGet]
+        public ActionResult View(int id)
+        {
+            Producto producto = _db.Producto.Find(id);
+            if (producto == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(producto);
+        }
+
         [HttpPost]
         public ActionResult Actualizar()
         {
             return View();
         }
+        [HttpGet]
         public ActionResult Inventario()
-        {
-            return View();
-        }
-        public ActionResult Closets()
-        {
-            return View();
-        }
-        public ActionResult ClosetsCR()
-        {
-            return View();
-        }
-        public ActionResult Comedores()
-        {
-            return View();
-        }
-        public ActionResult Comodas()
-        {
-            return View();
-        }
-        public ActionResult ComodasCR()
-        {
-            return View();
-        }
-        public ActionResult Camas()
-        {
-            return View();
-        }
-        public ActionResult Disenno()
-        {
-            return View();
-        }
-        public ActionResult Mesas()
         {
             return View();
         }

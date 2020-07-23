@@ -61,6 +61,12 @@
                 Correo = "mapv@email.com",
                 Cargo = "Ensamblador"
             };
+            context.Empleado.Add(em1);
+            context.Empleado.Add(em2);
+            context.Empleado.Add(em3);
+            context.Empleado.Add(em4);
+            context.SaveChanges();
+
             Producto p1 = new Producto()
             {
                 Codigo = "pd-01",
@@ -97,6 +103,12 @@
                 Descripcion = "La descripcion4",
                 Estado = "Produccion"
             };
+            context.Producto.Add(p1);
+            context.Producto.Add(p2);
+            context.Producto.Add(p3);
+            context.Producto.Add(p4);
+            context.SaveChanges();
+
             Proveedor pr1 = new Proveedor()
             {
                 Razon = "Empresas de Insumos S.A",
@@ -116,7 +128,10 @@
                 Email = "ei1@email.com",
                 Contacto = "Bernardo Silva Medina",
                 Comuna = "Santiago"
-            };            
+            };
+            context.Proveedor.Add(pr1);
+            context.Proveedor.Add(pr2);
+            context.SaveChanges();
             Recurso re1 = new Recurso()
             {
                 Descripcion = "Madera de Pino",
@@ -132,21 +147,11 @@
                 Descripcion = "Relleno de lana",
                 Umedida = "m*3"
             };
-
-            context.Producto.Add(p1);
-            context.Producto.Add(p2);
-            context.Producto.Add(p3);
-            context.Producto.Add(p4);
-            context.Empleado.Add(em1);
-            context.Empleado.Add(em2);
-            context.Empleado.Add(em3);
-            context.Empleado.Add(em4);
-            context.Proveedor.Add(pr1);
-            context.Proveedor.Add(pr2);
             context.Recurso.Add(re1);
             context.Recurso.Add(re2);
             context.Recurso.Add(re3);
             context.SaveChanges();
+
         }
     }
 }

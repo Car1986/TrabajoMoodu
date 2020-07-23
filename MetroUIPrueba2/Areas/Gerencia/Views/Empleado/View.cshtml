@@ -1,22 +1,24 @@
-﻿@{
-    ViewBag.Title = "Intranet";
+﻿@model MetroUIPrueba2.Models.Empleado
+@{
+    ViewBag.Title = "View";
     Layout = "~/Areas/Gerencia/Views/Shared/_IntranetLayoutGerencia.cshtml";
 }
 
 <style>
     #principal {
         width: 800px;
-        height: 750px;
+        height: 700px;
         top: 50%;
         margin-top: 5px;
         border: 1px solid green;
         padding-top: 10px;
         padding-left: 60px;
+        padding-right: 40px;
         position: relative;
     }
 
     .user_session {
-        margin-top: 5px;
+        margin-top: 0px;
         margin-left: 5px;
         width: 300px;
         position: relative;
@@ -38,22 +40,41 @@
     <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/lupa.png"></div>
     <h3>Ver Empleado</h3>
     <hr />
-    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow" style="margin-right:30px" >
         <div class="row mb-2">
             <label class="cell-sm-3">Rut:</label>
             <div class="cell-sm-9">
-                <input type="text" value="14.876.789-1" data-role="input"
+                <input type="text" value="@Model.Rut" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-indent-increase'></span>"
                        readonly>
             </div>
         </div>
 
+        <div class="row mb-2">
+            <label class="cell-sm-3">Nombre:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Nombres" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-steps'></span>"
+                       readonly>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-3">Apellidos:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Apellidos" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-steps'></span>"
+                       readonly>
+            </div>
+        </div>
 
         <div class="row mb-2">
             <label class="cell-sm-3">Dirección:</label>
             <div class="cell-sm-9">
-                <input type="text" value="Anibal Pinto # 345" data-role="input"
+                <input type="text" value="@Model.Direccion" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-steps'></span>"
                        readonly>
@@ -62,8 +83,8 @@
 
         <div class="row mb-2">
             <label class="cell-sm-3">Teléfono:</label>
-            <div class="cell-sm-4">
-                <input type="text" value="+56 9 67453222" data-role="input"
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Telefono" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-phone'></span>"
                        readonly>
@@ -72,7 +93,7 @@
         <div class="row mb-2">
             <label class="cell-sm-3">Email:</label>
             <div class="cell-sm-9">
-                <input type="email" value="jcarlos.Fernandezm@email.com" data-role="input"
+                <input type="email" value="@Model.Correo" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-envelop'></span>"
                        readonly>
@@ -80,31 +101,15 @@
         </div>
         <div class="row mb-2">
             <label class="cell-sm-3">Cargo:</label>
-            <div class="cell-sm-6">
-                <input type="text" value="Supervisor" data-role="input"
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Cargo" data-role="input"
                        class="mb-1"
                        data-prepend="<span class='mif-tree'></span>"
                        readonly>
             </div>
         </div>
-        <div class="row mb-2">
-            <label class="cell-sm-3">Remuneración:</label>
-            <div class="cell-sm-6">
-                <input type="text" value="$ 850.000" data-role="input"
-                       class="mb-1"
-                       data-prepend="<span class='mif-dollar2'></span>"
-                       readonly>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <label class="cell-sm-3">Previsión:</label>
-            <div class="cell-sm-6">
-                <input type="text" value="Isapre MasVida" data-role="input"
-                       class="mb-1"
-                       data-prepend="<span class='mif-ambulance'></span>"
-                       readonly>
-            </div>
-        </div>
+
     </form>
 
 </div>
+

@@ -1,0 +1,88 @@
+﻿@model MetroUIPrueba2.Models.Producto
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Gerencia/Views/Shared/_IntranetLayoutGerencia.cshtml";
+}
+
+<style>
+    .login-form {
+        width: 650px;
+        height: auto;
+        top: 50%;
+        margin-top: -10px;
+    }
+
+    #principal {
+        width: 900px;
+        height: auto;
+        top: 50%;
+        margin-top: 60px;
+        border: 1px solid green;
+        padding: 50px;
+        position: relative;
+    }
+</style>
+
+
+@Html.ValidationSummary()
+<div class="container" id="principal">
+    <h3>Editar Producto</h3>
+    <hr />
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow" method="POST" action="@Url.Action("Edit","Producto", new { id = Model.Id })">
+        <table>
+            <tr>
+                <td style="padding-right:15px;">Codigo Producto:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Codigo" value="@Model.Codigo" data-role="input" data-append="#" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Ingreso:</td>
+                <td style="padding-top: 10px;"><input style="width:347px;" type="text" name="Fecha" value="@Model.Fecha" data-role="input" class="input-lg" /></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Valoración:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Precio" value="@Model.Precio" onkeyup="format(this);" data-role="input" data-append="$.00" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Imagen:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Imagen" value="@Model.Imagen" data-role="input" data-append="/Ruta" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Descripción:</td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Descripcion" value="@Model.Descripcion" data-role="input" data-append="$.00" class="input-lg"></td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;padding-top:20px;">Estado:</td>
+                <td>
+                    <select style="width:400px;" data-role="select" name="Estado" class="input-lg">
+                        <option value="@Model.Estado">@Model.Estado</option>
+                        <option value="1">Produccion</option>
+                        <option value="2">En Diseño</option>
+
+                    </select>
+                </td>
+            </tr>
+        </table><br />
+        <div class="form-group">
+            <button type="submit" class="button success">Actualizar</button>
+            <input type="button" class="button" value="Cancel">
+        </div>
+    </form>
+
+</div>
+<script type="text/javascript">
+
+    function format(input) {
+        var num = input.value.replace(/\./g, '');
+        if (!isNaN(num)) {
+            num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+            num = num.split('').reverse().join('').replace(/^[\.]/, '');
+            input.value = num;
+        }
+
+        else {
+            alert('Solo se permiten numeros');
+            input.value = input.value.replace(/[^\d\.]*/g, '');
+        }
+    }
+</script>
+

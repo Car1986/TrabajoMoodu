@@ -1,4 +1,4 @@
-﻿@model  MetroUIPrueba2.Models.Empleado
+﻿@model MetroUIPrueba2.Models.Empleado
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Gerencia/Views/Shared/_IntranetLayoutGerencia.cshtml";
@@ -7,56 +7,105 @@
 <style>
     #principal {
         width: 800px;
-        height: 600px;
+        height: 700px;
         top: 50%;
-        margin-top: 55px;
+        margin-top: 5px;
         border: 1px solid green;
         padding-top: 10px;
         padding-left: 60px;
+        padding-right: 40px;
         position: relative;
     }
+
+    .user_session {
+        margin-top: 0px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+    .div-img {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
+<div class="user_session">
+    <h6>Usuario: Juan Perez</h6>
+</div>
 
-
+@Html.ValidationSummary()
 <div class="container" id="principal">
+    <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/lupa.png"></div>
     <h3>Editar Empleado</h3>
     <hr />
-    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
-        <table>
-            <tr>
-                <td style="padding-right:15px;">Rut:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Rut" value="@Model.Rut" data-role="input" data-append="#" class="input-lg"></td>
-            </tr>
-            <tr>
-                <td style="padding-right:15px;">Nombres:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Nombres" value="@Model.Nombres" data-role="input" data-append="#" class="input-lg"></td>
-            </tr>
-            <tr>
-                <td style="padding-right:15px;">Apellidos:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Apellidos" value="@Model.Apellidos" data-role="input" data-append="#" class="input-lg"></td>
-            </tr>
-            <tr>
-                <td style="padding-right:15px;">Dirección:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Direccion" value="@Model.Direccion" data-role="input" data-append="#" class="input-lg"></td>
-            </tr>
-            <tr>
-                <td style="padding-right:15px;">Teléfono:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Telefono" value="@Model.Telefono" data-role="input" data-append="#" class="input-lg"></td>
-            </tr>
-            <tr>
-                <td style="padding-right:15px;">Email:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="email" name="Correo" value="@Model.Correo" data-role="input" data-append="#" class="input-lg"></td>
-            </tr>
-            <tr>
-                <td style="padding-right:15px;">Cargo:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Cargo" value="@Model.Cargo" data-role="input" data-append="#" class="input-lg"></td>
-            </tr>
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow" style="margin-right:30px" method="POST" action="@Url.Action("Edit","Empleado", new { id = Model.Id })">
+        <div class="row mb-2">
+            <label class="cell-sm-3">Rut:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Rut" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-indent-increase'></span>">               
+            </div>
+        </div>
 
-        </table><br />
+        <div class="row mb-2">
+            <label class="cell-sm-3">Nombre:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Nombres" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-steps'></span>">                
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-3">Apellidos:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Apellidos" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-steps'></span>">                
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-3">Dirección:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Direccion" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-steps'></span>">                
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-3">Teléfono:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Telefono" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-phone'></span>">               
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="cell-sm-3">Email:</label>
+            <div class="cell-sm-9">
+                <input type="email" value="@Model.Correo" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-envelop'></span>">               
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="cell-sm-3">Cargo:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="@Model.Cargo" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-tree'></span>">                
+            </div>
+        </div>
         <div class="form-group">
-            <button class="button success">Actualizar</button>
+            <button type="submit" class="button success">Actualizar</button>
             <input type="button" class="button" value="Cancel">
         </div>
     </form>
-
 </div>
+

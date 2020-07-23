@@ -7,68 +7,68 @@ using System.Web.Mvc;
 
 namespace MetroUIPrueba2.Areas.Gerencia.Controllers
 {
-    public class ProveedorController : Controller
+    public class RecursoController : Controller
     {
         MooduContext _db = new MooduContext();
         // GET: Insumo
         [HttpGet]
         public ActionResult Index()
         {
-            List<Proveedor> proveedores = _db.Proveedor.ToList();
-            return View(proveedores);
+            List<Recurso> recursos = _db.Recurso.ToList();
+            return View(recursos);
         }
         [HttpGet]
         public ActionResult Create()
         {
-            Proveedor proveedor = new Proveedor();
-            return View(proveedor);
+            Recurso recurso = new Recurso();
+            return View(recurso);
         }
         [HttpPost]
-        public ActionResult Create(Proveedor proveedor)
+        public ActionResult Create(Recurso recurso)
         {
             if (ModelState.IsValid)
             {
                 //acá codigo para guardar
-                return RedirectToAction("Index", "Proveedor");
+                return RedirectToAction("Index", "Recurso");
             }
-            return View(proveedor);
+            return View(recurso);
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Proveedor proveedor = _db.Proveedor.Find(id);
-            if (proveedor == null)
+            Recurso recurso = _db.Recurso.Find(id);
+            if (recurso == null)
             {
                 return new HttpNotFoundResult();
             }
-            return View(proveedor);
+            return View(recurso);
         }
         [HttpPost]
-        public ActionResult Edit(int id, Proveedor proveedor)
+        public ActionResult Edit(int id, Recurso recurso)
         {
-            Proveedor p = _db.Proveedor.Find(id);
-            if (p == null)
+            Recurso r = _db.Recurso.Find(id);
+            if (r == null)
             {
                 return new HttpNotFoundResult();
             }
 
             if (ModelState.IsValid)
             {
-                return RedirectToAction("View", "Proveedor", new { id = id });
+                return RedirectToAction("View", "Recurso", new { id = id });
             }
-            return View(proveedor);
+            return View(recurso);
         }
 
         [HttpGet]
         public ActionResult View(int id)
         {
-            Proveedor proveedor = _db.Proveedor.Find(id);
-            if (proveedor == null)
+            Recurso recurso = _db.Recurso.Find(id);
+            if (recurso == null)
             {
                 return new HttpNotFoundResult();
             }
-            return View(proveedor);
+            return View(recurso);
         }
 
         [HttpPost]
