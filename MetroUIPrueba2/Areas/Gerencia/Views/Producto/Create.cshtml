@@ -21,8 +21,22 @@
         padding: 50px;
         position: relative;
     }
-</style>
 
+    .user_session {
+        margin-top: 3px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+        .user_session h6 {
+            color: blue;
+        }
+</style>
+<div class="user_session">
+    <h6>Usuario: Juan Perez</h6>
+</div>
 <div class="container" id="principal">
     <h3>Nuevo Producto</h3>
     <hr />
@@ -30,8 +44,14 @@
         <table>
             <tr>
                 <td style="padding-right:15px;">Codigo Producto:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Codigo" data-role="input" data-append="#" class="input-lg"></td>
+                <td style="padding-top:10px;">
+                    <select data-role="select">
+                        <option>seleccione</option>  
+                        @*<-->Poner en forma dinamica</-->*@
+                    </select>
+                </td>
             </tr>
+
             @Html.ValidationMessageFor(model => model.Codigo)
             <tr>
                 <td style="padding-right:15px;">Ingreso:</td>
@@ -41,19 +61,19 @@
 
             <tr>
                 <td style="padding-right:15px;">Valoración:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Precio" onkeyup="format(this);" data-role="input" data-append="$.00" class="input-lg"></td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Precio" data-role="input" data-append="<span class='mif-money'></span>" class="input-lg"></td>
             </tr>
             @Html.ValidationMessageFor(model => model.Precio)
 
             <tr>
                 <td style="padding-right:15px;">Imagen:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Imagen" data-role="input" data-append="/Ruta" class="input-lg"></td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Imagen" data-role="input" data-append="<span class='mif-image'></span>" class="input-lg"></td>
             </tr>
             @Html.ValidationMessageFor(model => model.Imagen)
 
             <tr>
                 <td style="padding-right:15px;">Descripción:</td>
-                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Descripcion" data-role="input" data-append="$.00" class="input-lg"></td>
+                <td style="padding-top:10px;"><input style="width:400px;" type="text" name="Descripcion" data-role="input" data-append="<span class='mif-lines'></span>" class="input-lg"></td>
             </tr>
             @Html.ValidationMessageFor(model => model.Descripcion)
 
@@ -68,21 +88,9 @@
                 </td>
             </tr>
             @Html.ValidationMessageFor(model => model.Estado)
-            <tr>
-                <td style="padding-right:15px;padding-top:20px;">Usuario:</td>
-                <td>
-                    <select style="width:400px;" name="Id" data-role="select" class="input-lg">
-                        <option value="">seleccione</option>
-                        <option value="Usr-1"></option>
-                        <option value="Usr-2"></option>
-                        }
-                    </select>
-                </td>
-            </tr>
-
         </table><br />
         <div class="form-group">
-            <button type="submit" class="button success">Registrar</button>
+            <button class="button success">Registrar</button>
             <input type="button" class="button" value="Cancel">
         </div>
     </form>

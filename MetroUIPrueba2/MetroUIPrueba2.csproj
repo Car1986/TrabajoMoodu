@@ -249,6 +249,8 @@
     <Content Include="Areas\Gerencia\Views\Recurso\Create.cshtml" />
     <Content Include="Areas\Gerencia\Views\Recurso\Edit.cshtml" />
     <Content Include="Areas\Gerencia\Views\Recurso\View.cshtml" />
+    <Content Include="Areas\Gerencia\Views\Producto\Inventario.cshtml" />
+    <Content Include="Areas\Gerencia\Views\Recurso\Inventario.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
