@@ -16,7 +16,7 @@
 
         div.mega-container {
             display: inline-block;
-            min-width: 400px;
+            min-width: 800px;
         }
     </style>
 </head>
@@ -26,14 +26,14 @@
 <body>
     <div style="display:flex; flex-direction:row; justify-content:space-between ">
         <ul class="h-menu mega">
-            <li><a href="@Url.Action("Index","Insumo")"><span class="mif-home icon"></span></a></li>
+            <li><a href="@Url.Action("Index","Recurso")"><span class="mif-home icon"></span></a></li>
             <li>
                 <a href="#" class="dropdown-toggle"><span class="mif-stack icon"></span> Insumos</a>
                 <div class="mega-container" data-role="dropdown">
                     <ul class="h-menu">
-                        <li><a href="@Url.Action("Index","Insumo")" style="font-size:14px"><span class="mif-zoom-in icon"></span> Ver Insumos</a></li>
-                        <li><a href="@Url.Action("Index","Insumo/Nuevo")" style="font-size:14px"><span class="mif-zoom-in icon"></span> Nuevo Insumo</a></li>
-                        <li><a href="@Url.Action("Index", "Insumo/Inventario")" style="font-size:14px"><span class="mif-zoom-in icon"></span> Inventario Insumos</a></li>
+                        <li><a href="@Url.Action("Index","Recurso")" style="font-size:14px"><span class="mif-zoom-in icon"></span> Ver Insumos</a></li>
+                        <li><a href="@Url.Action("Create","Recurso")" style="font-size:14px"><span class="mif-zoom-in icon"></span> Nuevo Insumo</a></li>
+                        <li><a href="@Url.Action("Inventario", "Recurso")" style="font-size:14px"><span class="mif-zoom-in icon"></span> Inventario Insumos</a></li>
                     </ul>
                 </div>
             </li>

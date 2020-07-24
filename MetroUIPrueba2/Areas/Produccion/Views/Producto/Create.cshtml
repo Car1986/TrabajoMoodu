@@ -21,37 +21,89 @@
         padding: 50px;
         position: relative;
     }
+
+    .user_session {
+        margin-top: 3px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+        .user_session h6 {
+            color: blue;
+        }
 </style>
-@Html.ValidationSummary()
+<div class="user_session">
+    <h6>Usuario: Juan Perez</h6>
+</div>
 <div class="container" id="principal">
     <h3>Nuevo Producto</h3>
     <hr />
     <form class="bg-white p-6 mx-auto border bd-default win-shadow" method="POST" action="@Url.Action("Create","Producto")">
         <table>
+            <tr>
+                <td style="padding-right:15px;">Codigo:</td>
+                <td style="padding-top: 10px;">
+                    <input style="width:347px;" type="text" name="Codigo" data-role="input" class="input-lg" />
+                    @Html.ValidationMessageFor(model => model.Codigo)
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="padding-right:15px;">Ingreso:</td>
+                <td style="padding-top: 10px;">
+                    <input style="width:347px;" type="date" name="Fecha" data-role="input" class="input-lg" />
+                    @Html.ValidationMessageFor(model => model.Fecha)
+                </td>
+            </tr>
+            
 
-            <tr><td style="padding-right:15px;">Codigo Producto:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" name="Codigo" data-role="input" data-append="#" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Ingreso:</td><td style="padding-top: 10px;"><input style="width:347px;" type="date" name="Fecha" data-role="input" class="input-lg" /></td></tr>
-            <tr><td style="padding-right:15px;">Precio:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" name="Precio" data-role="input" data-append="$.00" class="input-lg"></td></tr>            
-            <tr><td style="padding-right:15px;">Imagen:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" name="Imagen" data-append="$.00" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" data-role="input" name="Descripcion" data-append="$.00" class="input-lg"></td></tr>
+            <tr>
+                <td style="padding-right:15px;">Valoración:</td>
+                <td style="padding-top:10px;">
+                    <input style="width:400px;" type="text" name="Precio" data-role="input" data-append="<span class='mif-money'></span>" class="input-lg">
+                    @Html.ValidationMessageFor(model => model.Precio)
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td style="padding-right:15px;">Imagen:</td>
+                <td style="padding-top:10px;">
+                    <input style="width:400px;" type="text" name="Imagen" data-role="input" data-append="<span class='mif-image'></span>" class="input-lg">
+                    @Html.ValidationMessageFor(model => model.Imagen)
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td style="padding-right:15px;">Descripción:</td>
+                <td style="padding-top:10px;">
+                    <input style="width:400px;" type="text" name="Descripcion" data-role="input" data-append="<span class='mif-lines'></span>" class="input-lg">
+                    @Html.ValidationMessageFor(model => model.Descripcion)
+                </td>
+            </tr>
+            
+
             <tr>
                 <td style="padding-right:15px;padding-top:20px;">Estado:</td>
                 <td>
-                    <select style="width:400px;" name="Estado" data-role="select" class="input-lg">
-                        <option value="1">Produccion</option>
+                    <select style="width:400px;" data-role="select" name="Estado" class="input-lg">
+                        <option value="1">Fabricado</option>
                         <option value="2">En Diseño</option>
                     </select>
                 </td>
             </tr>
+            @Html.ValidationMessageFor(model => model.Estado)
         </table><br />
         <div class="form-group">
-            <button type="submit" class="button success">Registrar</button>
+            <button class="button success">Registrar</button>
             <input type="button" class="button" value="Cancel">
         </div>
     </form>
 
 </div>
-
 <script type="text/javascript">
 
     function format(input) {

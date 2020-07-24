@@ -6,32 +6,84 @@
 
 <style>
     #principal {
-        width: 800px;
-        height: 450px;
+        width: 900px;
+        height: auto;
         top: 50%;
-        margin-top: 60px;
+        margin-top: 15px;
         border: 1px solid green;
         padding-top: 30px;
         padding-left: 50px;
         padding-right: 50px;
         position: relative;
     }
+
+    .user_session {
+        margin-top: 3px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+    .div-img {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
+<div class="user_session">
+    <h6>Usuario: Juan Perez</h6>
+</div>
 
 <div class="container" id="principal">
-    <h3>Ver Insumo</h3>
+    <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/lupa.png"></div>
+    <h3 style="margin-top:1px">Ver Insumo</h3>
+
     <hr />
-    <form class="bg-white p-6 mx-auto border bd-default win-shadow">
-        <table>
-            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding:10px;"><input style="width:400px;" type="text" value="@Model.Descripcion" disabled="disabled" data-role="input" data-append="" class="input-lg"></td></tr>
-            <tr>
-            <tr>
-                <td style="padding-right:15px;">UMedida</td>
-                <td style="padding:10px;">
-                    <input style="width:400px;" type="text" value="@Model.Umedida" disabled="disabled" data-role="input" data-append="" class="input-lg">
-                </td>
-            </tr>         
-        </table><br />
+    <form class="bg-white p-6 mx-auto border bd-default win-shadow" style="margin-top:10px">
+        <div class="row mb-2">
+            <label class="cell-sm-3">Codigo:</label>
+            <div class="cell-sm-9">
+                <input type="text" value="Ins-234" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-barcode'></span>"
+                       readonly>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="cell-sm-3">UMedida</label>
+            <div class="cell-sm-9">
+                <input type="text" data-role="input" value="@Model.Umedida" class="mb-1"
+                       data-prepend="<span class='mif-dialpad'></span>" readonly>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="cell-sm-3">Descripción</label>
+            <div class="cell-sm-9">
+                <textarea data-role="textarea" class="mb-1" data-default-value="@Model.Descripcion"
+                          data-prepend="<span class='mif-comment'></span>" readonly></textarea>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="cell-sm-3">Stock Actual</label>
+            <div class="cell-sm-9">
+                <input type="text" value="102" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-shopping-basket2'></span>"
+                       readonly>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-3">Stock Crítico</label>
+            <div class="cell-sm-9">
+                <input type="text" value="50" data-role="input"
+                       class="mb-1"
+                       data-prepend="<span class='mif-flash-off'></span>"
+                       readonly>
+            </div>
+        </div>
 
     </form>
 

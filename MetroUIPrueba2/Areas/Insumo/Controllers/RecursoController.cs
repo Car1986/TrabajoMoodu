@@ -9,14 +9,13 @@ namespace MetroUIPrueba2.Areas.Insumo.Controllers
 {
     public class RecursoController : Controller
     {
-        // GET: Insumo/Recurso
         MooduContext _db = new MooduContext();
         // GET: Insumo
         [HttpGet]
         public ActionResult Index()
         {
-            List<Recurso> recurso = _db.Recurso.ToList();
-            return View(recurso);
+            List<Recurso> recursos = _db.Recurso.ToList();
+            return View(recursos);
         }
         [HttpGet]
         public ActionResult Create()
@@ -30,10 +29,11 @@ namespace MetroUIPrueba2.Areas.Insumo.Controllers
             if (ModelState.IsValid)
             {
                 //acá codigo para guardar
-                return RedirectToAction("View", "Empleado", new { id = recurso.Id });
+                return RedirectToAction("Index", "Recurso");
             }
             return View(recurso);
         }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -44,6 +44,22 @@ namespace MetroUIPrueba2.Areas.Insumo.Controllers
             }
             return View(recurso);
         }
+        [HttpPost]
+        public ActionResult Edit(int id, Recurso recurso)
+        {
+            Recurso r = _db.Recurso.Find(id);
+            if (r == null)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("View", "Recurso", new { id = id });
+            }
+            return View(recurso);
+        }
+
         [HttpGet]
         public ActionResult View(int id)
         {
