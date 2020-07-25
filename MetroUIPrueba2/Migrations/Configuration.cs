@@ -1,6 +1,7 @@
 ﻿namespace MetroUIPrueba2.Migrations
 {
     using MetroUIPrueba2.Models;
+    using Microsoft.SqlServer.Server;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -19,53 +20,7 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-            Empleado em1 = new Empleado()
-            {
-                Rut = "10897213-1",
-                Nombres = "Juan Alberto",
-                Apellidos = "Camaño Perez",
-                Direccion = "Arturo Prat # 2285",
-                Telefono = "9-98765342",
-                Correo = "jac@email.com",
-                Cargo = "Control Produccion"
-            };
-            Empleado em2 = new Empleado()
-            {
-                Rut = "10358692-1",
-                Nombres = "Manuel Bernardo",
-                Apellidos = "Pellegrini Cortez",
-                Direccion = "Arturo Prat # 2315",
-                Telefono = "9-65832142",
-                Correo = "mbpc@email.com",
-                Cargo = "Supervisor"
-            };
-
-            Empleado em3 = new Empleado()
-            {
-                Rut = "19999000-2",
-                Nombres = "Arturo Ignacio",
-                Apellidos = "Vidal Benitez",
-                Direccion = "Manuel Bulnes # 555",
-                Telefono = "9-1111111",
-                Correo = "aivb@email.com",
-                Cargo = "Gerente"
-            };
-
-            Empleado em4 = new Empleado()
-            {
-                Rut = "14071986-k",
-                Nombres = "Marcelo Andres",
-                Apellidos = "Placencia Velasquez",
-                Direccion = "Igancio Serrano # 1500",
-                Telefono = "9-4444231",
-                Correo = "mapv@email.com",
-                Cargo = "Ensamblador"
-            };
-            context.Empleado.Add(em1);
-            context.Empleado.Add(em2);
-            context.Empleado.Add(em3);
-            context.Empleado.Add(em4);
-            context.SaveChanges();
+           
 
            
 
@@ -112,17 +67,96 @@
             context.Producto.Add(p4);
             context.SaveChanges();
 
-            /*InventarioProducto ip = new InventarioProducto()
+            Almacen a1 = new Almacen()
             {
-                IdInv=1,
-                Producto = p3,
-                Fecha ="2020-02-20",
-                Cantidad=32,
+                Id=1,
+                Descripcion="Almacen Produccion",
+                Ubicacion="Sector G, Bodega Principal",
+                Observacion="Sin Observacion"
+            };
+            Almacen a2 = new Almacen()
+            { 
+                Id=2,
+                Descripcion = "Almacen Diseño",
+                Ubicacion = "Sector H, Bodega Principal",
+                Observacion = "Sin Observacion"
+            };
+            context.Almacenes.Add(a1);
+            context.Almacenes.Add(a2);
+            context.SaveChanges();
 
-                };*/
+            InventarioProducto ip1 = new InventarioProducto()
+            {
+                Id = 1,
+                Fecha = "10/02/2020",
+                Cantidad = 32,
+                Critico = 10,
+                Observacion = "fdfkjsdfkf",
+                AlmacenId=a1.Id,
+                ProductoId=p1.Id
+                };
+
+            InventarioProducto ip2 = new InventarioProducto()
+            {
+                Id = 1,
+                Fecha = "13/03/2020",
+                Cantidad = 45,
+                Critico = 10,
+                Observacion = "fdfkjsdfkf",
+                AlmacenId = a1.Id,
+                ProductoId = p1.Id
+            };
+            InventarioProducto ip3 = new InventarioProducto()
+            {
+                Id = 1,
+                Fecha = "14/04/2020",
+                Cantidad = 15,
+                Critico = 5,
+                Observacion = "fdfkjsdfkf",
+                AlmacenId = a1.Id,
+                ProductoId = p1.Id
+            };
+            InventarioProducto ip4 = new InventarioProducto()
+            {
+                Id = 1,
+                Fecha = "13/05/2020",
+                Cantidad = 13,
+                Critico = 5,
+                Observacion = "fdfkjsdfkf",
+                AlmacenId = a2.Id,
+                ProductoId = p3.Id
+            };
+            InventarioProducto ip5 = new InventarioProducto()
+            {
+                Id = 1,
+                Fecha = "13/06/2020",
+                Cantidad = 8,
+                Critico = 5,
+                Observacion = "fdfkjsdfkf",
+                AlmacenId = a2.Id,
+                ProductoId = p3.Id
+            };
+            InventarioProducto ip6 = new InventarioProducto()
+            {
+                Id = 1,
+                Fecha = "13/06/2020",
+                Cantidad = 23,
+                Critico = 10,
+                Observacion = "fdfkjsdfkf",
+                AlmacenId = a1.Id,
+                ProductoId = p4.Id
+            };
+            context.InventarioProductos.Add(ip1);
+            context.InventarioProductos.Add(ip2);
+            context.InventarioProductos.Add(ip3);
+            context.InventarioProductos.Add(ip4);
+            context.InventarioProductos.Add(ip5);
+            context.InventarioProductos.Add(ip6);
+            context.SaveChanges();
 
             Proveedor pr1 = new Proveedor()
             {
+
                 Razon = "Empresas de Insumos S.A",
                 Rut = "65.452.123-k",
                 Direccion = "Los avedules # 456",
@@ -144,6 +178,49 @@
             context.Proveedor.Add(pr1);
             context.Proveedor.Add(pr2);
             context.SaveChanges();
+
+            Insumo i1 = new Insumo()
+            {
+                Id = 1,
+                Descripcion = "Manillas de Comodas",
+                Umedida = "C/U",
+                Categoria = "Accesorio"
+            };
+            Insumo i2 = new Insumo()
+            {
+                Id = 2,
+                Descripcion = "Manillas de Roperos",
+                Umedida = "C/U",
+                Categoria = "Accesorio"
+            };
+            context.Insumo.Add(i1);
+            context.Insumo.Add(i2);
+            context.SaveChanges();
+
+            CompraInsumo ci1 = new CompraInsumo()
+            {
+                Id=1,
+                Fecha="25-02-2020",
+                Valor=3000,
+                Cantidad=100,
+                Observacion="fsfdsdsf",
+                InsumoId=i1.Id,
+                ProveedorId=pr1.Id
+            };
+            CompraInsumo ci2 = new CompraInsumo()
+            {
+                Id = 1,
+                Fecha = "25-02-2020",
+                Valor = 2500,
+                Cantidad = 150,
+                Observacion = "fsfdsdsf",
+                InsumoId = i2.Id,
+                ProveedorId = pr1.Id
+            };
+            context.CompraInsumo.Add(ci1);
+            context.CompraInsumo.Add(ci2);
+            context.SaveChanges();
+
             Recurso re1 = new Recurso()
             {
                 Descripcion = "Madera de Pino",
@@ -164,6 +241,53 @@
             context.Recurso.Add(re3);
             context.SaveChanges();
 
+             Empleado em1 = new Empleado()
+             {
+                 Rut = "10897213-1",
+                 Nombres = "Juan Alberto",
+                 Apellidos = "Camaño Perez",
+                 Direccion = "Arturo Prat # 2285",
+                 Telefono = "9-98765342",
+                 Correo = "jac@email.com",
+                 Cargo = "Control Produccion"
+             };
+        Empleado em2 = new Empleado()
+        {
+            Rut = "10358692-1",
+            Nombres = "Manuel Bernardo",
+            Apellidos = "Pellegrini Cortez",
+            Direccion = "Arturo Prat # 2315",
+            Telefono = "9-65832142",
+            Correo = "mbpc@email.com",
+            Cargo = "Supervisor"
+        };
+
+        Empleado em3 = new Empleado()
+        {
+            Rut = "19999000-2",
+            Nombres = "Arturo Ignacio",
+            Apellidos = "Vidal Benitez",
+            Direccion = "Manuel Bulnes # 555",
+            Telefono = "9-1111111",
+            Correo = "aivb@email.com",
+            Cargo = "Gerente"
+        };
+
+        Empleado em4 = new Empleado()
+        {
+            Rut = "14071986-k",
+            Nombres = "Marcelo Andres",
+            Apellidos = "Placencia Velasquez",
+            Direccion = "Igancio Serrano # 1500",
+            Telefono = "9-4444231",
+            Correo = "mapv@email.com",
+            Cargo = "Ensamblador"
+        };
+        context.Empleado.Add(em1);
+            context.Empleado.Add(em2);
+            context.Empleado.Add(em3);
+            context.Empleado.Add(em4);
+            context.SaveChanges();
         }
     }
 }
