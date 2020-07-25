@@ -67,6 +67,8 @@
             context.Empleado.Add(em4);
             context.SaveChanges();
 
+           
+
             Producto p1 = new Producto()
             {
                 Codigo = "pd-01",
@@ -108,6 +110,15 @@
             context.Producto.Add(p3);
             context.Producto.Add(p4);
             context.SaveChanges();
+
+            /*InventarioProducto ip = new InventarioProducto()
+            {
+                IdInv=1,
+                Producto = p3,
+                Fecha ="2020-02-20",
+                Cantidad=32,
+
+                };*/
 
             Proveedor pr1 = new Proveedor()
             {

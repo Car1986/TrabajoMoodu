@@ -79,7 +79,8 @@
                     <td>@p.Estado</td>
 
                     <td>
-                        <a href="@Url.Action("View", "Producto", new { id = p.Id })">Ver</a>
+                        <a href="@Url.Action("View", "Producto", new { id = p.Id })">Ver/</a>
+                        <a href="@Url.Action("Edit", "Producto", new { id = p.Id })">Ver</a>
                     </td>
                 </tr>
             }
