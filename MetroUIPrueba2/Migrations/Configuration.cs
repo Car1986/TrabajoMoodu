@@ -69,10 +69,11 @@
 
            
 
+            // para que reconozca las fechas se debe meter dia mes an
             Producto p1 = new Producto()
             {
                 Codigo = "pd-01",
-                Fecha = "15-02-2020",
+                Fecha = "2020-02-15",
                 Precio = 650000,
                 Imagen = "La ruta1",
                 Descripcion = "La descripcion",
@@ -81,7 +82,7 @@
             Producto p2 = new Producto()
             {
                 Codigo = "pd-02",
-                Fecha = "15-02-2020",
+                Fecha = "2020-02-15",
                 Precio = 450000,
                 Imagen = "La ruta2",
                 Descripcion = "La descripcion2",
@@ -90,7 +91,7 @@
             Producto p3 = new Producto()
             {
                 Codigo = "pd-03",
-                Fecha = "15-02-2020",
+                Fecha = "2020-02-15",
                 Precio = 350000,
                 Imagen = "La ruta3",
                 Descripcion = "La descripcion3",
@@ -99,7 +100,7 @@
             Producto p4 = new Producto()
             {
                 Codigo = "pd-04",
-                Fecha = "15-02-2020",
+                Fecha = "2020-02-15",
                 Precio = 250000,
                 Imagen = "La ruta4",
                 Descripcion = "La descripcion4",

@@ -23,21 +23,50 @@
     }
 </style>
 
-@Html.ValidationSummary()
 <div class="container" id="principal">
     <h3>Editar Producto</h3>
     <hr />
     <form class="bg-white p-6 mx-auto border bd-default win-shadow" method="POST" action="@Url.Action("Edit","Producto", new { id = Model.Id })">
         <table>
-            <tr><td style="padding-right:15px;">Codigo Producto:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" value="@Model.Codigo" name="Codigo" data-role="input" data-append="#" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Ingreso:</td><td style="padding-top: 10px;"><input style="width:347px;" type="text" value="@Model.Fecha" name="Fecha" data-role="input" class="input-lg" /></td></tr>
-            <tr><td style="padding-right:15px;">Valoración:</td><td style="padding-top:10px;"><input id="cambio" style="width:400px;" type="text" value="@Model.Precio" name="Precio" data-role="input" data-append="$.00" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Imagen:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" value="@Model.Imagen" name="Imagen" data-role="input" data-append="/Ruta" class="input-lg"></td></tr>
-            <tr><td style="padding-right:15px;">Descripción:</td><td style="padding-top:10px;"><input style="width:400px;" type="text" value="@Model.Descripcion" name="Descripcion" data-role="input" data-append="$.00" class="input-lg"></td></tr>
+            <tr>
+                <td style="padding-right:15px;">Codigo Producto:</td>
+                <td style="padding-top:10px;">
+                    <input style="width:400px;" type="text" name="Codigo" value="@Model.Codigo" data-role="input" data-append="#" class="input-lg">
+                    @Html.ValidationMessageFor(model => model.Codigo)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Ingreso:</td>                
+                <td style="padding-top: 10px;">
+                    <input style="width:347px;" type="date" name="Fecha" value="@Model.Fecha" data-role="input" class="input-lg" />
+                    @Html.ValidationMessageFor(model => model.Fecha)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Valoración:</td>
+                <td style="padding-top:10px;">
+                    <input style="width:400px;" type="text" name="Precio" value="@Model.Precio" data-role="input" data-append="$.00" class="input-lg">
+                    @Html.ValidationMessageFor(model => model.Precio)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Imagen:</td>
+                <td style="padding-top:10px;">
+                    <input style="width:400px;" type="text" name="Imagen" value="@Model.Imagen" data-role="input" data-append="/Ruta" class="input-lg">
+                    @Html.ValidationMessageFor(model => model.Imagen)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right:15px;">Descripción:</td>
+                <td style="padding-top:10px;">
+                    <input style="width:400px;" type="text" name="Descripcion" value="@Model.Descripcion" data-role="input" data-append="$.00" class="input-lg">
+                    @Html.ValidationMessageFor(model => model.Descripcion)
+                </td>
+            </tr>
             <tr>
                 <td style="padding-right:15px;padding-top:20px;">Estado:</td>
                 <td>
-                    <select style="width:400px;" name="Estado" data-role="select" class="input-lg">
+                    <select style="width:400px;" data-role="select" name="Estado" class="input-lg">                        
                         <option value="1">Produccion</option>
                         <option value="2">En Diseño</option>
                     </select>
@@ -45,7 +74,7 @@
             </tr>
         </table><br />
         <div class="form-group">
-            <button type="submit" id="cambio2" class="button success">Actualizar</button>
+            <button type="submit" class="button success">Actualizar</button>
             <input type="button" class="button" value="Cancel">
         </div>
     </form>
@@ -66,13 +95,4 @@
             input.value = input.value.replace(/[^\d\.]*/g, '');
         }
     }
-</script>
-<script>
-    $('#cambio').on("myCustomEvent",function ( event ) {
-        var text = $(this).text();
-        $(this).text(text.replace('.', ''));
-    });
-    $("#cambio2").click(function () {
-        $("#cambio").trigger("myCustomEvent");
-    });  
 </script>

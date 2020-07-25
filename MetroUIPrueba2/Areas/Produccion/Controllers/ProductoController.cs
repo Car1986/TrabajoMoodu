@@ -20,7 +20,7 @@ namespace MetroUIPrueba2.Areas.Produccion.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            Producto producto = new Producto();
+            Producto producto = new Producto();            
             return View(producto);
         }
         [HttpPost]

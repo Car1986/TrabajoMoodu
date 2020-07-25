@@ -13,15 +13,15 @@ namespace MetroUIPrueba2.Models
         [Required]
         [StringLength(50,MinimumLength =1)]
         public string Codigo { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Debe de seleccionar una fecha válida")]
         public string Fecha { get; set; }
         [Required]
-        [Range(0,100000000)]
+        [Range(1,99999999, ErrorMessage = "El valor por producto debe de ser minimo de 1 y máximo de 99999999")]
         public double Precio { get; set; }
         [Required]
         public string Imagen { get; set; }
         [Required]
-        [StringLength(100, MinimumLength = 3)]
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "La descripción debe de tener un minimo de 3 y máximo de 100 caracteres")]
         public string Descripcion { get; set; }
         [Required]      
         public string Estado { get; set; }

@@ -15,7 +15,7 @@
         }
         div.mega-container{
             display:inline-block;
-            min-width:700px;
+            min-width:800px;
         }        
     </style>
 </head>
@@ -30,10 +30,7 @@
                 <a href="#" class="dropdown-toggle"><span class="mif-cart icon"></span> Productos</a>
                 <div class="mega-container" data-role="dropdown">
                     <ul class="h-menu">
-                        <li><a href="@Url.Action("Index","Producto")"><span class="mif-zoom-in icon"></span> Ver Productos</a></li>
-                        <li><a href="#">Otro1</a></li>
-                        <li><a href="#">Otro2</a></li>
-                        <li><a href="#">Otro3</a></li>
+                        <li><a href="@Url.Action("Index","Producto")"><span class="mif-zoom-in icon"></span> Ver Productos</a></li>                    
                     </ul>
                 </div>
             </li>
@@ -41,9 +38,8 @@
                 <a href="#" class="dropdown-toggle"><span class="mif-stack icon"></span> Insumos</a>
                 <div class="mega-container" data-role="dropdown">
                     <ul class="h-menu">
-                        <li><a href="@Url.Action("Index","Recurso")"><span class="mif-zoom-in icon"></span> Ver Insumos</a></li>                       
-                        <li><a href="@Url.Action("View","Recurso")">Ver Detalle Insumo</a></li>
-                        <li><a href="@Url.Action("Inventario","Recurso")">Inventario</a></li>
+                        <li><a href="@Url.Action("Index","Recurso")"><span class="mif-zoom-in icon"></span> Ver Insumos</a></li>              
+                        <li><a href="@Url.Action("Inventario","Recurso")"><span class="mif-database icon"></span>Inventario</a></li>
                     </ul>
                 </div>
             </li>

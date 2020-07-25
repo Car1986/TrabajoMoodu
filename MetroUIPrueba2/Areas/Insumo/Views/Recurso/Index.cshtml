@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MetroUIPrueba2.Models.Recurso>
 @{
     ViewBag.Title = "Intranet";
-    Layout = "~/Areas/Produccion/Views/Shared/_IntranetLayoutInsumos.cshtml";
+    Layout = "~/Areas/Insumo/Views/Shared/_IntranetLayoutInsumo.cshtml";
 }
 
 <style>
@@ -42,7 +42,8 @@
                     <td>@r.Descripcion</td>
                     <td>@r.Umedida</td>                    
                     <td>
-                        <a href="@Url.Action("View","Recurso", new { id = r.Id })">Ver</a>
+                        <a href="@Url.Action("View","Recurso", new { id = r.Id })">Ver/</a>
+                        <a href="@Url.Action("Edit","Recurso", new { id = r.Id })">Editar</a>
                     </td>
                 </tr>
             }
