@@ -7,7 +7,7 @@
 <style>
     #principal {
         width: 800px;
-        height: 700px;
+        height: auto;
         top: 50%;
         margin-top: 5px;
         border: 1px solid green;
@@ -36,7 +36,6 @@
     <h6>Usuario: Juan Perez</h6>
 </div>
 
-@Html.ValidationSummary()
 <div class="container" id="principal">
     <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/lupa.png"></div>
     <h3>Editar Empleado</h3>
@@ -47,7 +46,8 @@
             <div class="cell-sm-9">
                 <input type="text" value="@Model.Rut" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-indent-increase'></span>">               
+                       data-prepend="<span class='mif-indent-increase'></span>">
+                @Html.ValidationMessageFor(model => model.Rut)
             </div>
         </div>
 
@@ -56,7 +56,8 @@
             <div class="cell-sm-9">
                 <input type="text" value="@Model.Nombres" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-steps'></span>">                
+                       data-prepend="<span class='mif-steps'></span>">
+                @Html.ValidationMessageFor(model => model.Nombres)
             </div>
         </div>
 
@@ -65,7 +66,8 @@
             <div class="cell-sm-9">
                 <input type="text" value="@Model.Apellidos" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-steps'></span>">                
+                       data-prepend="<span class='mif-steps'></span>">
+                @Html.ValidationMessageFor(model => model.Apellidos)
             </div>
         </div>
 
@@ -74,7 +76,8 @@
             <div class="cell-sm-9">
                 <input type="text" value="@Model.Direccion" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-steps'></span>">                
+                       data-prepend="<span class='mif-steps'></span>">
+                @Html.ValidationMessageFor(model => model.Direccion)
             </div>
         </div>
 
@@ -83,7 +86,8 @@
             <div class="cell-sm-9">
                 <input type="text" value="@Model.Telefono" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-phone'></span>">               
+                       data-prepend="<span class='mif-phone'></span>">
+                @Html.ValidationMessageFor(model => model.Telefono)
             </div>
         </div>
         <div class="row mb-2">
@@ -91,7 +95,8 @@
             <div class="cell-sm-9">
                 <input type="email" value="@Model.Correo" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-envelop'></span>">               
+                       data-prepend="<span class='mif-envelop'></span>">
+                @Html.ValidationMessageFor(model => model.Correo)
             </div>
         </div>
         <div class="row mb-2">
@@ -99,7 +104,8 @@
             <div class="cell-sm-9">
                 <input type="text" value="@Model.Cargo" data-role="input"
                        class="mb-1"
-                       data-prepend="<span class='mif-tree'></span>">                
+                       data-prepend="<span class='mif-tree'></span>">
+                @Html.ValidationMessageFor(model => model.Cargo)
             </div>
         </div>
         <div class="form-group">
