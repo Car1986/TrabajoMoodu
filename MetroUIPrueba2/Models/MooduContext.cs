@@ -19,6 +19,9 @@ namespace MetroUIPrueba2.Models
         public DbSet<Almacen> Almacenes { get; set; }
         public DbSet<InventarioProducto> InventarioProductos { get; set;  }
         public DbSet<CompraInsumo> CompraInsumo { get; set; }
+        public DbSet<CatergoriaInsumo> CategoriaInsumo { get; set; }
+        public DbSet<InventarioInsumo> InventarioInsumo { get; set; }
+        public DbSet<ProveeInsumo> ProveeInsumo { get; set; }
 
     }
 }
