@@ -16,5 +16,6 @@ namespace MetroUIPrueba2.Models
         [StringLength(50, MinimumLength = 5)]
         public string Ubicacion { get; set; }
         public string Observacion { get; set; }
+        public virtual ICollection<InventarioProducto> InventarioProductos { get; set; }
     }
 }

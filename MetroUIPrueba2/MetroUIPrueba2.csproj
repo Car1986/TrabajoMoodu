@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Gerencia\Controllers\EmpleadoController.cs" />
     <Compile Include="Areas\Gerencia\Controllers\InsumoController.cs" />
+    <Compile Include="Areas\Gerencia\Controllers\InventarioProductoController.cs" />
     <Compile Include="Areas\Gerencia\Controllers\ProductoController.cs" />
     <Compile Include="Areas\Gerencia\Controllers\ProveedorController.cs" />
     <Compile Include="Areas\Gerencia\Controllers\RecursoController.cs" />
@@ -150,12 +151,17 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\CatergoriaInsumo.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\CompraInsumo.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Insumo.cs" />
+    <Compile Include="Models\InventarioInsumo.cs" />
+    <Compile Include="Models\InventarioProducto.cs" />
     <Compile Include="Models\MooduContext.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
+    <Compile Include="Models\ProveeInsumo.cs" />
     <Compile Include="Models\Recurso.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -328,6 +334,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Gerencia\Data\" />
+    <Folder Include="Areas\Gerencia\Views\InventarioProducto\" />
     <Folder Include="Areas\Insumo\Data\" />
     <Folder Include="Areas\Produccion\Data\" />
   </ItemGroup>
