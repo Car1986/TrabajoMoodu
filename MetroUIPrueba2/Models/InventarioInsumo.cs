@@ -13,7 +13,7 @@ namespace MetroUIPrueba2.Models
         public DateTime Fecha { get; set; }
         [Required]        
         public int Cantidad { get; set; }
-        [Required]       
+        [Required]      
         public int Critico { get; set; }
         [StringLength(100, MinimumLength = 5)]
         public string Observacion { get; set; }

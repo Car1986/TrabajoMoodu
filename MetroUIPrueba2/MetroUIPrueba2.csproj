@@ -151,6 +151,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\Areas.cs" />
+    <Compile Include="Models\AsignaRoles.cs" />
     <Compile Include="Models\CatergoriaInsumo.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteProducto.cs" />
@@ -166,6 +168,8 @@
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\ProveeInsumo.cs" />
     <Compile Include="Models\Recurso.cs" />
+    <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

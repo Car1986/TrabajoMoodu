@@ -30,5 +30,8 @@ namespace MetroUIPrueba2.Models
         public string Cargo { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+        public int AreaId { get; set; }
+        public virtual Areas Areas { get; set; }
+        public virtual ICollection<AsignaRoles> AsignaRoles { get; set; }
     }
 }

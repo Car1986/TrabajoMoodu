@@ -27,6 +27,9 @@ namespace MetroUIPrueba2.Models
         public string Contacto { get; set; }
         [Required]
         public string Comuna { get; set; }
+        public int UsuarioId { get; set; }
+        public virtual Usuario Usuario { get; set; }
         public virtual ICollection<CompraInsumo> CompraInsumo { get; set; }
+        public virtual ICollection<ProveeInsumo> ProveeInsumo { get; set; }
     }
 }
