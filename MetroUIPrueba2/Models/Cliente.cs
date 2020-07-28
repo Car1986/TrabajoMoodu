@@ -22,7 +22,9 @@ namespace MetroUIPrueba2.Models
         [Required]       
         public string Rut { get; set; }
 
+        public virtual ICollection<ClienteProducto> ClienteProductos { get; set; }
+
         //puesto alreves de lo que dice la logica con el cliente usuario
-        //public virtual Usuario Usuario { get; set; }        
+        public virtual Usuario Usuario { get; set; }        
     }
 }

@@ -14,7 +14,7 @@ namespace MetroUIPrueba2.Models
         [StringLength(50,MinimumLength =1)]
         public string Codigo { get; set; }
         [Required(ErrorMessage = "Debe de seleccionar una fecha válida")]
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         [Required]
         [Range(1,99999999, ErrorMessage = "El valor por producto debe de ser minimo de 1 y máximo de 99999999")]
         public double Precio { get; set; }
@@ -28,6 +28,10 @@ namespace MetroUIPrueba2.Models
         //[Required]
         //public int id { get; set; }
         //public Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
+        public virtual Usuario Usuario { get; set; }
+
         public virtual ICollection<InventarioProducto> InventarioProductos { get; set; }
+        public virtual ICollection<ClienteProducto> ClienteProductos { get; set; }
     }
 }

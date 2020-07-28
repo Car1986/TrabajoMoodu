@@ -28,5 +28,7 @@ namespace MetroUIPrueba2.Models
         public string Correo { get; set; }
         [Required]
         public string Cargo { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
     }
 }

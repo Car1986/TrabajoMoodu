@@ -10,7 +10,7 @@ namespace MetroUIPrueba2.Models
     {
         public int Id { get; set; }
         [Required]
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         [Required]
         [Range(0, 50)]
         public int Cantidad { get; set; }
@@ -18,7 +18,7 @@ namespace MetroUIPrueba2.Models
         [Range(3,10)]
         public int Critico { get; set; }
 
-       [StringLength(100,MinimumLength =5)]
+        [StringLength(100,MinimumLength =5)]
         public string Observacion {get;set;}
         
 

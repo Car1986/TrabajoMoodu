@@ -6,6 +6,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Security.Cryptography;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MetroUIPrueba2.Models.MooduContext>
     {
@@ -35,7 +36,6 @@
                 Correo = "jac@email.com",
                 Cargo = "Control Produccion"
             };
-
             Empleado em2 = new Empleado()
             {
                 Rut = "10358692-1",
@@ -46,7 +46,6 @@
                 Correo = "mbpc@email.com",
                 Cargo = "Supervisor"
             };
-
             Empleado em3 = new Empleado()
             {
                 Rut = "19999000-2",
@@ -57,7 +56,6 @@
                 Correo = "aivb@email.com",
                 Cargo = "Gerente"
             };
-
             Empleado em4 = new Empleado()
             {
                 Rut = "14071986-k",
@@ -72,14 +70,93 @@
             context.Empleado.Add(em2);
             context.Empleado.Add(em3);
             context.Empleado.Add(em4);
+            context.SaveChanges();          
+
+            Cliente cl1 = new Cliente()
+            {
+                Nombres = "Roberto Carlos",
+                Apellidos = "Rojas Ascencio",
+                Correo = "ewqewq@das.cl",
+                Telefono = 94444231,
+                Rut = "14074567-k"               
+            };
+            Cliente cl2 = new Cliente()
+            {
+                Nombres = "Juan Pedro",
+                Apellidos = "Perez Merea",
+                Correo = "gfdgdf@das.cl",
+                Telefono = 94444231,
+                Rut = "12074437-k",
+            };
+            Cliente cl3 = new Cliente()
+            {
+                Nombres = "Sebastian Rodolfo",
+                Apellidos = "Mella Prieto",
+                Correo = "tttt@das.cl",
+                Telefono = 94444231,
+                Rut = "14567543-1",
+            };
+            context.Clientes.Add(cl1);
+            context.Clientes.Add(cl2);
+            context.Clientes.Add(cl3);           
             context.SaveChanges();
 
+            Usuario us1 = new Usuario()
+            {
+                NombreUsuario = "Roberto123",
+                Password = "1234",
+                ClienteId = cl1.Id
+            };
+            Usuario us2 = new Usuario()
+            {
+                NombreUsuario = "Batman1234",
+                Password = "1234",
+                ClienteId = cl2.Id
+            };
+            Usuario us3 = new Usuario()
+            {
+                NombreUsuario = "roro",
+                Password = "1234",
+                ClienteId = cl3.Id
+            };
+            Usuario us4 = new Usuario()
+            {
+                NombreUsuario = "ar1",
+                Password = "1234",
+                EmpleadoId = em1.Id
+            };
+            Usuario us5 = new Usuario()
+            {
+                NombreUsuario = "gf2",
+                Password = "1234",
+                EmpleadoId = em2.Id
+            };
+            Usuario us6 = new Usuario()
+            {
+                NombreUsuario = "fff3",
+                Password = "1234",
+                EmpleadoId = em3.Id
+            };
+            Usuario us7 = new Usuario()
+            {
+                NombreUsuario = "re3",
+                Password = "1234",
+                EmpleadoId = em4.Id
+            };
+            context.Usuarios.Add(us1);
+            context.Usuarios.Add(us2);
+            context.Usuarios.Add(us3);
+            context.Usuarios.Add(us4);
+            context.Usuarios.Add(us5);
+            context.Usuarios.Add(us6);
+            context.Usuarios.Add(us7);
+            context.SaveChanges();
 
             Producto p1 = new Producto()
             {
 
                 Codigo = "pd-01",
-                Fecha = "2020-02-15",
+                Fecha = new DateTime(2020,6,10),
                 Precio = 650000,
                 Imagen = "La ruta1",
                 Descripcion = "La descripcion",
@@ -89,7 +166,7 @@
             {
 
                 Codigo = "pd-02",
-                Fecha = "2020-02-15",
+                Fecha = new DateTime(2020, 6, 10),
                 Precio = 450000,
                 Imagen = "La ruta2",
                 Descripcion = "La descripcion2",
@@ -99,7 +176,7 @@
             {
 
                 Codigo = "pd-03",
-                Fecha = "2020-02-15",
+                Fecha = new DateTime(2020, 6, 10),
                 Precio = 350000,
                 Imagen = "La ruta3",
                 Descripcion = "La descripcion3",
@@ -109,7 +186,7 @@
             {
 
                 Codigo = "pd-04",
-                Fecha = "2020-02-15",
+                Fecha = new DateTime(2020, 6, 10),
                 Precio = 250000,
                 Imagen = "La ruta4",
                 Descripcion = "La descripcion4",
@@ -150,29 +227,27 @@
             InventarioProducto ip1 = new InventarioProducto()
             {
 
-                Fecha = "10/02/2020",
+                Fecha = new DateTime(2020, 2, 10),
                 Cantidad = 32,
                 Critico = 10,
                 Observacion = "fdfkjsdfkf",
                 AlmacenId = a1.Id,
                 ProductoId = p1.Id
             };
-
             InventarioProducto ip2 = new InventarioProducto()
             {
 
-                Fecha = "13/03/2020",
+                Fecha = new DateTime(2020, 2, 10),
                 Cantidad = 45,
                 Critico = 10,
                 Observacion = "fdfkjsdfkf",
                 AlmacenId = a1.Id,
                 ProductoId = p1.Id
             };
-
             InventarioProducto ip3 = new InventarioProducto()
             {
 
-                Fecha = "14/04/2020",
+                Fecha = new DateTime(2020, 2, 10),
                 Cantidad = 15,
                 Critico = 5,
                 Observacion = "fdfkjsdfkf",
@@ -182,7 +257,7 @@
             InventarioProducto ip4 = new InventarioProducto()
             {
 
-                Fecha = "13/05/2020",
+                Fecha = new DateTime(2020, 2, 10),
                 Cantidad = 13,
                 Critico = 5,
                 Observacion = "fdfkjsdfkf",
@@ -192,7 +267,7 @@
             InventarioProducto ip5 = new InventarioProducto()
             {
 
-                Fecha = "13/06/2020",
+                Fecha = new DateTime(2020, 6, 12),
                 Cantidad = 8,
                 Critico = 5,
                 Observacion = "fdfkjsdfkf",
@@ -202,7 +277,7 @@
             InventarioProducto ip6 = new InventarioProducto()
             {
 
-                Fecha = "13/06/2020",
+                Fecha = new DateTime(2020, 6, 12),
                 Cantidad = 23,
                 Critico = 10,
                 Observacion = "fdfkjsdfkf",
@@ -289,10 +364,87 @@
             context.Insumo.Add(i3);
             context.SaveChanges();
 
+            MedioPago mp1 = new MedioPago()
+            {
+                Descripcion = "tarjeta credito",
+                EntidadComercial = "Banco Estado"
+
+            };
+            MedioPago mp2 = new MedioPago()
+            {
+                Descripcion = "tarjeta debito",
+                EntidadComercial = "Banco Estado"
+            };
+            context.MedioPago.Add(mp1);
+            context.MedioPago.Add(mp2); ;
+            context.SaveChanges();
+
+            Pago pa1 = new Pago()
+            {
+                Num_orden = 12,
+                Total = 120000,
+                Fecha = new DateTime(2020, 2, 25),
+                MedioPagoId = mp1.Id
+            };
+
+            Pago pa2 = new Pago()
+            {
+                Num_orden = 132,
+                Total = 1200000,
+                Fecha = new DateTime(2020, 2, 25),                
+                MedioPagoId = mp1.Id
+            };
+
+            Pago pa3 = new Pago()
+            {
+                Num_orden = 11,
+                Total = 100000,
+                Fecha = new DateTime(2020, 2, 25),                
+                MedioPagoId = mp2.Id
+            };
+            context.Pago.Add(pa1);
+            context.Pago.Add(pa2);
+            context.Pago.Add(pa3);
+            context.SaveChanges();         
+
+            ClienteProducto cp1 = new ClienteProducto()
+            {
+                NumOrden = 145,
+                Subtotal = 120000,
+                Fecha = new DateTime(2020, 6, 10),
+                ProductoId = p1.Id,
+                ClienteId = cl1.Id
+            };
+
+            ClienteProducto cp2 = new ClienteProducto()
+            {
+                NumOrden = 122,
+                Subtotal = 203000,
+                Fecha = new DateTime(2020, 6, 10),
+                ProductoId = p2.Id,
+                ClienteId = cl2.Id
+            };
+
+            ClienteProducto cp3 = new ClienteProducto()
+            {
+                NumOrden = 111,
+                Subtotal = 320000,
+                Fecha = new DateTime(2020, 6, 10),
+                ProductoId = p3.Id,
+                ClienteId = cl3.Id
+            };
+            context.ClienteProducto.Add(cp1);
+            context.ClienteProducto.Add(cp2);
+            context.ClienteProducto.Add(cp3);
+            context.SaveChanges();
+
+
+
+
             InventarioInsumo ii1 = new InventarioInsumo()
             {
 
-                Fecha = "21-01-2020",
+                Fecha = new DateTime(2020, 1, 21),
                 Cantidad = 50,
                 Critico = 50,
                 Observacion = "no hay",
@@ -303,7 +455,7 @@
             InventarioInsumo ii2 = new InventarioInsumo()
             {
 
-                Fecha = "21-02-2020",
+                Fecha = new DateTime(2020, 1, 21),
                 Cantidad = 150,
                 Critico = 50,
                 Observacion = "no hay",
@@ -315,11 +467,10 @@
             context.InventarioInsumo.Add(ii2);
             context.SaveChanges();
 
-
             CompraInsumo ci1 = new CompraInsumo()
             {
 
-                Fecha = "25-02-2020",
+                Fecha = new DateTime(2020, 2, 25),
                 Valor = 3000,
                 Cantidad = 100,
                 Observacion = "fsfdsdsf",
@@ -329,7 +480,7 @@
             CompraInsumo ci2 = new CompraInsumo()
             {
 
-                Fecha = "25-02-2020",
+                Fecha = new DateTime(2020, 2, 25),
                 Valor = 2500,
                 Cantidad = 150,
                 Observacion = "fsfdsdsf",
@@ -339,7 +490,6 @@
             context.CompraInsumo.Add(ci1);
             context.CompraInsumo.Add(ci2);
             context.SaveChanges();
-
 
             ProveeInsumo pri1 = new ProveeInsumo()
             {
@@ -358,8 +508,6 @@
             context.ProveeInsumo.Add(pri1);
             context.ProveeInsumo.Add(pri2);
             context.SaveChanges();
-
-         
 
             Recurso re1 = new Recurso()
             {
@@ -380,9 +528,8 @@
             context.Recurso.Add(re2);
             context.Recurso.Add(re3);
             context.SaveChanges();
+        }        
 
 
-           
-        }
     }
 }

@@ -8,7 +8,7 @@ namespace MetroUIPrueba2.Models
     public class CompraInsumo
     {
         public int Id { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public double Valor { get; set; }
         public int Cantidad { get; set; }
         public string Observacion { get; set; }
