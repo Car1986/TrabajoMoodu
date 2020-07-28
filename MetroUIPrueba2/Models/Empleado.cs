@@ -28,5 +28,8 @@ namespace MetroUIPrueba2.Models
         public string Correo { get; set; }
         [Required]
         public string Cargo { get; set; }
+        public int AreaId { get; set; }
+        public virtual Areas Areas { get; set; }
+        public virtual ICollection<AsignaRoles> AsignaRoles { get; set; }
     }
 }

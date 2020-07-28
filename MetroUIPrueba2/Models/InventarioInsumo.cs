@@ -12,10 +12,10 @@ namespace MetroUIPrueba2.Models
         [Required]
         public string Fecha { get; set; }
         [Required]
-        [Range(0, 50)]
+        
         public int Cantidad { get; set; }
         [Required]
-        [Range(3, 10)]
+       
         public int Critico { get; set; }
         [StringLength(100, MinimumLength = 5)]
         public string Observacion { get; set; }

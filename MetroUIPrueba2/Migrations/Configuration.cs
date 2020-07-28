@@ -21,8 +21,68 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
+            Areas ar1 = new Areas()
+            {
+                Descripcion="Gerencia"
+            };
+            Areas ar2 = new Areas()
+            {
+                Descripcion = "Insumo"
+            };
+            Areas ar3 = new Areas()
+            {
+                Descripcion = "Produccion"
+            };
+            context.Areas.Add(ar1);
+            context.Areas.Add(ar2);
+            context.Areas.Add(ar3);
+            context.SaveChanges();
 
 
+            Roles rol1 = new Roles()
+            {
+                Descripcion="Administrador"
+            };
+            Roles rol2 = new Roles()
+            {
+                Descripcion = "Supervisor"
+            };
+            Roles rol3 = new Roles()
+            {
+                Descripcion = "Trabajador"
+            };
+            context.Roles.Add(rol1);
+            context.Roles.Add(rol2);
+            context.Roles.Add(rol3);
+            context.SaveChanges();
+
+            TipoUsuario t1 = new TipoUsuario()
+            {
+                Descripcion="Interno"
+            };
+            TipoUsuario t2 = new TipoUsuario()
+            {
+                Descripcion = "Externo"
+            };
+            context.TipoUsuario.Add(t1);
+            context.TipoUsuario.Add(t2);
+            context.SaveChanges();
+
+            Usuario user1 = new Usuario()
+            {
+                NombreUsuario="Carlos Marchant",
+                Password="123",
+                TipoUsuarioId=t1.Id
+            };
+            Usuario user2 = new Usuario()
+            {
+                NombreUsuario = "Cristian Fernandez",
+                Password = "321",
+                TipoUsuarioId = t1.Id
+            };
+            context.Usuarios.Add(user1);
+            context.Usuarios.Add(user2);
+            context.SaveChanges();
 
             // para que reconozca las fechas se debe meter dia mes an
             Empleado em1 = new Empleado()
@@ -33,7 +93,8 @@
                 Direccion = "Arturo Prat # 2285",
                 Telefono = "9-98765342",
                 Correo = "jac@email.com",
-                Cargo = "Control Produccion"
+                Cargo = "Control Produccion",
+                AreaId = ar3.Id
             };
 
             Empleado em2 = new Empleado()
@@ -44,7 +105,8 @@
                 Direccion = "Arturo Prat # 2315",
                 Telefono = "9-65832142",
                 Correo = "mbpc@email.com",
-                Cargo = "Supervisor"
+                Cargo = "Supervisor",
+                AreaId= ar2.Id
             };
 
             Empleado em3 = new Empleado()
@@ -55,7 +117,8 @@
                 Direccion = "Manuel Bulnes # 555",
                 Telefono = "9-1111111",
                 Correo = "aivb@email.com",
-                Cargo = "Gerente"
+                Cargo = "Gerente",
+                AreaId = ar1.Id
             };
 
             Empleado em4 = new Empleado()
@@ -66,12 +129,27 @@
                 Direccion = "Igancio Serrano # 1500",
                 Telefono = "9-4444231",
                 Correo = "mapv@email.com",
-                Cargo = "Ensamblador"
+                Cargo = "Ensamblador",
+                AreaId = ar3.Id
             };
             context.Empleado.Add(em1);
             context.Empleado.Add(em2);
             context.Empleado.Add(em3);
             context.Empleado.Add(em4);
+            context.SaveChanges();
+
+            AsignaRoles asig1 = new AsignaRoles()
+            {
+                EmpleadoId = em1.Id,
+                RolId= rol1.Id
+            };
+            AsignaRoles asig2 = new AsignaRoles()
+            {
+                EmpleadoId = em2.Id,
+                RolId = rol2.Id
+            };
+            context.AsignaRoles.Add(asig1);
+            context.AsignaRoles.Add(asig2);
             context.SaveChanges();
 
 
@@ -226,7 +304,8 @@
                 Telefono = "+56 9 86425787",
                 Email = "ei@email.com",
                 Contacto = "Juan Medina Garces",
-                Comuna = "Concepcion"
+                Comuna = "Concepcion",
+                UsuarioId= user1.Id
             };
             Proveedor pr2 = new Proveedor()
             {
@@ -237,7 +316,8 @@
                 Telefono = "+56 9 55555555",
                 Email = "ei1@email.com",
                 Contacto = "Bernardo Silva Medina",
-                Comuna = "Santiago"
+                Comuna = "Santiago",
+                UsuarioId = user1.Id
             };
             context.Proveedor.Add(pr1);
             context.Proveedor.Add(pr2);
@@ -268,21 +348,24 @@
 
                 Descripcion = "Manillas de Comodas",
                 Umedida = "C/U",
-                CategoriaId = cti3.Id
+                CategoriaId = cti3.Id,
+                UsuarioId = user2.Id
             };
             Insumo i2 = new Insumo()
             {
 
                 Descripcion = "Manillas de Roperos",
                 Umedida = "C/U",
-                CategoriaId = cti3.Id
+                CategoriaId = cti3.Id,
+                UsuarioId = user2.Id
             };
             Insumo i3 = new Insumo()
             {
 
                 Descripcion = "Barniz Cafe Cipres",
                 Umedida = "Galon",
-                CategoriaId = cti2.Id
+                CategoriaId = cti2.Id,
+                UsuarioId = user2.Id
             };
             context.Insumo.Add(i1);
             context.Insumo.Add(i2);
