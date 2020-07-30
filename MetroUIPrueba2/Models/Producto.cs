@@ -26,11 +26,11 @@ namespace MetroUIPrueba2.Models
         [Required]      
         public string Estado { get; set; }
         //[Required]
-        //public int id { get; set; }
-        //public Usuario Usuario { get; set; }
-        public int UsuarioId { get; set; }
-        public virtual Usuario Usuario { get; set; }
 
+        public int? Usuarioid { get; set; }
+        public Usuario Usuario { get; set; }
+        public int? UsuarioInternoId { get; set; }
+        public virtual UsuarioInterno UsuarioInterno { get; set; }
         public virtual ICollection<InventarioProducto> InventarioProductos { get; set; }
         public virtual ICollection<ClienteProducto> ClienteProductos { get; set; }
     }

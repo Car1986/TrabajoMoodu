@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace MetroUIPrueba2.Models
 {
     public class Empleado
-    {
+    {        
         public int Id { get; set; }
         [Required]
         [StringLength(11, MinimumLength = 10)]
@@ -28,9 +29,12 @@ namespace MetroUIPrueba2.Models
         public string Correo { get; set; }
         [Required]
         public string Cargo { get; set; }
-
-        public virtual Usuario Usuario { get; set; }
-        public int AreaId { get; set; }
+        [Key]
+        [ForeignKey("UsuarioInterno")]
+        public int UsuarioInternoId { get; set; }
+        public UsuarioInterno UsuarioInterno { get; set; }
+        [ForeignKey("Areas")]
+        public int? AreaId { get; set; }
         public virtual Areas Areas { get; set; }
         public virtual ICollection<AsignaRoles> AsignaRoles { get; set; }
     }

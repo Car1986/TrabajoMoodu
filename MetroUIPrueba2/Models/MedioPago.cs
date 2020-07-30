@@ -11,7 +11,7 @@ namespace MetroUIPrueba2.Models
         public string Descripcion { get; set; }
         public string EntidadComercial { get; set; }
 
-        public virtual Pago Pago { get; set; }
+        public virtual ICollection<Pago> Pago { get; set; }
        
     }
 }

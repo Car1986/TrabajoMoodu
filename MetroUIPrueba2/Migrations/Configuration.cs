@@ -22,9 +22,11 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
+
+            //TABLAS SIN FOREIGN KEY
             Areas ar1 = new Areas()
             {
-                Descripcion="Gerencia"
+                Descripcion = "Gerencia"
             };
             Areas ar2 = new Areas()
             {
@@ -39,10 +41,9 @@
             context.Areas.Add(ar3);
             context.SaveChanges();
 
-
             Roles rol1 = new Roles()
             {
-                Descripcion="Administrador"
+                Descripcion = "Administrador"
             };
             Roles rol2 = new Roles()
             {
@@ -57,223 +58,50 @@
             context.Roles.Add(rol3);
             context.SaveChanges();
 
-            TipoUsuario t1 = new TipoUsuario()
-            {
-                Descripcion="Interno"
-            };
-            TipoUsuario t2 = new TipoUsuario()
-            {
-                Descripcion = "Externo"
-            };
-            context.TipoUsuario.Add(t1);
-            context.TipoUsuario.Add(t2);
-            context.SaveChanges();
-
-            Usuario user1 = new Usuario()
-            {
-                NombreUsuario="Carlos Marchant",
-                Password="123",
-                TipoUsuarioId=t1.Id
-            };
-            Usuario user2 = new Usuario()
-            {
-                NombreUsuario = "Cristian Fernandez",
-                Password = "321",
-                TipoUsuarioId = t1.Id
-            };
-            context.Usuarios.Add(user1);
-            context.Usuarios.Add(user2);
-            context.SaveChanges();
-
-            // para que reconozca las fechas se debe meter dia mes an
-            Empleado em1 = new Empleado()
-            {
-                Rut = "10897213-1",
-                Nombres = "Juan Alberto",
-                Apellidos = "Camaño Perez",
-                Direccion = "Arturo Prat # 2285",
-                Telefono = "9-98765342",
-                Correo = "jac@email.com",
-                Cargo = "Control Produccion",
-                AreaId = ar3.Id
-            };
-            Empleado em2 = new Empleado()
-            {
-                Rut = "10358692-1",
-                Nombres = "Manuel Bernardo",
-                Apellidos = "Pellegrini Cortez",
-                Direccion = "Arturo Prat # 2315",
-                Telefono = "9-65832142",
-                Correo = "mbpc@email.com",
-                Cargo = "Supervisor",
-                AreaId= ar2.Id
-            };
-            Empleado em3 = new Empleado()
-            {
-                Rut = "19999000-2",
-                Nombres = "Arturo Ignacio",
-                Apellidos = "Vidal Benitez",
-                Direccion = "Manuel Bulnes # 555",
-                Telefono = "9-1111111",
-                Correo = "aivb@email.com",
-                Cargo = "Gerente",
-                AreaId = ar1.Id
-            };
-            Empleado em4 = new Empleado()
-            {
-                Rut = "14071986-k",
-                Nombres = "Marcelo Andres",
-                Apellidos = "Placencia Velasquez",
-                Direccion = "Igancio Serrano # 1500",
-                Telefono = "9-4444231",
-                Correo = "mapv@email.com",
-                Cargo = "Ensamblador",
-                AreaId = ar3.Id
-            };
-            context.Empleado.Add(em1);
-            context.Empleado.Add(em2);
-            context.Empleado.Add(em3);
-            context.Empleado.Add(em4);
-            context.SaveChanges();          
-
-            Cliente cl1 = new Cliente()
-            {
-                Nombres = "Roberto Carlos",
-                Apellidos = "Rojas Ascencio",
-                Correo = "ewqewq@das.cl",
-                Telefono = 94444231,
-                Rut = "14074567-k"               
-            };
-            Cliente cl2 = new Cliente()
-            {
-                Nombres = "Juan Pedro",
-                Apellidos = "Perez Merea",
-                Correo = "gfdgdf@das.cl",
-                Telefono = 94444231,
-                Rut = "12074437-k",
-            };
-            Cliente cl3 = new Cliente()
-            {
-                Nombres = "Sebastian Rodolfo",
-                Apellidos = "Mella Prieto",
-                Correo = "tttt@das.cl",
-                Telefono = 94444231,
-                Rut = "14567543-1",
-            };
-            context.Clientes.Add(cl1);
-            context.Clientes.Add(cl2);
-            context.Clientes.Add(cl3);           
-            context.SaveChanges();
-
             Usuario us1 = new Usuario()
             {
                 NombreUsuario = "Roberto123",
-                Password = "1234",
-                ClienteId = cl1.Id
+                Password = "1234"
             };
             Usuario us2 = new Usuario()
             {
                 NombreUsuario = "Batman1234",
-                Password = "1234",
-                ClienteId = cl2.Id
+                Password = "1234"
             };
             Usuario us3 = new Usuario()
             {
                 NombreUsuario = "roro",
-                Password = "1234",
-                ClienteId = cl3.Id
-            };
-            Usuario us4 = new Usuario()
-            {
-                NombreUsuario = "ar1",
-                Password = "1234",
-                EmpleadoId = em1.Id
-            };
-            Usuario us5 = new Usuario()
-            {
-                NombreUsuario = "gf2",
-                Password = "1234",
-                EmpleadoId = em2.Id
-            };
-            Usuario us6 = new Usuario()
-            {
-                NombreUsuario = "fff3",
-                Password = "1234",
-                EmpleadoId = em3.Id
-            };
-            Usuario us7 = new Usuario()
-            {
-                NombreUsuario = "re3",
-                Password = "1234",
-                EmpleadoId = em4.Id
+                Password = "1234"
             };
             context.Usuarios.Add(us1);
             context.Usuarios.Add(us2);
             context.Usuarios.Add(us3);
-            context.Usuarios.Add(us4);
-            context.Usuarios.Add(us5);
-            context.Usuarios.Add(us6);
-            context.Usuarios.Add(us7);
-            context.SaveChanges();
-            AsignaRoles asig1 = new AsignaRoles()
-            {
-                EmpleadoId = em1.Id,
-                RolId= rol1.Id
-            };
-            AsignaRoles asig2 = new AsignaRoles()
-            {
-                EmpleadoId = em2.Id,
-                RolId = rol2.Id
-            };
-            context.AsignaRoles.Add(asig1);
-            context.AsignaRoles.Add(asig2);
             context.SaveChanges();
 
-
-            Producto p1 = new Producto()
+            UsuarioInterno usi1 = new UsuarioInterno()
             {
-
-                Codigo = "pd-01",
-                Fecha = new DateTime(2020,6,10),
-                Precio = 650000,
-                Imagen = "La ruta1",
-                Descripcion = "La descripcion",
-                Estado = "Produccion"
+                NombreUsuario = "nfncv",
+                Password = "1234"
             };
-            Producto p2 = new Producto()
+            UsuarioInterno usi2 = new UsuarioInterno()
             {
-
-                Codigo = "pd-02",
-                Fecha = new DateTime(2020, 6, 10),
-                Precio = 450000,
-                Imagen = "La ruta2",
-                Descripcion = "La descripcion2",
-                Estado = "Produccion"
+                NombreUsuario = "yrttr",
+                Password = "1234"
             };
-            Producto p3 = new Producto()
+            UsuarioInterno usi3 = new UsuarioInterno()
             {
-
-                Codigo = "pd-03",
-                Fecha = new DateTime(2020, 6, 10),
-                Precio = 350000,
-                Imagen = "La ruta3",
-                Descripcion = "La descripcion3",
-                Estado = "Produccion"
+                NombreUsuario = "hgfhg",
+                Password = "1234"
             };
-            Producto p4 = new Producto()
+            UsuarioInterno usi4 = new UsuarioInterno()
             {
-
-                Codigo = "pd-04",
-                Fecha = new DateTime(2020, 6, 10),
-                Precio = 250000,
-                Imagen = "La ruta4",
-                Descripcion = "La descripcion4",
-                Estado = "Produccion"
+                NombreUsuario = "dster",
+                Password = "1234"
             };
-            context.Producto.Add(p1);
-            context.Producto.Add(p2);
-            context.Producto.Add(p3);
-            context.Producto.Add(p4);
+            context.UsuarioInterno.Add(usi1);
+            context.UsuarioInterno.Add(usi2);
+            context.UsuarioInterno.Add(usi3);
+            context.UsuarioInterno.Add(usi4);
             context.SaveChanges();
 
             Almacen a1 = new Almacen()
@@ -300,6 +128,204 @@
             context.Almacenes.Add(a1);
             context.Almacenes.Add(a2);
             context.Almacenes.Add(a3);
+            context.SaveChanges();
+
+            CatergoriaInsumo cti1 = new CatergoriaInsumo()
+            {
+                Descripcion = "Materia Prima"
+            };
+            CatergoriaInsumo cti2 = new CatergoriaInsumo()
+            {
+                Descripcion = "Pinturas"
+            };
+            CatergoriaInsumo cti3 = new CatergoriaInsumo()
+            {
+                Descripcion = "Accesorios"
+            };
+            context.CategoriaInsumo.Add(cti1);
+            context.CategoriaInsumo.Add(cti2);
+            context.CategoriaInsumo.Add(cti3);
+            context.SaveChanges();
+
+            MedioPago mp1 = new MedioPago()
+            {
+                Descripcion = "tarjeta credito",
+                EntidadComercial = "Banco Estado"
+
+            };
+            MedioPago mp2 = new MedioPago()
+            {
+                Descripcion = "tarjeta debito",
+                EntidadComercial = "Banco Estado"
+            };
+            context.MedioPago.Add(mp1);
+            context.MedioPago.Add(mp2); ;
+            context.SaveChanges();
+
+            Recurso re1 = new Recurso()
+            {
+                Descripcion = "Madera de Pino",
+                Umedida = "m"
+            };
+            Recurso re2 = new Recurso()
+            {
+                Descripcion = "Tela Sintetica",
+                Umedida = "m"
+            };
+            Recurso re3 = new Recurso()
+            {
+                Descripcion = "Relleno de lana",
+                Umedida = "m*3"
+            };
+            context.Recurso.Add(re1);
+            context.Recurso.Add(re2);
+            context.Recurso.Add(re3);
+            context.SaveChanges();
+
+            // TABLAS CON FOREIGN KEY
+
+            Empleado em1 = new Empleado()
+            {
+                Rut = "10897213-1",
+                Nombres = "Juan Alberto",
+                Apellidos = "Camaño Perez",
+                Direccion = "Arturo Prat # 2285",
+                Telefono = "9-98765342",
+                Correo = "jac@email.com",
+                Cargo = "Control Produccion",
+                AreaId = ar3.Id,
+                UsuarioInternoId = usi1.Id
+            };
+            Empleado em2 = new Empleado()
+            {
+                Rut = "10358692-1",
+                Nombres = "Manuel Bernardo",
+                Apellidos = "Pellegrini Cortez",
+                Direccion = "Arturo Prat # 2315",
+                Telefono = "9-65832142",
+                Correo = "mbpc@email.com",
+                Cargo = "Supervisor",
+                AreaId = ar2.Id,
+                UsuarioInternoId = usi2.Id
+            };
+            Empleado em3 = new Empleado()
+            {
+                Rut = "19999000-2",
+                Nombres = "Arturo Ignacio",
+                Apellidos = "Vidal Benitez",
+                Direccion = "Manuel Bulnes # 555",
+                Telefono = "9-1111111",
+                Correo = "aivb@email.com",
+                Cargo = "Gerente",
+                AreaId = ar1.Id,
+                UsuarioInternoId = usi3.Id
+            };
+            Empleado em4 = new Empleado()
+            {
+                Rut = "14071986-k",
+                Nombres = "Marcelo Andres",
+                Apellidos = "Placencia Velasquez",
+                Direccion = "Igancio Serrano # 1500",
+                Telefono = "9-4444231",
+                Correo = "mapv@email.com",
+                Cargo = "Ensamblador",
+                AreaId = ar3.Id,
+                UsuarioInternoId = usi4.Id
+            };
+            context.Empleado.Add(em1);
+            context.Empleado.Add(em2);
+            context.Empleado.Add(em3);
+            context.Empleado.Add(em4);
+            context.SaveChanges();
+
+            Cliente cl1 = new Cliente()
+            {
+                Nombres = "Roberto Carlos",
+                Apellidos = "Rojas Ascencio",
+                Correo = "ewqewq@das.cl",
+                Telefono = 94444231,
+                Rut = "14074567-k",
+                UsuarioId = us1.Id
+
+            };
+            Cliente cl2 = new Cliente()
+            {
+                Nombres = "Juan Pedro",
+                Apellidos = "Perez Merea",
+                Correo = "gfdgdf@das.cl",
+                Telefono = 94444231,
+                Rut = "12074437-k",
+                UsuarioId = us2.Id
+            };
+            Cliente cl3 = new Cliente()
+            {
+                Nombres = "Sebastian Rodolfo",
+                Apellidos = "Mella Prieto",
+                Correo = "tttt@das.cl",
+                Telefono = 94444231,
+                Rut = "14567543-1",
+                UsuarioId = us3.Id
+            };
+            context.Clientes.Add(cl1);
+            context.Clientes.Add(cl2);
+            context.Clientes.Add(cl3);
+            context.SaveChanges();
+
+            AsignaRoles asig1 = new AsignaRoles()
+            {
+                EmpleadoId = em1.Id,
+                RolId = rol1.Id
+            };
+            AsignaRoles asig2 = new AsignaRoles()
+            {
+                EmpleadoId = em2.Id,
+                RolId = rol2.Id
+            };
+            context.AsignaRoles.Add(asig1);
+            context.AsignaRoles.Add(asig2);
+            context.SaveChanges();
+
+            Producto p1 = new Producto()
+            {
+                Codigo = "pd-01",
+                Fecha = new DateTime(2020, 6, 10),
+                Precio = 650000,
+                Imagen = "La ruta1",
+                Descripcion = "La descripcion",
+                Estado = "Produccion"
+            };
+            Producto p2 = new Producto()
+            {
+                Codigo = "pd-02",
+                Fecha = new DateTime(2020, 6, 10),
+                Precio = 450000,
+                Imagen = "La ruta2",
+                Descripcion = "La descripcion2",
+                Estado = "Produccion"
+            };
+            Producto p3 = new Producto()
+            {
+                Codigo = "pd-03",
+                Fecha = new DateTime(2020, 6, 10),
+                Precio = 350000,
+                Imagen = "La ruta3",
+                Descripcion = "La descripcion3",
+                Estado = "Produccion"
+            };
+            Producto p4 = new Producto()
+            {
+
+                Codigo = "pd-04",
+                Fecha = new DateTime(2020, 6, 10),
+                Precio = 250000,
+                Imagen = "La ruta4",
+                Descripcion = "La descripcion4",
+                Estado = "Produccion"
+            };
+            context.Producto.Add(p1);
+            context.Producto.Add(p2);
+            context.Producto.Add(p3);
+            context.Producto.Add(p4);
             context.SaveChanges();
 
             InventarioProducto ip1 = new InventarioProducto()
@@ -380,7 +406,7 @@
                 Email = "ei@email.com",
                 Contacto = "Juan Medina Garces",
                 Comuna = "Concepcion",
-                UsuarioId= user1.Id
+                UsuarioInternoId = usi1.Id
             };
             Proveedor pr2 = new Proveedor()
             {
@@ -392,31 +418,13 @@
                 Email = "ei1@email.com",
                 Contacto = "Bernardo Silva Medina",
                 Comuna = "Santiago",
-                UsuarioId = user1.Id
+                UsuarioInternoId = usi2.Id
             };
             context.Proveedor.Add(pr1);
             context.Proveedor.Add(pr2);
             context.SaveChanges();
 
-            CatergoriaInsumo cti1 = new CatergoriaInsumo()
-            {
 
-                Descripcion = "Materia Prima"
-            };
-            CatergoriaInsumo cti2 = new CatergoriaInsumo()
-            {
-
-                Descripcion = "Pinturas"
-            };
-            CatergoriaInsumo cti3 = new CatergoriaInsumo()
-            {
-                Descripcion = "Accesorios"
-            };
-
-            context.CategoriaInsumo.Add(cti1);
-            context.CategoriaInsumo.Add(cti2);
-            context.CategoriaInsumo.Add(cti3);
-            context.SaveChanges();
 
             Insumo i1 = new Insumo()
             {
@@ -424,7 +432,7 @@
                 Descripcion = "Manillas de Comodas",
                 Umedida = "C/U",
                 CategoriaId = cti3.Id,
-                UsuarioId = user2.Id
+                UsuarioInternoId = usi1.Id
             };
             Insumo i2 = new Insumo()
             {
@@ -432,7 +440,7 @@
                 Descripcion = "Manillas de Roperos",
                 Umedida = "C/U",
                 CategoriaId = cti3.Id,
-                UsuarioId = user2.Id
+                UsuarioInternoId = usi2.Id
             };
             Insumo i3 = new Insumo()
             {
@@ -440,26 +448,11 @@
                 Descripcion = "Barniz Cafe Cipres",
                 Umedida = "Galon",
                 CategoriaId = cti2.Id,
-                UsuarioId = user2.Id
+                UsuarioInternoId = usi3.Id
             };
             context.Insumo.Add(i1);
             context.Insumo.Add(i2);
             context.Insumo.Add(i3);
-            context.SaveChanges();
-
-            MedioPago mp1 = new MedioPago()
-            {
-                Descripcion = "tarjeta credito",
-                EntidadComercial = "Banco Estado"
-
-            };
-            MedioPago mp2 = new MedioPago()
-            {
-                Descripcion = "tarjeta debito",
-                EntidadComercial = "Banco Estado"
-            };
-            context.MedioPago.Add(mp1);
-            context.MedioPago.Add(mp2); ;
             context.SaveChanges();
 
             Pago pa1 = new Pago()
@@ -474,7 +467,7 @@
             {
                 Num_orden = 132,
                 Total = 1200000,
-                Fecha = new DateTime(2020, 2, 25),                
+                Fecha = new DateTime(2020, 2, 25),
                 MedioPagoId = mp1.Id
             };
 
@@ -482,13 +475,13 @@
             {
                 Num_orden = 11,
                 Total = 100000,
-                Fecha = new DateTime(2020, 2, 25),                
+                Fecha = new DateTime(2020, 2, 25),
                 MedioPagoId = mp2.Id
             };
             context.Pago.Add(pa1);
             context.Pago.Add(pa2);
             context.Pago.Add(pa3);
-            context.SaveChanges();         
+            context.SaveChanges();
 
             ClienteProducto cp1 = new ClienteProducto()
             {
@@ -497,6 +490,7 @@
                 Fecha = new DateTime(2020, 6, 10),
                 ProductoId = p1.Id,
                 ClienteId = cl1.Id
+                //PagoId = pa1.Id
             };
 
             ClienteProducto cp2 = new ClienteProducto()
@@ -506,6 +500,7 @@
                 Fecha = new DateTime(2020, 6, 10),
                 ProductoId = p2.Id,
                 ClienteId = cl2.Id
+                //PagoId = pa2.Id
             };
 
             ClienteProducto cp3 = new ClienteProducto()
@@ -515,14 +510,12 @@
                 Fecha = new DateTime(2020, 6, 10),
                 ProductoId = p3.Id,
                 ClienteId = cl3.Id
+                //PagoId = pa3.Id
             };
             context.ClienteProducto.Add(cp1);
             context.ClienteProducto.Add(cp2);
             context.ClienteProducto.Add(cp3);
             context.SaveChanges();
-
-
-
 
             InventarioInsumo ii1 = new InventarioInsumo()
             {
@@ -562,7 +555,6 @@
             };
             CompraInsumo ci2 = new CompraInsumo()
             {
-
                 Fecha = new DateTime(2020, 2, 25),
                 Valor = 2500,
                 Cantidad = 150,
@@ -576,42 +568,19 @@
 
             ProveeInsumo pri1 = new ProveeInsumo()
             {
-
                 InsumoId = i2.Id,
                 ProveedorId = pr1.Id
-
             };
             ProveeInsumo pri2 = new ProveeInsumo()
             {
-
                 InsumoId = i2.Id,
                 ProveedorId = pr1.Id
-
             };
             context.ProveeInsumo.Add(pri1);
             context.ProveeInsumo.Add(pri2);
             context.SaveChanges();
 
-            Recurso re1 = new Recurso()
-            {
-                Descripcion = "Madera de Pino",
-                Umedida = "m"
-            };
-            Recurso re2 = new Recurso()
-            {
-                Descripcion = "Tela Sintetica",
-                Umedida = "m"
-            };
-            Recurso re3 = new Recurso()
-            {
-                Descripcion = "Relleno de lana",
-                Umedida = "m*3"
-            };
-            context.Recurso.Add(re1);
-            context.Recurso.Add(re2);
-            context.Recurso.Add(re3);
-            context.SaveChanges();
-        }        
+        }
 
 
     }

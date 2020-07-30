@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Prueba";
+    Layout = "~/Views/Shared/_IntranetLayout.cshtml";
+}
+
+<style>
+    #principal {
+        width: 900px;
+        height: auto;
+        top: 50%;
+        margin-top: 30px;
+        border: 1px solid green;
+        padding: 50px;
+        position: relative;
+    }
+
+    .user_session {
+        margin-top: 3px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+        .user_session h6 {
+            color: blue;
+        }
+
+    .div-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="container" id="principal">
+    <select data-role="select" multiple>
+        <option value="1" data-template="<span class='mif-amazon icon'></span> $1">Amazon</option>
+        <option value="2" data-template="<span class='mif-apple icon'></span> $1">Apple</option>
+        <option value="3" data-template="<span class='mif-blogger icon'></span> $1">Blogger</option>
+        <option value="4" data-template="<span class='mif-evernote icon'></span> $1">Evernote</option>
+        <option value="5" data-template="<span class='mif-github icon'></span> $1">GitHub</option>
+    </select>
+</div>

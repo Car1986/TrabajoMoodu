@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -24,7 +25,11 @@ namespace MetroUIPrueba2.Models
 
         public virtual ICollection<ClienteProducto> ClienteProductos { get; set; }
 
-        //puesto alreves de lo que dice la logica con el cliente usuario
-        public virtual Usuario Usuario { get; set; }        
+        //puesto alreves de lo que dice la logica con el cliente usuario       
+
+        [Key]
+        [ForeignKey("Usuario")]
+        public int? UsuarioId { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }
