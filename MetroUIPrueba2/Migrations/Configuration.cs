@@ -486,7 +486,7 @@
             ClienteProducto cp1 = new ClienteProducto()
             {
                 NumOrden = 145,
-                Subtotal = 120000,
+                Cantidad = 12,
                 Fecha = new DateTime(2020, 6, 10),
                 ProductoId = p1.Id,
                 ClienteId = cl1.Id
@@ -496,7 +496,7 @@
             ClienteProducto cp2 = new ClienteProducto()
             {
                 NumOrden = 122,
-                Subtotal = 203000,
+                Cantidad = 10,
                 Fecha = new DateTime(2020, 6, 10),
                 ProductoId = p2.Id,
                 ClienteId = cl2.Id
@@ -506,7 +506,7 @@
             ClienteProducto cp3 = new ClienteProducto()
             {
                 NumOrden = 111,
-                Subtotal = 320000,
+                Cantidad = 3,
                 Fecha = new DateTime(2020, 6, 10),
                 ProductoId = p3.Id,
                 ClienteId = cl3.Id
