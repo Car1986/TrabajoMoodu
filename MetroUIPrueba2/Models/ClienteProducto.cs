@@ -13,8 +13,8 @@ namespace MetroUIPrueba2.Models
         //[Column(Order = 1)]
         public int Id { get; set; }
         public int NumOrden { get; set; }
-        public int Subtotal { get; set; }
         public DateTime Fecha { get; set; }
+        public int Cantidad { get; set; }
         //[Key]
         //[Column(Order = 2)]
         public int ClienteId { get; set; }       
