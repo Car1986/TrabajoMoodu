@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MetroUIPrueba2.Models;
+using MetroUIPrueba2.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,7 @@ namespace MetroUIPrueba2.Controllers
 {
     public class HomeController : Controller
     {
+        private MooduContext _db = new MooduContext();
         public ActionResult Index()
         {
             return View();
@@ -77,6 +80,45 @@ namespace MetroUIPrueba2.Controllers
         public ActionResult Prueba()
         {
             return View();
+        }
+
+        public ActionResult InsumoEmpleado()
+        {
+            List<Empleado> empleados = _db.Empleado
+                                            .Where(e => e.Areas.Descripcion == "Insumo")
+                                            .Select(e => e)
+                                            .ToList();
+            return View(empleados);
+        }
+
+        public ActionResult GerenciaEmpleado()
+        {
+            List<Empleado> empleados = _db.Empleado
+                                            .Where(e => e.Areas.Descripcion == "Gerencia")
+                                            .Select(e => e)
+                                            .ToList();
+            return View(empleados);
+        }
+
+        public ActionResult Ranking()
+        {
+            List<RankingArea> ranking = _db.Areas
+                                          .Select(r => new RankingArea
+                                          {
+                                              Area = r,
+                                              Cantidad = r.Empleado.Count()
+                                          })
+                                          .ToList();
+            return View(ranking);
+        }
+
+        public ActionResult ProduccionEmpleado()
+        {
+            List<Empleado> empleados = _db.Empleado
+                                            .Where(e => e.Areas.Descripcion == "Produccion")
+                                            .Select(e => e)
+                                            .ToList();
+            return View(empleados);
         }
     }
 }

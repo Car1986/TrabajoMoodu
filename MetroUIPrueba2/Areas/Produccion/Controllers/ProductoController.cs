@@ -29,6 +29,8 @@ namespace MetroUIPrueba2.Areas.Produccion.Controllers
             if (ModelState.IsValid)
             {
                 //acá codigo para guardar
+                _db.Producto.Add(producto);
+                _db.SaveChanges();
                 return RedirectToAction("Index","Producto");
             }
             return View(producto);

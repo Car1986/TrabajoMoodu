@@ -171,6 +171,7 @@
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioInterno.cs" />
+    <Compile Include="Models\ViewModels\RankingArea.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -313,6 +314,10 @@
     <Content Include="Views\Producto\View.cshtml" />
     <Content Include="Views\Producto\Edit.cshtml" />
     <Content Include="Views\Home\Prueba.cshtml" />
+    <Content Include="Views\Home\InsumoEmpleado.cshtml" />
+    <Content Include="Views\Home\GerenciaEmpleado.cshtml" />
+    <Content Include="Views\Home\ProduccionEmpleado.cshtml" />
+    <Content Include="Views\Home\Ranking.cshtml" />
     <None Include="Views\Shared\_IntranetLayout.xxx" />
     <Content Include="Views\Home\Intranet.cshtml" />
     <Content Include="Views\Producto\Disenno.cshtml" />

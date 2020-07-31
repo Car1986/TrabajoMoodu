@@ -1,0 +1,76 @@
+﻿@model IEnumerable<MetroUIPrueba2.Models.Empleado>
+@{
+    ViewBag.Title = "ProduccionEmpleado";
+    Layout = "~/Views/Shared/_IntranetLayout.cshtml";
+}
+
+<style>
+    #principal {
+        width: 900px;
+        height: auto;
+        top: 50%;
+        margin-top: 30px;
+        border: 1px solid green;
+        padding: 50px;
+        position: relative;
+    }
+
+    .user_session {
+        margin-top: 3px;
+        margin-left: 5px;
+        width: 300px;
+        position: relative;
+        color: blue;
+    }
+
+        .user_session h6 {
+            color: blue;
+        }
+
+    .div-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="user_session">
+    <h6>Usuario: Juan Perez</h6>
+</div>
+<div class="container" id="principal">
+    <div class="div-img"><img style="width:50px; height:50px;" src="~/pics/intranet/listar.jpg"></div>
+    <h3>Lista de Empleados</h3>
+    <a href="/Empleado/Create" class="button primary small"><span class="mif-note-add"></span>Nuevo</a>
+    <hr />
+    <table class="table compact row-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Rut</th>
+                <th>Cargo</th>
+                <th>Area</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (MetroUIPrueba2.Models.Empleado e in Model)
+            {
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Nombres</td>
+                <td>@e.Apellidos</td>
+                <td>@e.Rut</td>
+                <td>@e.Cargo</td>
+                <td>@e.Areas.Descripcion</td>
+                <td>
+                    <a href="@Url.Action("View","Empleado", new { id = e.Id })">Ver/</a>
+                    <a href="@Url.Action("Edit", "Empleado", new  {id = e.Id })">Editar</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
