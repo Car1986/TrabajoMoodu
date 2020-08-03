@@ -8,13 +8,13 @@ using System.Web;
 namespace MetroUIPrueba2.Models
 {
     public class Empleado
-    {        
+    {
         public int Id { get; set; }
         [Required]
         [StringLength(11, MinimumLength = 10)]
-        public string Rut  { get; set; }
+        public string Rut { get; set; }
         [Required]
-        [StringLength(50, MinimumLength = 1, ErrorMessage =" El o los nombres deben de tener un mínimo de 1 y máximo 50 caracteres")]
+        [StringLength(50, MinimumLength = 1, ErrorMessage = " El o los nombres deben de tener un mínimo de 1 y máximo 50 caracteres")]
         public string Nombres { get; set; }
         [Required]
         [StringLength(80, MinimumLength = 1, ErrorMessage = " El o los nombres deben de tener un mínimo de 1 y máximo 80 caracteres")]
@@ -29,13 +29,10 @@ namespace MetroUIPrueba2.Models
         public string Correo { get; set; }
         [Required]
         public string Cargo { get; set; }
-        [Key]
-        [ForeignKey("UsuarioInterno")]
-        public int UsuarioInternoId { get; set; }
-        public UsuarioInterno UsuarioInterno { get; set; }
-        [ForeignKey("Areas")]
+        public int? UsuarioInternoId { get; set; }
+
         public int? AreaId { get; set; }
-        public virtual Areas Areas { get; set; }
+
         public virtual ICollection<AsignaRoles> AsignaRoles { get; set; }
     }
 }

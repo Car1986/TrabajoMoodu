@@ -157,12 +157,15 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteProducto.cs" />
     <Compile Include="Models\CompraInsumo.cs" />
+    <Compile Include="Models\Diseno.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Insumo.cs" />
     <Compile Include="Models\InventarioInsumo.cs" />
     <Compile Include="Models\InventarioProducto.cs" />
     <Compile Include="Models\MedioPago.cs" />
     <Compile Include="Models\MooduContext.cs" />
+    <Compile Include="Models\Orden.cs" />
+    <Compile Include="Models\OrdenDetalle.cs" />
     <Compile Include="Models\Pago.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />

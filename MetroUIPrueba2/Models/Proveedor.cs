@@ -14,10 +14,10 @@ namespace MetroUIPrueba2.Models
         [Required]
         public string Razon { get; set; }
         [Required]
-        [StringLength(12, MinimumLength =11)]
+        [StringLength(12, MinimumLength = 11)]
         public string Rut { get; set; }
         [Required]
-        [StringLength(50, MinimumLength =5)]
+        [StringLength(50, MinimumLength = 5)]
         public string Direccion { get; set; }
         [Required]
         public string Telefono { get; set; }
@@ -27,9 +27,10 @@ namespace MetroUIPrueba2.Models
         public string Contacto { get; set; }
         [Required]
         public string Comuna { get; set; }
-        public int? UsuarioInternoId { get; set; }
-        public virtual UsuarioInterno UsuarioInterno { get; set; }
+        public int UsuarioInternoId { get; set; }
+
         public virtual ICollection<CompraInsumo> CompraInsumo { get; set; }
         public virtual ICollection<ProveeInsumo> ProveeInsumo { get; set; }
+
     }
 }

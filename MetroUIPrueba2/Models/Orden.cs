@@ -7,13 +7,14 @@ using System.Web;
 
 namespace MetroUIPrueba2.Models
 {
-    public class Usuario
+    public class Orden
     {
         public int Id { get; set; }
-        public string NombreUsuario { get; set; }
-        public string Password { get; set; }
+        [Required]
+        public DateTime Fecha { get; set; }
+        public int ClienteId { get; set; }
+        public int? PagoId { get; set; }
+        public virtual ICollection<OrdenDetalle> OrdenDetalle { get; set; }
 
-        public virtual Cliente Cliente { get; set; }
-        public virtual ICollection<Diseno> Diseno { get; set; }
     }
 }

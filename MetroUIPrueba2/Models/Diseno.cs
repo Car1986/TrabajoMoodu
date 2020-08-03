@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.EnterpriseServices.Internal;
 using System.Linq;
 using System.Web;
 
 namespace MetroUIPrueba2.Models
 {
-    public class Areas
+    public class Diseno
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public virtual Empleado Empleado { get; set; }
+        public string Fecha { get; set; }
+        public int UsuarioId { get; set; }
+        public int UsuarioInternoId { get; set; }
     }
 }
