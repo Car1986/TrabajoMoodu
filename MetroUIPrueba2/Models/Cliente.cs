@@ -17,7 +17,7 @@ namespace MetroUIPrueba2.Models
         [Required]
         [StringLength(35, MinimumLength = 3)]
         public string Apellidos { get; set; }
-        [Required]
+        
         public string Direccion { get; set; }
         [Required]
         public string Correo { get; set; }

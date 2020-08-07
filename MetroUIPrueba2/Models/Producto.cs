@@ -21,7 +21,7 @@ namespace MetroUIPrueba2.Models
         [Required]
         public string Imagen { get; set; }
         [Required]
-        [StringLength(100, MinimumLength = 3, ErrorMessage = "La descripción debe de tener un minimo de 3 y máximo de 100 caracteres")]
+        [StringLength(300, MinimumLength = 3, ErrorMessage = "La descripción debe de tener un minimo de 3 y máximo de 100 caracteres")]
         public string Descripcion { get; set; }
         [Required]
         public string Estado { get; set; }

@@ -1,4 +1,4 @@
-﻿
+﻿@model MetroUIPrueba2.Models.Producto
 @{
     ViewBag.Title = "product_selected";
 }
@@ -10,18 +10,18 @@
             <div class="cell-6">
                 <div class="container">
                     <div class="img-container thumbnail">
-                        <img src="https://3.bp.blogspot.com/-vZgGsRu_LK4/V3HepUswb7I/AAAAAAAALBw/cOJJVWugwxYtmjnxlYSLdH0WtevnyN3EACLcB/s1600/Woodworking-Projects-Free-Planos-Muebles-Madera-Alacena-4.jpg">
+                        <img src="@Model.Imagen">
                     </div>
                 </div>
             </div>
             <div class="cell-6">
                 <div class="container">
-                    
+
                     <form>
                         <h8>Mesa 1</h8>
                         <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                             <label>Precio Unitario</label>
-                            <label>$50.000</label>
+                            <label>@Model.Precio</label>
                         </div>
                         <div class="form-group" style="display: flex; justify-content:space-between; align-items: center">
                             <label>Cantidad: </label>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group" style="display:flex; flex-direction:column">
                             <a href="/Home/Cart/" class=button primary outline">Agregar al carro</a><br />
-                            <input onclick="goBack()" class=button primary outline" value="Volver"/>
+                            <input onclick="goBack()" class=button primary outline" value="Volver" />
                         </div>
                     </form>
                 </div>
@@ -72,7 +72,7 @@
                                 Nullam non dolor lectus. Pellentesque augue neque, pulvinar ut malesuada dictum, faucibus quis augue. Nulla pharetra vel nulla eget posuere.
                                 Morbi iaculis quis erat ut luctus. Aenean elementum molestie tincidunt. Nulla facilisi.
                             </p>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>

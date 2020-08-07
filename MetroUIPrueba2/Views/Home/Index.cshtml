@@ -1,4 +1,5 @@
-﻿<style>
+﻿@model IEnumerable<MetroUIPrueba2.Models.Producto>
+<style>
     #banner_ {
         display: flex;
         align-items: center;
@@ -44,7 +45,35 @@
         data-sort-dir="desc"
         data-cls-list="unstyled-list row flex-justify-center mt-4"
         data-cls-list-item="cell-sm-4 cell-md-2">
-        <li>
+
+        @foreach (MetroUIPrueba2.Models.Producto p in Model)
+        {
+            <li>
+                <figure class="text-center">
+                    <div class="img-container thumbnail">
+                        <a href="@Url.Action("product_selected", "Home", new { p.Id })">
+                            <div class="carousel" data-role="carousel" data-controls="false" data-bullets="false" data-effect="fade" data-period="3000" data-duration="500" data-auto-start="true" data-height="150">
+                                <div class="slide">
+                                    <img src=@p.Imagen.ToString()>
+                                </div>
+                                <div class="slide">
+                                    <img src="~/pics/closets/closet_02_1.jpg">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <input data-role="rating" id="rating-methods" data-stars="5" data-star-color="yellow" data-stared-color="yellow">
+                    <figcaption class="autor-closets text-bold" style="font-size:12px">@p.Descripcion</figcaption>
+                    <figcaption class="nombre-closets" style="text-align:justify; font-size:10px">Ideal para dormitorios de tamaño medio y grande incorporando las puertas corredera ideal para no perder más espacio al momento de abrir las puertas, este modelo contiene diversos compartimientos para colgar ropa, almacenar en repisas y un espacio superior disponibles para guardar ropa de cama o aquello que no usas a menudo</figcaption>
+                    <div class="row">
+                        <div class="col-md-8"><p class="mt-0" style="text-align:left;font-size:12px;font-weight:bold">Precio contado</p></div>
+                        <div class="col-md-4"><figcaption style="color:red;text-align:right;font-size:12px" class="precio-closets text-bold" data-format="money">$ @p.Precio</figcaption></div>
+                    </div>
+                </figure>
+            </li>
+        }
+
+        @*<li>
             <figure class="text-center">
                 <div class="img-container thumbnail">
                     <a href="/Home/product_selected/">
@@ -135,6 +164,6 @@
                     <div class="col-md-4"><figcaption style="color:red;text-align:right;font-size:12px" class="precio-closets text-bold" data-format="money">$ 190.000</figcaption></div>
                 </div>
             </figure>
-        </li>
+        </li>*@
     </ul>
 </div>

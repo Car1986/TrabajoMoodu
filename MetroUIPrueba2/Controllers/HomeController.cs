@@ -11,9 +11,11 @@ namespace MetroUIPrueba2.Controllers
     public class HomeController : Controller
     {
         private MooduContext _db = new MooduContext();
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            List<Producto> productos = _db.Producto.ToList();
+            return View(productos);
         }
 
         public ActionResult About()
@@ -44,9 +46,14 @@ namespace MetroUIPrueba2.Controllers
             return View();
         }
 
-        public ActionResult product_selected()
+        public ActionResult product_selected(int id, Producto producto)
         {
-            return View();
+            Producto p = _db.Producto.Find(id);
+            if (p == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(p);
         }
         public ActionResult Mesas()
         {
@@ -82,43 +89,46 @@ namespace MetroUIPrueba2.Controllers
             return View();
         }
 
-        public ActionResult InsumoEmpleado()
-        {
-            List<Empleado> empleados = _db.Empleado
-                                            .Where(e => e.Areas.Descripcion == "Insumo")
-                                            .Select(e => e)
-                                            .ToList();
-            return View(empleados);
-        }
 
-        public ActionResult GerenciaEmpleado()
-        {
-            List<Empleado> empleados = _db.Empleado
-                                            .Where(e => e.Areas.Descripcion == "Gerencia")
-                                            .Select(e => e)
-                                            .ToList();
-            return View(empleados);
-        }
 
-        public ActionResult Ranking()
-        {
-            List<RankingArea> ranking = _db.Areas
-                                          .Select(r => new RankingArea
-                                          {
-                                              Area = r,
-                                              Cantidad = r.Empleado.Count()
-                                          })
-                                          .ToList();
-            return View(ranking);
-        }
 
-        public ActionResult ProduccionEmpleado()
-        {
-            List<Empleado> empleados = _db.Empleado
-                                            .Where(e => e.Areas.Descripcion == "Produccion")
-                                            .Select(e => e)
-                                            .ToList();
-            return View(empleados);
-        }
+    //    public ActionResult InsumoEmpleado()
+    //    {
+    //        List<Empleado> empleados = _db.Empleado
+    //                                        .Where(e => e.Areas.Descripcion == "Insumo")
+    //                                        .Select(e => e)
+    //                                        .ToList();
+    //        return View(empleados);
+    //    }
+
+    //    public ActionResult GerenciaEmpleado()
+    //    {
+    //        List<Empleado> empleados = _db.Empleado
+    //                                        .Where(e => e.Areas.Descripcion == "Gerencia")
+    //                                        .Select(e => e)
+    //                                        .ToList();
+    //        return View(empleados);
+    //    }
+
+    //    public ActionResult Ranking()
+    //    {
+    //        List<RankingArea> ranking = _db.Areas
+    //                                      .Select(r => new RankingArea
+    //                                      {
+    //                                          Area = r,
+    //                                          Cantidad = r.Empleado.Count()
+    //                                      })
+    //                                      .ToList();
+    //        return View(ranking);
+    //    }
+
+    //    public ActionResult ProduccionEmpleado()
+    //    {
+    //        List<Empleado> empleados = _db.Empleado
+    //                                        .Where(e => e.Areas.Descripcion == "Produccion")
+    //                                        .Select(e => e)
+    //                                        .ToList();
+    //        return View(empleados);
+    //    }
     }
 }

@@ -130,22 +130,22 @@
             context.Almacenes.Add(a3);
             context.SaveChanges();
 
-            CatergoriaInsumo cti1 = new CatergoriaInsumo()
-            {
-                Descripcion = "Materia Prima"
-            };
-            CatergoriaInsumo cti2 = new CatergoriaInsumo()
-            {
-                Descripcion = "Pinturas"
-            };
-            CatergoriaInsumo cti3 = new CatergoriaInsumo()
-            {
-                Descripcion = "Accesorios"
-            };
-            context.CategoriaInsumo.Add(cti1);
-            context.CategoriaInsumo.Add(cti2);
-            context.CategoriaInsumo.Add(cti3);
-            context.SaveChanges();
+            //CatergoriaInsumo cti1 = new CatergoriaInsumo()
+            //{
+            //    Descripcion = "Materia Prima"
+            //};
+            //CatergoriaInsumo cti2 = new CatergoriaInsumo()
+            //{
+            //    Descripcion = "Pinturas"
+            //};
+            //CatergoriaInsumo cti3 = new CatergoriaInsumo()
+            //{
+            //    Descripcion = "Accesorios"
+            //};
+            //context.CategoriaInsumo.Add(cti1);
+            //context.CategoriaInsumo.Add(cti2);
+            //context.CategoriaInsumo.Add(cti3);
+            //context.SaveChanges();
 
             MedioPago mp1 = new MedioPago()
             {
@@ -290,7 +290,7 @@
                 Codigo = "pd-01",
                 Fecha = new DateTime(2020, 6, 10),
                 Precio = 650000,
-                Imagen = "La ruta1",
+                Imagen = "/pics/closets/closet_02_por.jpg",
                 Descripcion = "La descripcion",
                 Estado = "Produccion"
             };
@@ -299,7 +299,7 @@
                 Codigo = "pd-02",
                 Fecha = new DateTime(2020, 6, 10),
                 Precio = 450000,
-                Imagen = "La ruta2",
+                Imagen = "/pics/closets/closet_05_por.jpg",
                 Descripcion = "La descripcion2",
                 Estado = "Produccion"
             };
@@ -308,7 +308,7 @@
                 Codigo = "pd-03",
                 Fecha = new DateTime(2020, 6, 10),
                 Precio = 350000,
-                Imagen = "La ruta3",
+                Imagen = "/pics/closets/closet_01_por.jpg",
                 Descripcion = "La descripcion3",
                 Estado = "Produccion"
             };
@@ -318,7 +318,7 @@
                 Codigo = "pd-04",
                 Fecha = new DateTime(2020, 6, 10),
                 Precio = 250000,
-                Imagen = "La ruta4",
+                Imagen = "/pics/closets/closet_04_por.jpg",
                 Descripcion = "La descripcion4",
                 Estado = "Produccion"
             };
@@ -426,62 +426,62 @@
 
 
 
-            Insumo i1 = new Insumo()
-            {
+            //Insumo i1 = new Insumo()
+            //{
 
-                Descripcion = "Manillas de Comodas",
-                Umedida = "C/U",
-                CategoriaId = cti3.Id,
-                UsuarioInternoId = usi1.Id
-            };
-            Insumo i2 = new Insumo()
-            {
+            //    Descripcion = "Manillas de Comodas",
+            //    Umedida = "C/U",
+            //    CategoriaId = cti3.Id,
+            //    UsuarioInternoId = usi1.Id
+            //};
+            //Insumo i2 = new Insumo()
+            //{
 
-                Descripcion = "Manillas de Roperos",
-                Umedida = "C/U",
-                CategoriaId = cti3.Id,
-                UsuarioInternoId = usi2.Id
-            };
-            Insumo i3 = new Insumo()
-            {
+            //    Descripcion = "Manillas de Roperos",
+            //    Umedida = "C/U",
+            //    CategoriaId = cti3.Id,
+            //    UsuarioInternoId = usi2.Id
+            //};
+            //Insumo i3 = new Insumo()
+            //{
 
-                Descripcion = "Barniz Cafe Cipres",
-                Umedida = "Galon",
-                CategoriaId = cti2.Id,
-                UsuarioInternoId = usi3.Id
-            };
-            context.Insumo.Add(i1);
-            context.Insumo.Add(i2);
-            context.Insumo.Add(i3);
-            context.SaveChanges();
+            //    Descripcion = "Barniz Cafe Cipres",
+            //    Umedida = "Galon",
+            //    CategoriaId = cti2.Id,
+            //    UsuarioInternoId = usi3.Id
+            //};
+            //context.Insumo.Add(i1);
+            //context.Insumo.Add(i2);
+            //context.Insumo.Add(i3);
+            //context.SaveChanges();
 
-            Pago pa1 = new Pago()
-            {
-                Num_orden = 12,
-                Total = 120000,
-                Fecha = new DateTime(2020, 2, 25),
-                MedioPagoId = mp1.Id
-            };
+            //Pago pa1 = new Pago()
+            //{
+            //    Num_orden = 12,
+            //    Total = 120000,
+            //    Fecha = new DateTime(2020, 2, 25),
+            //    MedioPagoId = mp1.Id
+            //};
 
-            Pago pa2 = new Pago()
-            {
-                Num_orden = 132,
-                Total = 1200000,
-                Fecha = new DateTime(2020, 2, 25),
-                MedioPagoId = mp1.Id
-            };
+            //Pago pa2 = new Pago()
+            //{
+            //    Num_orden = 132,
+            //    Total = 1200000,
+            //    Fecha = new DateTime(2020, 2, 25),
+            //    MedioPagoId = mp1.Id
+            //};
 
-            Pago pa3 = new Pago()
-            {
-                Num_orden = 11,
-                Total = 100000,
-                Fecha = new DateTime(2020, 2, 25),
-                MedioPagoId = mp2.Id
-            };
-            context.Pago.Add(pa1);
-            context.Pago.Add(pa2);
-            context.Pago.Add(pa3);
-            context.SaveChanges();
+            //Pago pa3 = new Pago()
+            //{
+            //    Num_orden = 11,
+            //    Total = 100000,
+            //    Fecha = new DateTime(2020, 2, 25),
+            //    MedioPagoId = mp2.Id
+            //};
+            //context.Pago.Add(pa1);
+            //context.Pago.Add(pa2);
+            //context.Pago.Add(pa3);
+            //context.SaveChanges();
 
             ClienteProducto cp1 = new ClienteProducto()
             {
@@ -512,73 +512,73 @@
                 ClienteId = cl3.Id
                 //PagoId = pa3.Id
             };
-            context.ClienteProducto.Add(cp1);
-            context.ClienteProducto.Add(cp2);
-            context.ClienteProducto.Add(cp3);
+            //context.ClienteProducto.Add(cp1);
+            //context.ClienteProducto.Add(cp2);
+            //context.ClienteProducto.Add(cp3);
             context.SaveChanges();
 
-            InventarioInsumo ii1 = new InventarioInsumo()
-            {
+            //InventarioInsumo ii1 = new InventarioInsumo()
+            //{
 
-                Fecha = new DateTime(2020, 1, 21),
-                Cantidad = 50,
-                Critico = 50,
-                Observacion = "no hay",
-                AlmacenId = a3.Id,
-                InsumoId = i2.Id
+            //    Fecha = new DateTime(2020, 1, 21),
+            //    Cantidad = 50,
+            //    Critico = 50,
+            //    Observacion = "no hay",
+            //    AlmacenId = a3.Id,
+            //    InsumoId = i2.Id
 
-            };
-            InventarioInsumo ii2 = new InventarioInsumo()
-            {
+            //};
+            //InventarioInsumo ii2 = new InventarioInsumo()
+            //{
 
-                Fecha = new DateTime(2020, 1, 21),
-                Cantidad = 150,
-                Critico = 50,
-                Observacion = "no hay",
-                AlmacenId = a3.Id,
-                InsumoId = i1.Id
-            };
+            //    Fecha = new DateTime(2020, 1, 21),
+            //    Cantidad = 150,
+            //    Critico = 50,
+            //    Observacion = "no hay",
+            //    AlmacenId = a3.Id,
+            //    InsumoId = i1.Id
+            //};
 
-            context.InventarioInsumo.Add(ii1);
-            context.InventarioInsumo.Add(ii2);
-            context.SaveChanges();
+            //context.InventarioInsumo.Add(ii1);
+            //context.InventarioInsumo.Add(ii2);
+            //context.SaveChanges();
 
-            CompraInsumo ci1 = new CompraInsumo()
-            {
+            //CompraInsumo ci1 = new CompraInsumo()
+            //{
 
-                Fecha = new DateTime(2020, 2, 25),
-                Valor = 3000,
-                Cantidad = 100,
-                Observacion = "fsfdsdsf",
-                InsumoId = i1.Id,
-                ProveedorId = pr1.Id
-            };
-            CompraInsumo ci2 = new CompraInsumo()
-            {
-                Fecha = new DateTime(2020, 2, 25),
-                Valor = 2500,
-                Cantidad = 150,
-                Observacion = "fsfdsdsf",
-                InsumoId = i2.Id,
-                ProveedorId = pr1.Id
-            };
-            context.CompraInsumo.Add(ci1);
-            context.CompraInsumo.Add(ci2);
-            context.SaveChanges();
+            //    Fecha = new DateTime(2020, 2, 25),
+            //    Valor = 3000,
+            //    Cantidad = 100,
+            //    Observacion = "fsfdsdsf",
+            //    InsumoId = i1.Id,
+            //    ProveedorId = pr1.Id
+            //};
+            //CompraInsumo ci2 = new CompraInsumo()
+            //{
+            //    Fecha = new DateTime(2020, 2, 25),
+            //    Valor = 2500,
+            //    Cantidad = 150,
+            //    Observacion = "fsfdsdsf",
+            //    InsumoId = i2.Id,
+            //    ProveedorId = pr1.Id
+            //};
+            //context.CompraInsumo.Add(ci1);
+            //context.CompraInsumo.Add(ci2);
+            //context.SaveChanges();
 
-            ProveeInsumo pri1 = new ProveeInsumo()
-            {
-                InsumoId = i2.Id,
-                ProveedorId = pr1.Id
-            };
-            ProveeInsumo pri2 = new ProveeInsumo()
-            {
-                InsumoId = i2.Id,
-                ProveedorId = pr1.Id
-            };
-            context.ProveeInsumo.Add(pri1);
-            context.ProveeInsumo.Add(pri2);
-            context.SaveChanges();
+            //ProveeInsumo pri1 = new ProveeInsumo()
+            //{
+            //    InsumoId = i2.Id,
+            //    ProveedorId = pr1.Id
+            //};
+            //ProveeInsumo pri2 = new ProveeInsumo()
+            //{
+            //    InsumoId = i2.Id,
+            //    ProveedorId = pr1.Id
+            //};
+            //context.ProveeInsumo.Add(pri1);
+            //context.ProveeInsumo.Add(pri2);
+            //context.SaveChanges();
 
         }
 
