@@ -12,9 +12,20 @@ namespace MetroUIPrueba2.Controllers
     {
         private MooduContext _db = new MooduContext();
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            List<Producto> productos = _db.Producto.ToList();
+
+            TipoProducto tipoProducto = _db.TipoProducto.Find(id);
+            if (tipoProducto == null)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            List<Producto> productos = _db.Producto
+                                            .Where(p => p.TipoProductoId == id)    
+                                            .Select(p => p)
+                                            .ToList();
+            ViewBag.productos = productos;
             return View(productos);
         }
 

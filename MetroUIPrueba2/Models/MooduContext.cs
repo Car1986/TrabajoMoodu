@@ -29,7 +29,7 @@ namespace MetroUIPrueba2.Models
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<UsuarioInterno> UsuarioInterno { get; set; }
-
+        public DbSet<TipoProducto> TipoProducto { get; set; }
 
     }
 }

@@ -25,6 +25,8 @@ namespace MetroUIPrueba2.Models
         public string Descripcion { get; set; }
         [Required]
         public string Estado { get; set; }
+        //Agregado tipo de producto
+        public int TipoProductoId { get; set; }
         //[Required]
         public virtual ICollection<OrdenDetalle> OrdenDetalle { get; set; }
         public virtual ICollection<InventarioProducto> InventarioProductos { get; set; }

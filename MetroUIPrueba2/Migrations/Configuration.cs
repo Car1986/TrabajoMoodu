@@ -130,6 +130,32 @@
             context.Almacenes.Add(a3);
             context.SaveChanges();
 
+            TipoProducto tp1 = new TipoProducto()
+            {
+                Nombre = "Closet",
+                Descripcion = "Mueble para guardar ropa"
+            };
+            TipoProducto tp2 = new TipoProducto()
+            {
+                Nombre = "Cama",
+                Descripcion = "Mueble de habitacion"
+            };
+            TipoProducto tp3 = new TipoProducto()
+            {
+                Nombre = "Comedor",
+                Descripcion = "Mueble de Cocina"
+            };
+            TipoProducto tp4 = new TipoProducto()
+            {
+                Nombre = "Comoda",
+                Descripcion = "Mueble de habitacion usado para guardar ropa"
+            };
+            context.TipoProducto.Add(tp1);
+            context.TipoProducto.Add(tp2);
+            context.TipoProducto.Add(tp3);
+            context.TipoProducto.Add(tp4);
+            context.SaveChanges();
+
             //CatergoriaInsumo cti1 = new CatergoriaInsumo()
             //{
             //    Descripcion = "Materia Prima"
@@ -285,6 +311,7 @@
             context.AsignaRoles.Add(asig2);
             context.SaveChanges();
 
+            //estas son closets
             Producto p1 = new Producto()
             {
                 Codigo = "pd-01",
@@ -292,7 +319,8 @@
                 Precio = 650000,
                 Imagen = "/pics/closets/closet_02_por.jpg",
                 Descripcion = "La descripcion",
-                Estado = "Produccion"
+                Estado = "Produccion",
+                TipoProductoId = tp1.Id
             };
             Producto p2 = new Producto()
             {
@@ -301,7 +329,8 @@
                 Precio = 450000,
                 Imagen = "/pics/closets/closet_05_por.jpg",
                 Descripcion = "La descripcion2",
-                Estado = "Produccion"
+                Estado = "Produccion",
+                TipoProductoId = tp1.Id
             };
             Producto p3 = new Producto()
             {
@@ -310,7 +339,8 @@
                 Precio = 350000,
                 Imagen = "/pics/closets/closet_01_por.jpg",
                 Descripcion = "La descripcion3",
-                Estado = "Produccion"
+                Estado = "Produccion",
+                TipoProductoId = tp1.Id
             };
             Producto p4 = new Producto()
             {
@@ -320,7 +350,8 @@
                 Precio = 250000,
                 Imagen = "/pics/closets/closet_04_por.jpg",
                 Descripcion = "La descripcion4",
-                Estado = "Produccion"
+                Estado = "Produccion",
+                TipoProductoId = tp1.Id
             };
             context.Producto.Add(p1);
             context.Producto.Add(p2);

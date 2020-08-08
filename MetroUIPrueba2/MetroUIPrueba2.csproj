@@ -172,6 +172,7 @@
     <Compile Include="Models\ProveeInsumo.cs" />
     <Compile Include="Models\Recurso.cs" />
     <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\TipoProducto.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioInterno.cs" />
     <Compile Include="Models\ViewModels\RankingArea.cs" />
